@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>AEPIFY — ChatGPT Ads Management for SMBs & Service Businesses</title>
+  <meta name="description" content="Aepify turns buyer conversations into high-converting ChatGPT Ads campaigns. Built for global SMBs and service businesses.">
+  <link rel="icon" type="image/png" href="assets/logo-cropped.png">
+  
+  <!-- Typography: Plus Jakarta Sans for clean geometric precision -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Background subtle warm accent grid -->
+  <div class="site-ambient-grid" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-link" aria-label="AEPIFY Home">
+        <img src="assets/logo-cropped.png" alt="AEPIFY" class="brand-logo" width="128" height="52">
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#examples" class="nav-link">Examples</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#opportunity-scan" class="btn btn-primary btn-sm nav-cta">
+          <span class="nav-cta-full">Free Opportunity Scan</span>
+          <span class="nav-cta-short">Scan Free</span>
+          <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
+        <a href="#examples" class="mobile-nav-link">Examples</a>
+        <a href="#pricing" class="mobile-nav-link">Pricing</a>
+        <a href="#faq" class="mobile-nav-link">FAQ</a>
+        <div class="mobile-menu-cta">
+          <a href="#opportunity-scan" class="btn btn-primary btn-full mobile-cta-btn">
+            Free Opportunity Scan →
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: HERO -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        
+        <div class="hero-content reveal in-view">
+          <div class="hero-meta-row">
+            <span class="eyebrow-badge">
+              <span class="badge-dot"></span>
+              CHATGPT ADS FOR SMBs
+            </span>
+            <span class="pricing-pill">PRICING · $99/MONTH</span>
+          </div>
+
+          <h1 class="hero-headline">
+            Your next customer may already be asking ChatGPT who to choose.
+          </h1>
+
+          <p class="hero-subtext">
+            Aepify finds the buyer conversations worth targeting — and turns them into ChatGPT Ads campaigns.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#opportunity-scan" class="btn btn-primary btn-lg">
+              Find My Opportunities
+              <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#how-it-works" class="btn btn-secondary btn-lg">
+              See How It Works
+            </a>
+          </div>
+
+          <div class="hero-microproof">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="check-icon"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Free website analysis · No card required</span>
+          </div>
+        </div>
+
+        <!-- HERO VISUAL: INTERACTIVE PRODUCT DEMO -->
+        <div class="hero-visual-wrapper reveal delay-1 in-view">
+          <div class="demo-card" id="heroDemoCard">
+            
+            <!-- Demo Header -->
+            <div class="demo-header">
+              <div class="demo-header-left">
+                <span class="window-dot red"></span>
+                <span class="window-dot yellow"></span>
+                <span class="window-dot green"></span>
+                <div class="chatgpt-status">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-6h-2v6zm0-8h2V7h-2v2z"/></svg>
+                  <span>ChatGPT Conversation Intelligence</span>
+                </div>
+              </div>
+              <div class="demo-scenarios-tabs" role="tablist">
+                <button class="scenario-tab active" data-scenario="renovation" role="tab" aria-selected="true">Home Services</button>
+                <button class="scenario-tab" data-scenario="travel" role="tab" aria-selected="false">Luxury Travel</button>
+                <button class="scenario-tab" data-scenario="consulting" role="tab" aria-selected="false">Consulting</button>
+              </div>
+            </div>
+
+            <!-- Demo Body: Simulation -->
+            <div class="demo-body">
+              <!-- Chat Bubble Input -->
+              <div class="chat-bubble-container">
+                <div class="bubble-sender">
+                  <span class="sender-avatar">U</span>
+                  <span class="sender-label">Prospective Buyer</span>
+                </div>
+                <div class="chat-speech-bubble" id="heroUserPrompt">
+                  “We’re renovating a 20-year-old house. Should we redo the kitchen and bathrooms together?”
+                </div>
+              </div>
+
+              <!-- Animated Transformation Pipeline -->
+              <div class="pipeline-flow" id="pipelineFlow">
+                
+                <!-- Stage 1: Buying Intent -->
+                <div class="pipeline-step step-intent" data-step="1">
+                  <div class="step-badge">
+                    <span class="step-num">01</span>
+                    <span class="step-title">BUYING INTENT</span>
+                  </div>
+                  <div class="step-value" id="pipelineIntent">Renovation planning</div>
+                </div>
+
+                <div class="pipeline-connector">
+                  <svg class="connector-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                </div>
+
+                <!-- Stage 2: Opportunity -->
+                <div class="pipeline-step step-opportunity" data-step="2">
+                  <div class="step-badge">
+                    <span class="step-num">02</span>
+                    <span class="step-title">OPPORTUNITY</span>
+                  </div>
+                  <div class="step-value" id="pipelineOpportunity">Major Home Renovation</div>
+                </div>
+
+                <div class="pipeline-connector">
+                  <svg class="connector-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                </div>
+
+                <!-- Stage 3: Campaign -->
+                <div class="pipeline-step step-campaign" data-step="3">
+                  <div class="step-badge">
+                    <span class="step-num">03</span>
+                    <span class="step-title">CAMPAIGN</span>
+                  </div>
+                  <div class="step-value" id="pipelineCampaign">Planning a Major Home Renovation</div>
+                </div>
+
+                <div class="pipeline-connector">
+                  <svg class="connector-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                </div>
+
+                <!-- Stage 4: ChatGPT Ad Placement -->
+                <div class="pipeline-step step-ad" data-step="4">
+                  <div class="step-badge">
+                    <span class="ad-tag">SPONSORED CHATGPT AD</span>
+                    <span class="ad-brand-tag">AEPIFY PLACEMENT</span>
+                  </div>
+                  <div class="ad-creative-preview">
+                    <div class="ad-headline" id="pipelineAdHeadline">“Planning a major renovation? One team from design to construction.”</div>
+                    <div class="ad-action-row">
+                      <span class="ad-url" id="pipelineAdUrl">oakandiron.build · Direct Consultation</span>
+                      <button class="ad-btn" id="pipelineAdBtn">Book Initial Walkthrough →</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Demo Interactive Control Bar -->
+            <div class="demo-footer">
+              <div class="demo-status-indicator">
+                <span class="pulse-light"></span>
+                <span class="status-label" id="demoStatusText">Live AI Intent Engine: Active</span>
+              </div>
+              <div class="demo-controls">
+                <button class="btn-control" id="btnDemoPrev" aria-label="Previous step">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                </button>
+                <button class="btn-control" id="btnDemoPlay" aria-label="Pause or play demo">
+                  <svg class="play-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l15 8-15 8z"/></svg>
+                  <svg class="pause-icon hidden" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                </button>
+                <button class="btn-control" id="btnDemoNext" aria-label="Next step">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: THE SHIFT -->
+    <section class="shift-section" id="shift">
+      <div class="container">
+        
+        <div class="section-intro reveal">
+          <h2 class="shift-headline">
+            Search tells you what people type.<br>
+            Conversations tell you what they need.
+          </h2>
+        </div>
+
+        <!-- Interactive Google vs ChatGPT Switcher -->
+        <div class="shift-interactive-card reveal delay-1">
+          <div class="shift-toggle-bar">
+            <button class="shift-toggle-btn active" id="btnShiftGoogle" data-mode="google">
+              <span class="toggle-platform-name">GOOGLE SEARCH</span>
+              <span class="toggle-sub">Keywords</span>
+            </button>
+            <div class="shift-vs-badge">VS</div>
+            <button class="shift-toggle-btn" id="btnShiftChatgpt" data-mode="chatgpt">
+              <span class="toggle-platform-name">CHATGPT CONVERSATION</span>
+              <span class="toggle-sub">Intent & Context</span>
+            </button>
+          </div>
+
+          <div class="shift-display-stage" id="shiftStage">
+            
+            <!-- Google View -->
+            <div class="shift-panel panel-google active" id="panelGoogle">
+              <div class="shift-input-mock">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B6B67" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                <span class="search-query-text">“home renovation company”</span>
+              </div>
+              <div class="shift-breakdown-row">
+                <div class="shift-chain-step">
+                  <span class="chain-label">INPUT</span>
+                  <span class="chain-val">Keyword</span>
+                </div>
+                <span class="chain-arrow">↓</span>
+                <div class="shift-chain-step">
+                  <span class="chain-label">OUTPUT</span>
+                  <span class="chain-val">Cold List of Links</span>
+                </div>
+              </div>
+              <p class="shift-commentary">
+                Blunt search keywords give you zero context on project scale, readiness, or budget. You bid against massive aggregators for cold traffic.
+              </p>
+            </div>
+
+            <!-- ChatGPT View -->
+            <div class="shift-panel panel-chatgpt" id="panelChatgpt">
+              <div class="shift-input-mock chatgpt-mock">
+                <span class="chatgpt-prompt-mark">Prompt</span>
+                <span class="chatgpt-query-text">“We’re renovating a 20-year-old house. How should we plan the project?”</span>
+              </div>
+              <div class="shift-breakdown-row chatgpt-chain">
+                <div class="shift-chain-step active-step">
+                  <span class="chain-label">01</span>
+                  <span class="chain-val">Problem</span>
+                </div>
+                <span class="chain-arrow">↓</span>
+                <div class="shift-chain-step active-step">
+                  <span class="chain-label">02</span>
+                  <span class="chain-val">Context</span>
+                </div>
+                <span class="chain-arrow">↓</span>
+                <div class="shift-chain-step active-step">
+                  <span class="chain-label">03</span>
+                  <span class="chain-val">Intent</span>
+                </div>
+                <span class="chain-arrow">↓</span>
+                <div class="shift-chain-step active-step">
+                  <span class="chain-label">04</span>
+                  <span class="chain-val">Decision</span>
+                </div>
+              </div>
+              <p class="shift-commentary highlight">
+                The buyer shares their timeline, hesitation, and exact requirements. Aepify positions your service at the exact decision moment.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="shift-footer-line">
+            <p class="shift-summary-text">Aepify helps you show up around the conversation.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: WHO IT'S FOR -->
+    <section class="audience-section" id="audience">
+      <div class="container">
+        
+        <div class="section-header reveal">
+          <span class="section-eyebrow">TARGET AUDIENCE</span>
+          <h2 class="section-title">Built for businesses people think about before they buy.</h2>
+        </div>
+
+        <!-- 6 Interactive Cards -->
+        <div class="audience-grid reveal delay-1" id="audienceGrid">
+          
+          <button class="audience-card active" data-cat="home">
+            <div class="aud-card-header">
+              <span class="aud-icon">🏡</span>
+              <span class="aud-title">HOME SERVICES</span>
+            </div>
+            <span class="aud-arrow">→</span>
+          </button>
+
+          <button class="audience-card" data-cat="travel">
+            <div class="aud-card-header">
+              <span class="aud-icon">✈️</span>
+              <span class="aud-title">TRAVEL</span>
+            </div>
+            <span class="aud-arrow">→</span>
+          </button>
+
+          <button class="audience-card" data-cat="consulting">
+            <div class="aud-card-header">
+              <span class="aud-icon">💼</span>
+              <span class="aud-title">CONSULTING</span>
+            </div>
+            <span class="aud-arrow">→</span>
+          </button>
+
+          <button class="audience-card" data-cat="professional">
+            <div class="aud-card-header">
+              <span class="aud-icon">⚖️</span>
+              <span class="aud-title">PROFESSIONAL SERVICES</span>
+            </div>
+            <span class="aud-arrow">→</span>
+          </button>
+
+          <button class="audience-card" data-cat="local">
+            <div class="aud-card-header">
+              <span class="aud-icon">📍</span>
+              <span class="aud-title">LOCAL BUSINESSES</span>
+            </div>
+            <span class="aud-arrow">→</span>
+          </button>
+
+          <button class="audience-card" data-cat="premium">
+            <div class="aud-card-header">
+              <span class="aud-icon">💎</span>
+              <span class="aud-title">PREMIUM SERVICES</span>
+            </div>
+            <span class="aud-arrow">→</span>
+          </button>
+
+        </div>
+
+        <!-- Live Preview Card for Selected Category -->
+        <div class="audience-preview-card reveal delay-2" id="audiencePreviewCard">
+          <div class="prev-top">
+            <span class="prev-tag" id="audPrevCategory">HOME SERVICES</span>
+            <span class="prev-badge">Active Conversation Match</span>
+          </div>
+          
+          <div class="prev-conversation-box">
+            <span class="prev-box-label">BUYER CONVERSATION IN CHATGPT</span>
+            <p class="prev-quote" id="audPrevQuote">“How much should I budget for a full kitchen renovation?”</p>
+          </div>
+
+          <div class="prev-match-details">
+            <div class="prev-col">
+              <span class="col-title">IDENTIFIED INTENT</span>
+              <span class="col-val" id="audPrevIntent">High-ticket home remodel & budget planning</span>
+            </div>
+            <div class="prev-col">
+              <span class="col-title">TARGET AUDIENCE</span>
+              <span class="col-val" id="audPrevAudience">Homeowners with immediate renovation intent</span>
+            </div>
+            <div class="prev-col">
+              <span class="col-title">AEPIFY CAMPAIGN ANGLE</span>
+              <span class="col-val" id="audPrevAngle">Transparent pricing guide + turnkey project management</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="audience-disclaimer reveal">
+          Currently focused on SMBs and service businesses — not complex SaaS, healthcare or heavily regulated categories.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: HOW AEPIFY WORKS -->
+    <section class="how-section" id="how-it-works">
+      <div class="container">
+        
+        <div class="section-header reveal">
+          <span class="section-eyebrow">THE SYSTEM</span>
+          <h2 class="section-title">How Aepify Works</h2>
+          <p class="section-lead">A visual intelligence system built around buying conversations.</p>
+        </div>
+
+        <!-- Interactive 5-Step System -->
+        <div class="system-flow-container reveal delay-1" id="systemFlowContainer">
+          
+          <div class="system-stepper">
+            
+            <div class="sys-step active" data-sys-step="1">
+              <div class="sys-marker">
+                <span class="sys-num">1</span>
+              </div>
+              <div class="sys-card">
+                <span class="sys-node-title">YOUR BUSINESS</span>
+                <p class="sys-node-desc">We study your business.</p>
+                <div class="sys-meta">Website & offer positioning analysis</div>
+              </div>
+            </div>
+
+            <div class="sys-step" data-sys-step="2">
+              <div class="sys-marker">
+                <span class="sys-num">2</span>
+              </div>
+              <div class="sys-card">
+                <span class="sys-node-title">BUYER CONVERSATIONS</span>
+                <p class="sys-node-desc">We find commercially relevant conversations.</p>
+                <div class="sys-meta">Real questions asked before buying</div>
+              </div>
+            </div>
+
+            <div class="sys-step" data-sys-step="3">
+              <div class="sys-marker">
+                <span class="sys-num">3</span>
+              </div>
+              <div class="sys-card">
+                <span class="sys-node-title">AD OPPORTUNITIES</span>
+                <p class="sys-node-desc">We build campaigns around them.</p>
+                <div class="sys-meta">Native ChatGPT copy & placement angles</div>
+              </div>
+            </div>
+
+            <div class="sys-step" data-sys-step="4">
+              <div class="sys-marker">
+                <span class="sys-num">4</span>
+              </div>
+              <div class="sys-card">
+                <span class="sys-node-title">CAMPAIGN</span>
+                <p class="sys-node-desc">We measure what happens.</p>
+                <div class="sys-meta">Live tracking of high-intent clicks & leads</div>
+              </div>
+            </div>
+
+            <div class="sys-step" data-sys-step="5">
+              <div class="sys-marker">
+                <span class="sys-num">5</span>
+              </div>
+              <div class="sys-card">
+                <span class="sys-node-title">LEARN</span>
+                <p class="sys-node-desc">We find what to test next.</p>
+                <div class="sys-meta">Weekly signal iteration & refinement</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: SEE IT IN ACTION -->
+    <section class="action-section" id="examples">
+      <div class="container">
+        
+        <div class="section-header reveal">
+          <span class="section-eyebrow">REAL CAMPAIGNS</span>
+          <h2 class="section-title">See It In Action</h2>
+        </div>
+
+        <!-- Tab Switcher -->
+        <div class="action-tab-wrapper reveal">
+          <div class="action-tabs" role="tablist">
+            <button class="action-tab active" data-action-tab="reno" role="tab" aria-selected="true">
+              HOME RENOVATION
+            </button>
+            <button class="action-tab" data-action-tab="travel" role="tab" aria-selected="false">
+              LUXURY TRAVEL
+            </button>
+            <button class="action-tab" data-action-tab="consulting" role="tab" aria-selected="false">
+              BOUTIQUE CONSULTING
+            </button>
+          </div>
+        </div>
+
+        <!-- Action Stage Display -->
+        <div class="action-stage-card reveal delay-1" id="actionStageCard">
+          
+          <div class="action-grid">
+            
+            <!-- Left: The Conversation & Transformation -->
+            <div class="action-story-col">
+              
+              <div class="story-item">
+                <span class="story-label">BUYER ASKS</span>
+                <div class="story-bubble" id="actionBuyerQuery">
+                  “How much should I budget for a 2,000 sq ft renovation?”
+                </div>
+              </div>
+
+              <div class="story-arrow-row">
+                <span class="tag-finding">AEPIFY FINDS</span>
+                <div class="finding-badge" id="actionSituation">
+                  BUYING SITUATION: Major renovation planning
+                </div>
+              </div>
+
+              <div class="story-item">
+                <span class="story-label">CAMPAIGN</span>
+                <div class="story-campaign-title" id="actionCampaignTitle">
+                  Plan Your Renovation Properly
+                </div>
+              </div>
+
+              <div class="story-item">
+                <span class="story-label">AD PLACEMENT</span>
+                <div class="story-ad-box" id="actionAdBox">
+                  <p class="ad-box-copy" id="actionAdCopy">“Planning a major renovation? One team from design to construction.”</p>
+                  <span class="ad-sub-target" id="actionAdTarget">Targeting prompts around project estimates & contractor selection</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right: Performance Card -->
+            <div class="action-perf-col">
+              <div class="perf-card">
+                <div class="perf-card-header">
+                  <span class="perf-live-dot"></span>
+                  <span class="perf-title">CAMPAIGN PERFORMANCE</span>
+                </div>
+
+                <div class="perf-stats-grid">
+                  <div class="perf-stat">
+                    <span class="stat-num" id="actionSpend">$612</span>
+                    <span class="stat-name">SPEND</span>
+                  </div>
+                  <div class="perf-stat">
+                    <span class="stat-num" id="actionClicks">141</span>
+                    <span class="stat-name">CLICKS</span>
+                  </div>
+                  <div class="perf-stat">
+                    <span class="stat-num" id="actionEnquiries">8</span>
+                    <span class="stat-name" id="actionEnquiriesLabel">ENQUIRIES</span>
+                  </div>
+                </div>
+
+                <div class="perf-signal-box">
+                  <span class="signal-label">STRONGEST SIGNAL</span>
+                  <p class="signal-value" id="actionSignal">“Planning a full-home renovation”</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6: THE AEPIFY LOOP -->
+    <section class="loop-section" id="loop">
+      <div class="container">
+        
+        <div class="loop-header reveal">
+          <h2 class="loop-headline">
+            Find the signal.<br>
+            Build the campaign.<br>
+            Learn. Repeat.
+          </h2>
+        </div>
+
+        <!-- Circular Loop Animation System -->
+        <div class="loop-visual-container reveal delay-1">
+          <div class="loop-track">
+            
+            <div class="loop-node" data-node="1">
+              <div class="node-circle">01</div>
+              <span class="node-label">DISCOVER</span>
+            </div>
+
+            <div class="loop-connector-beam">
+              <span class="pulse-beam"></span>
+            </div>
+
+            <div class="loop-node" data-node="2">
+              <div class="node-circle">02</div>
+              <span class="node-label">BUILD</span>
+            </div>
+
+            <div class="loop-connector-beam">
+              <span class="pulse-beam"></span>
+            </div>
+
+            <div class="loop-node" data-node="3">
+              <div class="node-circle">03</div>
+              <span class="node-label">LAUNCH</span>
+            </div>
+
+            <div class="loop-connector-beam">
+              <span class="pulse-beam"></span>
+            </div>
+
+            <div class="loop-node" data-node="4">
+              <div class="node-circle">04</div>
+              <span class="node-label">LEARN</span>
+            </div>
+
+            <div class="loop-connector-beam">
+              <span class="pulse-beam"></span>
+            </div>
+
+            <div class="loop-node" data-node="5">
+              <div class="node-circle">05</div>
+              <span class="node-label">EXPAND</span>
+            </div>
+
+          </div>
+        </div>
+
+        <p class="loop-subsentence reveal delay-2">
+          Your campaigns evolve around the conversations that actually matter.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- SECTION 7: OPPORTUNITY SCAN (MOST IMPORTANT FUNCTIONAL SECTION) -->
+    <section class="scan-section" id="opportunity-scan">
+      <div class="container">
+        
+        <div class="scan-wrapper">
+          
+          <div class="scan-header reveal">
+            <span class="scan-eyebrow">OPPORTUNITY ENGINE</span>
+            <h2 class="scan-title">What could Aepify find for your business?</h2>
+            <p class="scan-subtitle">Enter your website. We'll show you where to look.</p>
+          </div>
+
+          <!-- Interactive URL Form -->
+          <form class="scan-form reveal delay-1" id="scanForm" novalidate>
+            <div class="input-wrapper">
+              <div class="input-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B6B67" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <input 
+                type="text" 
+                class="scan-input" 
+                id="scanUrlInput" 
+                placeholder="https://yourwebsite.com" 
+                required 
+                autocomplete="off"
+                aria-label="Website URL"
+              >
+              <button type="submit" class="btn btn-primary scan-submit-btn" id="btnScanSubmit">
+                <span>Analyse My Website</span>
+                <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+            
+            <!-- Quick Preset Samples for One-Click Testing -->
+            <div class="scan-presets">
+              <span class="preset-label">Or test with demo scenarios:</span>
+              <button type="button" class="preset-pill" data-preset="https://archrenovate.com">archrenovate.com</button>
+              <button type="button" class="preset-pill" data-preset="https://bellavillatrips.com">bellavillatrips.com</button>
+              <button type="button" class="preset-pill" data-preset="https://apexsalesadvisory.com">apexsalesadvisory.com</button>
+              <button type="button" class="preset-pill" data-preset="https://harleystreetclinic.co.uk">harleystreetclinic.co.uk</button>
+            </div>
+
+            <div class="scan-meta-info">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Free · No credit card required · Instant preview</span>
+            </div>
+          </form>
+
+          <!-- Loading State Component -->
+          <div class="scan-loader" id="scanLoader" aria-live="polite">
+            <div class="loader-progress-track">
+              <div class="loader-progress-fill" id="loaderProgressFill"></div>
+            </div>
+            <div class="loader-status-container">
+              <div class="loader-spinner"></div>
+              <div class="loader-steps">
+                <div class="scan-step-msg" id="scanStepMsg">UNDERSTANDING YOUR BUSINESS...</div>
+                <div class="scan-substep-msg" id="scanSubstepMsg">Analyzing service offerings, page structure & target niche...</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Results Container -->
+          <div class="scan-results-container" id="scanResults" aria-live="polite">
+            <div class="results-banner">
+              <div class="results-tag">
+                <span class="live-dot"></span>
+                <span>OPPORTUNITY SCAN RESULTS</span>
+              </div>
+              <div class="results-mode-badge">
+                <span>SIMULATED PREVIEW</span>
+              </div>
+            </div>
+
+            <div class="results-body">
+              
+              <div class="res-domain-row">
+                <span class="res-label">YOUR BUSINESS</span>
+                <span class="res-domain-val" id="resDomain">yourwebsite.com</span>
+                <span class="res-category-badge" id="resCategory">Service Business</span>
+              </div>
+
+              <div class="res-flow-grid">
+                
+                <div class="res-card">
+                  <div class="res-card-tag">01 · BUYER PROBLEM</div>
+                  <h4 class="res-card-title" id="resProblem">Planning a major renovation</h4>
+                  <p class="res-card-desc" id="resProblemDesc">Customers struggle with scope, budgeting and reliable execution before reaching out to vendors.</p>
+                </div>
+
+                <div class="res-card">
+                  <div class="res-card-tag">02 · BUYER CONVERSATION</div>
+                  <p class="res-card-convo" id="resConversation">“How much should I budget for a full-scale renovation?”</p>
+                  <p class="res-card-desc">High-intent exploration occurring inside AI models right now.</p>
+                </div>
+
+                <div class="res-card">
+                  <div class="res-card-tag">03 · CAMPAIGN OPPORTUNITY</div>
+                  <h4 class="res-card-title" id="resOpportunity">Renovation Planning & Cost Transparency</h4>
+                  <p class="res-card-desc" id="resOpportunityDesc">Positioning your team as the definitive authority at the moment of budget formulation.</p>
+                </div>
+
+                <div class="res-card ad-angle-card">
+                  <div class="res-card-tag orange">04 · AD ANGLE</div>
+                  <div class="mock-chatgpt-ad">
+                    <span class="chatgpt-ad-tag">SPONSORED CHATGPT AD</span>
+                    <p class="ad-copy-text" id="resAdAngle">“Know the plan before construction begins. One unified team from design to completion.”</p>
+                    <div class="ad-link-row">
+                      <span class="ad-link" id="resAdUrl">Get Cost Breakdown Guide →</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Final Scan Conversion CTA -->
+              <div class="results-action-box">
+                <div class="action-box-left">
+                  <h3 class="action-box-heading">Ready to capture these conversations?</h3>
+                  <p class="action-box-sub">Turn this opportunity into your first live ChatGPT Ads campaign.</p>
+                </div>
+                <div class="action-box-right">
+                  <button class="btn btn-primary btn-lg" id="btnClaimOpportunities">
+                    Show Me My Opportunities
+                    <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 8: PRICING -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        
+        <div class="pricing-header reveal">
+          <span class="section-eyebrow">SIMPLE PRICING</span>
+          <h2 class="section-title">Pricing</h2>
+          <div class="founding-badge">
+            <span class="badge-fire">★</span>
+            FOUNDING 10 · LIMITED LAUNCH
+          </div>
+        </div>
+
+        <div class="pricing-card-container reveal delay-1">
+          <div class="pricing-card">
+            
+            <div class="price-top">
+              <div class="price-figure-wrap">
+                <span class="currency">$</span>
+                <span class="price-amount">99</span>
+                <span class="billing-period">/month</span>
+              </div>
+              <h3 class="pricing-card-headline">
+                ChatGPT Ads management without the agency overhead.
+              </h3>
+            </div>
+
+            <div class="pricing-divider"></div>
+
+            <div class="pricing-features-list">
+              <div class="feat-item">
+                <svg class="check-feat" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E65A02" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Buyer Conversation Research</span>
+              </div>
+              <div class="feat-item">
+                <svg class="check-feat" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E65A02" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Campaign Strategy</span>
+              </div>
+              <div class="feat-item">
+                <svg class="check-feat" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E65A02" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Campaign Setup</span>
+              </div>
+              <div class="feat-item">
+                <svg class="check-feat" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E65A02" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Ad Copy + Creatives</span>
+              </div>
+              <div class="feat-item">
+                <svg class="check-feat" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E65A02" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Campaign Management</span>
+              </div>
+              <div class="feat-item">
+                <svg class="check-feat" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E65A02" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Weekly Intelligence</span>
+              </div>
+            </div>
+
+            <div class="pricing-note">
+              Ad spend is separate and paid directly to OpenAI.
+            </div>
+
+            <button class="btn btn-primary btn-full btn-lg pricing-cta" id="btnJoinFounding">
+              Join the Founding 10 →
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 9: TRUST -->
+    <section class="trust-section" id="trust">
+      <div class="container">
+        
+        <div class="trust-grid reveal">
+          
+          <div class="trust-card">
+            <span class="trust-pre">TRANSPARENCY</span>
+            <h3 class="trust-title">YOUR ACCOUNT</h3>
+            <p class="trust-desc">You own your advertiser account.</p>
+          </div>
+
+          <div class="trust-card">
+            <span class="trust-pre">DIRECT BILLING</span>
+            <h3 class="trust-title">YOUR MONEY</h3>
+            <p class="trust-desc">You pay OpenAI directly for ad spend.</p>
+          </div>
+
+          <div class="trust-card">
+            <span class="trust-pre">ZERO BLACK BOX</span>
+            <h3 class="trust-title">YOUR DATA</h3>
+            <p class="trust-desc">Your campaign data stays visible to you.</p>
+          </div>
+
+        </div>
+
+        <div class="trust-disclaimer-wrap reveal delay-1">
+          <p class="trust-disclaimer">
+            Aepify is an independent ChatGPT Ads management service and is not affiliated with or endorsed by OpenAI.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 10: FAQ -->
+    <section class="faq-section" id="faq">
+      <div class="container faq-container">
+        
+        <div class="section-header reveal">
+          <span class="section-eyebrow">COMMON QUESTIONS</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-accordion reveal delay-1" id="faqAccordion">
+          
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>What are ChatGPT Ads?</span>
+              <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>ChatGPT Ads are targeted sponsored placements that appear natively within conversational buyer journeys on ChatGPT when users explore solutions, compare vendors, or seek buying guidance.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can you guarantee ad placement?</span>
+              <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>We configure high-relevance targeting vectors, ad copy, and commercial bids compliant with OpenAI policies. OpenAI's auction algorithms determine exact impression timing.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Why use ChatGPT Ads alongside Google?</span>
+              <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Google captures keyword clicks after buyers decide what to search. ChatGPT Ads intercept high-intent buyers earlier in their research process while they are formulating their decision.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Is $99 my ad spend?</span>
+              <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>No. $99/month is Aepify's full-service management and intelligence fee. Your actual ad spend is paid directly from your credit card to OpenAI without markup.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Who is Aepify for?</span>
+              <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Aepify is built for global SMBs and service businesses (home services, consulting, travel, professional advisory, high-value local services) where buyers research before purchasing.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Are you affiliated with OpenAI?</span>
+              <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>No. Aepify is an independent specialized campaign management service and is not affiliated with or endorsed by OpenAI.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta-section">
+      <div class="container">
+        <div class="final-cta-card reveal">
+          <h2 class="final-cta-headline">
+            Your customers are already asking AI.<br>
+            Are you showing up?
+          </h2>
+          <div class="final-cta-actions">
+            <a href="#opportunity-scan" class="btn btn-primary btn-lg">
+              Find My Opportunities
+              <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <p class="final-microproof">Free website analysis · No card required</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo-cropped.png" alt="AEPIFY" class="footer-logo" width="110" height="44">
+          <p class="footer-tagline">ChatGPT Ads management for service businesses and modern SMBs.</p>
+        </div>
+        <div class="footer-nav">
+          <a href="#how-it-works">How It Works</a>
+          <a href="#examples">Examples</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#opportunity-scan">Free Scan</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 AEPIFY. All rights reserved.</p>
+        <p class="footer-disclaimer-note">
+          Independent service. ChatGPT is a registered trademark of OpenAI.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FOUNDING 10 INTAKE MODAL -->
+  <div class="modal-backdrop" id="intakeModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      <button class="modal-close" id="btnModalClose" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      
+      <div class="modal-header">
+        <span class="modal-eyebrow">FOUNDING 10 · LIMITED LAUNCH</span>
+        <h3 class="modal-title" id="modalTitle">Claim Your ChatGPT Ads Strategy</h3>
+        <p class="modal-sub">Lock in $99/month founding pricing and get your conversational ad campaigns structured.</p>
+      </div>
+
+      <form class="modal-form" id="intakeForm">
+        <div class="form-group">
+          <label for="intakeName">Full Name</label>
+          <input type="text" id="intakeName" required placeholder="Jane Doe">
+        </div>
+        <div class="form-group">
+          <label for="intakeEmail">Work Email</label>
+          <input type="email" id="intakeEmail" required placeholder="jane@company.com">
+        </div>
+        <div class="form-group">
+          <label for="intakeWebsite">Website URL</label>
+          <input type="text" id="intakeWebsite" required placeholder="https://company.com">
+        </div>
+        <div class="form-group">
+          <label for="intakeService">Primary Service or Category</label>
+          <input type="text" id="intakeService" required placeholder="e.g. Architectural Design, Luxury Travel, B2B Consulting">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-lg" id="btnSubmitIntake">
+          <span>Submit & Claim Spot →</span>
+        </button>
+
+        <p class="modal-form-note">No credit card charged today. We review your site fit within 24 hours.</p>
+      </form>
+
+      <div class="modal-success hidden" id="modalSuccess">
+        <div class="success-icon">✓</div>
+        <h4 class="success-title">Spot Reserved!</h4>
+        <p class="success-desc">We’ve received your business details. Our conversation intelligence strategist will review your domain and email your initial campaign plan shortly.</p>
+        <button class="btn btn-secondary btn-full" id="btnCloseSuccess">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="js/hero-demo.js"></script>
+  <script src="js/shift-toggle.js"></script>
+  <script src="js/audience-selector.js"></script>
+  <script src="js/how-it-works.js"></script>
+  <script src="js/examples.js"></script>
+  <script src="js/scanner.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
