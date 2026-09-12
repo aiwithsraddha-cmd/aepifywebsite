@@ -73,6 +73,8 @@
     if (elAdBtn) elAdBtn.textContent = data.adBtn;
   }
 
+  const connectors = document.querySelectorAll('.pipeline-connector');
+
   function setStep(stepNum) {
     activeStep = ((stepNum - 1 + 4) % 4) + 1;
     steps.forEach(function (step) {
@@ -81,6 +83,19 @@
         step.classList.add('active');
       } else {
         step.classList.remove('active');
+      }
+      if (num === activeStep) {
+        step.classList.add('pulse-active');
+      } else {
+        step.classList.remove('pulse-active');
+      }
+    });
+
+    connectors.forEach(function (conn, idx) {
+      if (idx < activeStep - 1) {
+        conn.classList.add('active');
+      } else {
+        conn.classList.remove('active');
       }
     });
 
@@ -114,7 +129,18 @@
   function switchScenario(key) {
     if (!scenarios[key]) return;
     currentScenario = key;
-    renderScenario(key);
+    if (elPrompt) {
+      elPrompt.style.opacity = '0.35';
+      elPrompt.style.transform = 'translateY(3px)';
+      setTimeout(function () {
+        renderScenario(key);
+        elPrompt.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        elPrompt.style.opacity = '1';
+        elPrompt.style.transform = 'translateY(0)';
+      }, 140);
+    } else {
+      renderScenario(key);
+    }
     tabs.forEach(function (tab) {
       const matches = tab.getAttribute('data-scenario') === key;
       tab.classList.toggle('active', matches);
