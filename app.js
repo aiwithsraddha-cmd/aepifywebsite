@@ -1111,4 +1111,18 @@
     }, 400);
   });
 
+  // 6. WhatsApp Desktop vs Mobile Smart Routing
+  try {
+    const whatsappLinks = document.querySelectorAll('.whatsapp-link');
+    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (!isMobileDevice) {
+      const desktopUrl = 'https://web.whatsapp.com/send?phone=919000271367&text=' + encodeURIComponent("Hi Aepify, I'd like to learn more about ChatGPT Ads management.");
+      whatsappLinks.forEach(function (link) {
+        link.href = desktopUrl;
+      });
+    }
+  } catch (e) {
+    // Graceful fallback to default wa.me href
+  }
+
 })();
