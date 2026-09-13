@@ -3031,47 +3031,181 @@ p {
   padding: 64px 0 40px;
 }
 
-.footer-top-row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 32px;
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.9fr 1.6fr;
+  gap: 48px;
   margin-bottom: 48px;
 }
 
 .footer-brand-column {
-  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .footer-logo {
   height: 42px;
   width: auto;
-  margin-bottom: 14px;
+  margin-bottom: 4px;
 }
 
 .footer-desc {
   font-size: 0.92rem;
   color: var(--color-muted);
-  line-height: 1.5;
+  line-height: 1.55;
+  max-width: 320px;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.footer-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-warm-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-black);
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all var(--transition-fast);
+}
+
+.footer-social-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(230, 90, 2, 0.12);
+  background-color: #FFFFFF;
+}
+
+.footer-column-heading {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 18px;
 }
 
 .footer-nav-column {
   display: flex;
-  align-items: center;
-  gap: 28px;
-  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .footer-link {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--color-muted);
+  text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 .footer-link:hover {
   color: var(--color-black);
+}
+
+.footer-contact-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-contact-text {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.footer-contact-email-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: var(--color-warm-white);
+  border: 1.5px solid var(--color-primary-border);
+  border-radius: var(--radius-lg);
+  padding: 14px 18px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px -2px rgba(230, 90, 2, 0.1), 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: all var(--transition-smooth);
+}
+
+.footer-contact-email-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  background-color: #FFFFFF;
+  box-shadow: 0 8px 24px -3px rgba(230, 90, 2, 0.2), 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.email-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.email-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-grow: 1;
+}
+
+.email-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+}
+
+.email-address {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-black);
+  letter-spacing: -0.01em;
+  word-break: break-all;
+}
+
+.email-action-arrow {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  transition: transform var(--transition-fast);
+}
+
+.footer-contact-email-card:hover .email-action-arrow {
+  transform: translateX(4px);
+}
+
+.footer-contact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-muted);
 }
 
 .footer-bottom-row {
@@ -3752,15 +3886,21 @@ p {
     font-size: 1.95rem;
   }
 
-  .footer-top-row {
-    flex-direction: column;
-    gap: 24px;
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
 
-  .footer-nav-column {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
+  .footer-brand-column {
+    max-width: 100%;
+  }
+
+  .footer-contact-email-card {
+    padding: 12px 16px;
+  }
+
+  .email-address {
+    font-size: 0.98rem;
   }
 
   .footer-bottom-row {
