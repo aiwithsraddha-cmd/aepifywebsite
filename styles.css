@@ -2839,6 +2839,36 @@ p {
   border: 1px solid var(--color-border);
 }
 
+.pricing-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 24px;
+  margin-top: 12px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--color-border);
+  background-color: var(--color-card-white);
+  color: var(--color-black);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.pricing-whatsapp-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-primary-subtle);
+  transform: translateY(-1px);
+}
+
+.whatsapp-btn-icon {
+  color: #25D366;
+  flex-shrink: 0;
+}
+
 /* ==========================================================
    SECTION 11: TRANSPARENCY
    ========================================================== */
@@ -3242,6 +3272,46 @@ p {
 .footer-disclaimer {
   font-size: 0.8rem;
   color: var(--color-muted);
+}
+
+/* ==========================================================
+   FLOATING WHATSAPP BUTTON (ORANGE BACKGROUND, WHITE ICON)
+   ========================================================== */
+.whatsapp-floating-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #E65A02;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(230, 90, 2, 0.3);
+  text-decoration: none;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.22s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.whatsapp-floating-btn svg {
+  display: block;
+  width: 30px;
+  height: 30px;
+  fill: #FFFFFF;
+}
+
+.whatsapp-floating-btn:hover {
+  background-color: #CC4F00;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22), 0 4px 12px rgba(230, 90, 2, 0.4);
+}
+
+.whatsapp-floating-btn:active {
+  transform: translateY(0) scale(0.98);
 }
 
 /* ==========================================================
@@ -3907,6 +3977,18 @@ p {
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
+  }
+
+  .whatsapp-floating-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .whatsapp-floating-btn svg {
+    width: 28px;
+    height: 28px;
   }
 }
 
