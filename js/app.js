@@ -308,7 +308,7 @@
     local: {
       id: "local",
       title: "LOCAL SERVICES",
-      customer: "“I need some major plumbing work, my electrical wiring needs fixing, and the carpets need cleaning. Who should I call first?”",
+      customer: "“We’re planning a major renovation for our 20-year-old house and need architectural design, structural engineering, and permits. Where do we start?”",
       situation: "Planning a Home Renovation",
       opportunity: "Design + Build Services",
       campaign: "Complete Home Renovation",
@@ -664,11 +664,13 @@
 (function () {
   'use strict';
 
+  const dashboardContainer = document.getElementById('dashProductContainer');
+  if (!dashboardContainer) return;
+
   const chartPath = document.getElementById('dashChartPath');
   const chartFill = document.getElementById('dashChartFill');
   const chartTooltip = document.getElementById('dashChartTooltip');
   const chartPoints = document.querySelectorAll('.dash-chart-point');
-  const dashboardContainer = document.getElementById('dashProductContainer');
 
   let hasAnimated = false;
 
