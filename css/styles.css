@@ -2808,15 +2808,25 @@ p {
 
 .pricing-feature {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
-  font-size: 0.98rem;
+  font-size: 0.96rem;
   font-weight: 600;
   color: var(--color-black);
+  line-height: 1.42;
 }
 
 .feat-check-icon {
   flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.feature-note {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  margin-top: 2px;
 }
 
 .pricing-ad-spend-note {
