@@ -15,7 +15,7 @@
     local: {
       id: "local",
       title: "LOCAL SERVICES",
-      customer: "“I need some major plumbing work, my electrical wiring needs fixing, and the carpets need cleaning. Who should I call first?”",
+      customer: "“We’re planning a major renovation for our 20-year-old house and need architectural design, structural engineering, and permits. Where do we start?”",
       situation: "Planning a Home Renovation",
       opportunity: "Design + Build Services",
       campaign: "Complete Home Renovation",
