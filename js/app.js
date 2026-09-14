@@ -212,77 +212,63 @@
 (function () {
   'use strict';
 
-  const btnReady = document.getElementById('reportToggleReady');
-  const btnNotReady = document.getElementById('reportToggleNotReady');
-  const panelReady = document.getElementById('reportPanelReady');
-  const panelNotReady = document.getElementById('reportPanelNotReady');
-  const statusBadge = document.getElementById('reportStatusBadge');
-  const reportDomain = document.getElementById('reportDomainDisplay');
+  const tabBtns = document.querySelectorAll('.doc-tab-btn');
+  const scrollBox = document.getElementById('docViewerScroll');
 
-  function setReadinessState(state) {
-    const isReady = state === 'ready';
+  if (!scrollBox || !tabBtns.length) return;
 
-    if (btnReady) {
-      btnReady.classList.toggle('active', isReady);
-      btnReady.setAttribute('aria-pressed', isReady ? 'true' : 'false');
-    }
-    if (btnNotReady) {
-      btnNotReady.classList.toggle('active', !isReady);
-      btnNotReady.setAttribute('aria-pressed', !isReady ? 'true' : 'false');
-    }
-
-    if (statusBadge) {
-      if (isReady) {
-        statusBadge.textContent = 'READY TO ADVERTISE';
-        statusBadge.className = 'readiness-badge status-ready';
-      } else {
-        statusBadge.textContent = 'NOT READY YET';
-        statusBadge.className = 'readiness-badge status-not-ready';
-      }
-    }
-
-    if (panelReady && panelNotReady) {
-      if (isReady) {
-        panelNotReady.classList.remove('active');
-        setTimeout(() => {
-          panelNotReady.style.display = 'none';
-          panelReady.style.display = 'grid';
-          requestAnimationFrame(() => {
-            panelReady.classList.add('active');
-          });
-        }, 150);
-      } else {
-        panelReady.classList.remove('active');
-        setTimeout(() => {
-          panelReady.style.display = 'none';
-          panelNotReady.style.display = 'grid';
-          requestAnimationFrame(() => {
-            panelNotReady.classList.add('active');
-          });
-        }, 150);
-      }
-    }
-  }
-
-  if (btnReady) {
-    btnReady.addEventListener('click', function () {
-      setReadinessState('ready');
+  function setActiveTab(pageNum) {
+    tabBtns.forEach(btn => {
+      const match = btn.getAttribute('data-page') === String(pageNum);
+      btn.classList.toggle('active', match);
+      btn.setAttribute('aria-selected', match ? 'true' : 'false');
     });
   }
 
-  if (btnNotReady) {
-    btnNotReady.addEventListener('click', function () {
-      setReadinessState('not-ready');
-    });
-  }
-
-  // Allow other components to update report domain
-  window.AepifyReadiness = {
-    setState: setReadinessState,
-    setDomain: function (domain) {
-      if (reportDomain && domain) {
-        reportDomain.textContent = domain;
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+      const pageNum = this.getAttribute('data-page');
+      const targetPage = document.getElementById('docPage' + pageNum);
+      if (targetPage && scrollBox) {
+        const targetOffset = targetPage.offsetTop - scrollBox.offsetTop;
+        scrollBox.scrollTo({
+          top: targetOffset,
+          behavior: 'smooth'
+        });
+        setActiveTab(pageNum);
       }
+    });
+  });
+
+  // Track scroll position to update active tab
+  let isScrolling;
+  scrollBox.addEventListener('scroll', function () {
+    window.clearTimeout(isScrolling);
+    isScrolling = setTimeout(function () {
+      const currentScroll = scrollBox.scrollTop + 60;
+      const pages = [
+        document.getElementById('docPage1'),
+        document.getElementById('docPage2'),
+        document.getElementById('docPage3')
+      ];
+
+      for (let i = pages.length - 1; i >= 0; i--) {
+        const page = pages[i];
+        if (page) {
+          const pageTop = page.offsetTop - scrollBox.offsetTop;
+          if (currentScroll >= pageTop - 20) {
+            setActiveTab(i + 1);
+            break;
+          }
+        }
+      }
+    }, 50);
+  }, { passive: true });
+
+  window.AepifyReportViewer = {
+    goToPage: function (pageNum) {
+      const btn = document.querySelector(`.doc-tab-btn[data-page="${pageNum}"]`);
+      if (btn) btn.click();
     }
   };
 })();
