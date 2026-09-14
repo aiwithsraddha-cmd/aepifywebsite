@@ -231,144 +231,369 @@
           </p>
         </div>
 
-        <!-- Interactive Readiness Report Visual -->
-        <div class="readiness-card-container reveal delay-1">
-          <div class="readiness-product-card">
+        <!-- 3-PAGE CHATGPT ADS INTELLIGENCE REPORT VIEWER -->
+        <div class="doc-viewer-wrapper reveal delay-1" id="reportViewerWrapper">
+          
+          <!-- Top Control & Navigation Bar -->
+          <div class="doc-viewer-toolbar">
+            <div class="doc-toolbar-left">
+              <span class="doc-status-indicator"></span>
+              <span class="doc-toolbar-title">Sample Intelligence Report</span>
+              <span class="doc-toolbar-divider">·</span>
+              <span class="doc-client-badge">Zenos Design</span>
+            </div>
             
-            <!-- Card Header -->
-            <div class="readiness-card-header">
-              <div class="readiness-header-left">
-                <span class="report-brand-tag">AEPIFY READINESS REPORT</span>
-                <span class="report-domain-badge">Business: <strong id="reportDomainDisplay">examplebusiness.com</strong></span>
-              </div>
-              <div class="readiness-toggle-group">
-                <span class="toggle-hint">Preview State:</span>
-                <button type="button" class="btn-report-toggle active" id="reportToggleReady" aria-pressed="true">
-                  READY TO ADVERTISE
-                </button>
-                <button type="button" class="btn-report-toggle" id="reportToggleNotReady" aria-pressed="false">
-                  NOT READY YET
-                </button>
-              </div>
+            <div class="doc-page-tabs" role="tablist" aria-label="Report Pages">
+              <button type="button" class="doc-tab-btn active" data-page="1" role="tab" aria-selected="true">
+                <span class="tab-num">01</span> Readiness Checks
+              </button>
+              <button type="button" class="doc-tab-btn" data-page="2" role="tab" aria-selected="false">
+                <span class="tab-num">02</span> Opportunity Strategy
+              </button>
+              <button type="button" class="doc-tab-btn" data-page="3" role="tab" aria-selected="false">
+                <span class="tab-num">03</span> Sponsored Ad Mockup
+              </button>
             </div>
 
-            <!-- Status Banner -->
-            <div class="readiness-status-banner">
-              <div class="banner-info">
-                <span class="banner-sub">CHATGPT ADS READINESS</span>
-                <span class="readiness-badge status-ready" id="reportStatusBadge">READY TO ADVERTISE</span>
-              </div>
-              <div class="banner-note">
-                Readiness score determines commercial safety before activating ad spend.
-              </div>
+            <div class="doc-toolbar-right">
+              <span class="doc-scroll-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                Scroll to view 3 pages
+              </span>
             </div>
+          </div>
 
-            <!-- State 1: READY TO ADVERTISE (Default) -->
-            <div class="readiness-panel-grid active" id="reportPanelReady">
+          <!-- Scrollable Document Viewport -->
+          <div class="doc-viewer-scroll" id="docViewerScroll">
+
+            <!-- =========================
+                 PAGE 1: READINESS
+            ========================= -->
+            <div class="doc-page" id="docPage1">
               
-              <div class="readiness-score-card">
-                <span class="score-label">OPPORTUNITY SCORE</span>
-                <div class="score-display">
-                  <span class="score-num">88</span>
-                  <span class="score-denom">/ 100</span>
+              <header class="doc-report-header">
+                <div class="report-header-badge">
+                  <span class="report-badge-dot"></span>
+                  <span class="report-badge-text">ChatGPT Ads Readiness</span>
                 </div>
-                <div class="score-status-pill">HIGH COMMERCIAL FIT</div>
-                <p class="score-detail">
-                  Website demonstrates clear service definitions, transparent credentials, and high commercial qualification for AI search intent.
+                <div class="client">
+                  <strong>Zenos Design</strong>
+                  zenosdesign.com · Dubai / UAE
+                </div>
+              </header>
+
+              <div class="doc-section-label">Section one</div>
+              <h3 class="doc-section-title">ChatGPT Ads Readiness</h3>
+              <p class="doc-section-question">Does this business have the website foundation needed for paid ChatGPT Ads traffic?</p>
+
+              <div class="doc-verdict-block">
+                <span class="doc-verdict-flag">
+                  <span class="doc-tick"></span>
+                  Ready for ChatGPT Ads
+                </span>
+                <h4 class="doc-verdict-headline">Your website is ready for ChatGPT Ads traffic.</h4>
+                <p class="doc-verdict-reason">
+                  The website clearly presents relevant Dubai offers with visible consultation paths, suitable landing pages, and substantial trust evidence.
                 </p>
               </div>
 
-              <div class="readiness-findings-card">
-                <div class="finding-block">
-                  <span class="finding-label">RECOMMENDED CAMPAIGN THEMES</span>
-                  <p class="finding-val">Turnkey Project Scoping · Cost Transparency &amp; Contractor Comparison · Direct Consultation</p>
+              <div class="doc-measure-strip">
+                <div class="doc-measure">
+                  <div class="doc-measure-value">8</div>
+                  <div class="doc-measure-label">Pages reviewed</div>
                 </div>
-                <div class="finding-block">
-                  <span class="finding-label">RECOMMENDED STRATEGY</span>
-                  <p class="finding-val">Target high-consideration decision queries where buyers ask ChatGPT for project planning and vendor shortlists.</p>
+                <div class="doc-measure">
+                  <div class="doc-measure-value">3</div>
+                  <div class="doc-measure-label">Offers identified</div>
                 </div>
-                <div class="finding-block">
-                  <span class="finding-label">NEXT STEP</span>
-                  <p class="finding-val highlight-orange">Proceed to Account Setup, ad creative crafting, and launch targeting.</p>
+                <div class="doc-measure">
+                  <div class="doc-measure-value">4</div>
+                  <div class="doc-measure-label">Conversion routes identified</div>
+                </div>
+                <div class="doc-measure">
+                  <div class="doc-measure-value is-zero-good">0</div>
+                  <div class="doc-measure-label">Critical blockers</div>
                 </div>
               </div>
 
+              <h4 class="doc-block-heading">Readiness checks</h4>
+
+              <div class="doc-check-grid">
+                
+                <div class="doc-check-card is-ready">
+                  <div class="doc-check-top">
+                    <span class="doc-check-label">Website Functionality</span>
+                    <span class="doc-status-pill ready">READY</span>
+                  </div>
+                  <p class="doc-check-evidence">
+                    The site was reachable over HTTPS and eight reviewed pages contained populated business content, services, projects, contact details, FAQs, and enquiry actions.
+                  </p>
+                </div>
+
+                <div class="doc-check-card is-strong">
+                  <div class="doc-check-top">
+                    <span class="doc-check-label">Offer Clarity</span>
+                    <span class="doc-status-pill strong">STRONG</span>
+                  </div>
+                  <p class="doc-check-evidence">
+                    The homepage and service pages clearly identify bespoke interior design, turnkey renovation, and bespoke joinery for Dubai homes.
+                  </p>
+                </div>
+
+                <div class="doc-check-card is-ready">
+                  <div class="doc-check-top">
+                    <span class="doc-check-label">CTA Presence</span>
+                    <span class="doc-status-pill ready">READY</span>
+                  </div>
+                  <p class="doc-check-evidence">
+                    Visible calls to action include Book a Free Consultation, Book a Consultation, WhatsApp, phone, email, and Enquire.
+                  </p>
+                </div>
+
+                <div class="doc-check-card is-ready">
+                  <div class="doc-check-top">
+                    <span class="doc-check-label">Conversion Path</span>
+                    <span class="doc-status-pill ready">READY</span>
+                  </div>
+                  <p class="doc-check-evidence">
+                    Visitors can move from service or project content to a consultation form, phone call, WhatsApp message, or email enquiry. Successful submission or end-to-end CTA operation was not verified.
+                  </p>
+                </div>
+
+                <div class="doc-check-card is-ready">
+                  <div class="doc-check-top">
+                    <span class="doc-check-label">Landing Page Readiness</span>
+                    <span class="doc-status-pill ready">READY</span>
+                  </div>
+                  <p class="doc-check-evidence">
+                    The homepage, services pages, interior design page, and contact page are commercially relevant destinations for paid traffic seeking qualified leads.
+                  </p>
+                </div>
+
+                <div class="doc-check-card is-strong">
+                  <div class="doc-check-top">
+                    <span class="doc-check-label">Trust &amp; Credibility</span>
+                    <span class="doc-status-pill strong">STRONG</span>
+                  </div>
+                  <p class="doc-check-evidence">
+                    The site presents Dubai projects, client testimonials, a stated Google Rating of 4.7 from 15 reviews, team and founder details, FAQs, a physical address, phone number, email, and opening hours.
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="doc-readiness-conclusion">
+                <div class="doc-rule"></div>
+                <p>
+                  <b>No critical readiness blockers were found.</b>
+                  The next two pages show the strongest conversation opportunities identified for this business and what a first ChatGPT Ads campaign could look like.
+                </p>
+              </div>
+
+              <div class="doc-page-number">Page 1 of 3 · Readiness Analysis</div>
             </div>
 
-            <!-- State 2: NOT READY YET -->
-            <div class="readiness-panel-grid not-ready-view" id="reportPanelNotReady" style="display: none;">
+            <!-- =========================
+                 PAGE 2: OPPORTUNITY
+            ========================= -->
+            <div class="doc-page" id="docPage2">
               
-              <div class="not-ready-checklist-card">
-                <div class="critique-item">
-                  <div class="critique-header">
-                    <span class="critique-tag warning">NEEDS WORK</span>
-                    <span class="critique-title">Website Readiness</span>
+              <header class="doc-report-header">
+                <div class="report-header-badge">
+                  <span class="report-badge-dot"></span>
+                  <span class="report-badge-text">ChatGPT Ads Opportunity</span>
+                </div>
+                <div class="client">
+                  <strong>Zenos Design</strong>
+                  zenosdesign.com · Dubai / UAE
+                </div>
+              </header>
+
+              <div class="doc-section-label">Section two</div>
+              <h3 class="doc-section-title">ChatGPT Ads Opportunity</h3>
+              <p class="doc-section-question">Where your business could appear in commercially relevant conversations, and what the first campaign could look like.</p>
+
+              <h4 class="doc-block-heading">Top 3 conversation opportunities</h4>
+
+              <div class="doc-opportunity-list">
+                
+                <div class="doc-opportunity is-lead">
+                  <div class="doc-rank">01</div>
+                  <div>
+                    <span class="doc-lead-tag">RECOMMENDED FIRST OPPORTUNITY</span>
+                    <h5 class="doc-opp-title">Planning a complete villa renovation in Dubai</h5>
+                    <p class="doc-opp-desc">The homeowner is trying to understand how to plan, coordinate and deliver a full renovation from design through completion.</p>
                   </div>
-                  <p class="critique-desc">Page hierarchy lacks specific service scopes. Service descriptions must be structured so ChatGPT can reliably map commercial intent.</p>
                 </div>
 
-                <div class="critique-item">
-                  <div class="critique-header">
-                    <span class="critique-tag warning">NEEDS WORK</span>
-                    <span class="critique-title">Offer Clarity</span>
+                <div class="doc-opportunity is-supporting">
+                  <div class="doc-rank">02</div>
+                  <div>
+                    <h5 class="doc-opp-title">Deciding between interior design and a full renovation</h5>
+                    <p class="doc-opp-desc">The homeowner is comparing whether updated furnishings and finishes are enough or whether the property needs broader renovation work.</p>
                   </div>
-                  <p class="critique-desc">Offer is generic. Value proposition needs clear deliverables and upfront differentiation before driving paid ad traffic.</p>
                 </div>
 
-                <div class="critique-item">
-                  <div class="critique-header">
-                    <span class="critique-tag alert">ACTION REQUIRED</span>
-                    <span class="critique-title">Landing Page Readiness</span>
+                <div class="doc-opportunity is-supporting">
+                  <div class="doc-rank">03</div>
+                  <div>
+                    <h5 class="doc-opp-title">Creating custom storage and joinery for a Dubai home</h5>
+                    <p class="doc-opp-desc">The homeowner is looking for tailored cabinetry, furniture or woodwork that fits the space and supports the overall interior design.</p>
                   </div>
-                  <p class="critique-desc">Missing high-intent conversion pathways. Prospective leads from ChatGPT need a dedicated landing page with trust signals.</p>
                 </div>
 
-                <div class="critique-item">
-                  <div class="critique-header">
-                    <span class="critique-tag alert">ACTION REQUIRED</span>
-                    <span class="critique-title">Business Information</span>
+              </div>
+
+              <h4 class="doc-block-heading">Recommended first campaign</h4>
+
+              <div class="doc-campaign">
+                <div class="doc-campaign-head">
+                  <div class="doc-field-label">CAMPAIGN</div>
+                  <h5 class="doc-campaign-name">Dubai Villa Renovation Planning</h5>
+                </div>
+
+                <div class="doc-campaign-body">
+                  <div class="doc-campaign-cell">
+                    <div class="doc-field-label">CONVERSATION FOCUS</div>
+                    <p>Reach Dubai homeowners planning a complete villa renovation and encourage them to book a free, no-obligation consultation.</p>
                   </div>
-                  <p class="critique-desc">Verification credentials, service locations, and direct contact protocols need updating to satisfy advertising review standards.</p>
+
+                  <div class="doc-campaign-cell">
+                    <div class="doc-field-label">CONTEXT HINTS</div>
+                    <div class="doc-hint-pills">
+                      <span class="doc-hint-pill">Planning a villa renovation from initial design through handover</span>
+                      <span class="doc-hint-pill">Comparing renovation providers that manage design and construction together</span>
+                      <span class="doc-hint-pill">Understanding renovation stages, timelines, budgets and project coordination</span>
+                      <span class="doc-hint-pill">Looking for high-quality finishes and bespoke joinery within a Dubai home</span>
+                      <span class="doc-hint-pill">Reviewing examples of villa transformations across Dubai communities</span>
+                    </div>
+                    <p class="doc-hint-note">Context hints are relevance guidance, not exact prompts or guaranteed targeting.</p>
+                  </div>
+
+                  <div class="doc-campaign-cell">
+                    <div class="doc-field-label">LANDING PAGE</div>
+                    <p class="doc-value-mono">zenosdesign.com/contact</p>
+                  </div>
+
+                  <div class="doc-campaign-cell">
+                    <div class="doc-field-label">PRIMARY CONVERSION</div>
+                    <p>Book a free consultation</p>
+                  </div>
                 </div>
               </div>
 
-              <div class="not-ready-roadmap-card">
-                <span class="roadmap-label">ACTION ROADMAP</span>
-                <h4 class="roadmap-headline">Do not spend on ads yet.</h4>
-                <p class="roadmap-sub">Aepify guides you through fixing each deficiency so your ad spend isn't wasted.</p>
-
-                <div class="roadmap-steps-flow">
-                  <div class="r-step">
-                    <span class="r-num">01</span>
-                    <span class="r-title">FIX</span>
-                    <span class="r-desc">Address offer clarity and landing page conversion bottlenecks.</span>
-                  </div>
-                  <span class="r-arrow">→</span>
-                  <div class="r-step">
-                    <span class="r-num">02</span>
-                    <span class="r-title">REASSESS</span>
-                    <span class="r-desc">Re-run Aepify readiness review to verify full qualification.</span>
-                  </div>
-                  <span class="r-arrow">→</span>
-                  <div class="r-step">
-                    <span class="r-num">03</span>
-                    <span class="r-title">ADVERTISE</span>
-                    <span class="r-desc">Launch campaigns safely with commercial readiness validated.</span>
-                  </div>
+              <div class="doc-flow">
+                <div class="doc-flow-step">
+                  <div class="doc-flow-label">CONVERSATION</div>
+                  <div class="doc-flow-value">Planning a complete villa renovation in Dubai</div>
+                </div>
+                <div class="doc-flow-arrow">→</div>
+                <div class="doc-flow-step">
+                  <div class="doc-flow-label">CONTEXT HINTS</div>
+                  <div class="doc-flow-value">Relevance guidance</div>
+                </div>
+                <div class="doc-flow-arrow">→</div>
+                <div class="doc-flow-step">
+                  <div class="doc-flow-label">LANDING PAGE</div>
+                  <div class="doc-flow-value">zenosdesign.com/contact</div>
+                </div>
+                <div class="doc-flow-arrow">→</div>
+                <div class="doc-flow-step">
+                  <div class="doc-flow-label">PRIMARY CONVERSION</div>
+                  <div class="doc-flow-value">Book a free consultation</div>
                 </div>
               </div>
 
+              <div class="doc-page-number">Page 2 of 3 · Campaign Strategy</div>
             </div>
 
-            <!-- Card Bottom CTA -->
-            <div class="readiness-card-footer">
-              <span class="footer-note">Get an objective review of your website before you commit marketing budget.</span>
-              <a href="https://tally.so/r/GxZpre" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                <span>Get Your FREE Opportunity Report →</span>
-              </a>
+            <!-- =========================
+                 PAGE 3: SPONSORED AD
+            ========================= -->
+            <div class="doc-page" id="docPage3">
+              
+              <header class="doc-report-header">
+                <div class="report-header-badge">
+                  <span class="report-badge-dot"></span>
+                  <span class="report-badge-text">Sponsored Ad Mockup</span>
+                </div>
+                <div class="client">
+                  <strong>Zenos Design</strong>
+                  zenosdesign.com · Dubai / UAE
+                </div>
+              </header>
+
+              <div class="doc-section-label">Section two, continued</div>
+              <h3 class="doc-section-title">Illustrative sponsored ad</h3>
+              <p class="doc-section-question">Roughly how Zenos Design could show up inside a relevant ChatGPT conversation.</p>
+
+              <div class="doc-ad-frame">
+                <div class="doc-mock-tag-row">
+                  <span class="doc-mock-tag">ILLUSTRATIVE SPONSORED AD</span>
+                  <span class="doc-chat-turn">EXAMPLE CHATGPT CONVERSATION</span>
+                </div>
+
+                <div class="doc-chat-window">
+                  <div class="doc-chat-window-bar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <div class="doc-chat-thread">
+                    <div class="doc-chat-row is-user">
+                      <div class="doc-chat-bubble">
+                        I&#039;m planning a full villa renovation in Dubai. What should I look for in a company that can handle both design and construction?
+                      </div>
+                    </div>
+
+                    <div class="doc-chat-row is-assistant">
+                      <div class="doc-ad-unit">
+                        <div class="doc-ad-thumb">
+                          <span>CREATIVE<br>PLACEHOLDER</span>
+                        </div>
+                        <div class="doc-ad-meta">
+                          <div class="doc-ad-brandline">
+                            <span class="doc-ad-logo"></span>
+                            <span class="doc-ad-brand">Zenos Design</span>
+                            <span class="doc-ad-flag">Sponsored</span>
+                          </div>
+                          <div class="doc-ad-title">Plan Your Dubai Villa Renovation</div>
+                          <div class="doc-ad-desc">
+                            Zenos Design brings bespoke interior design, turnkey renovation and in-house joinery together under one accountable team. Book a free, no-obligation consultation.
+                          </div>
+                          <div class="doc-ad-url">zenosdesign.com/contact</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="doc-creative-note">
+                  <b>Creative direction.</b> Show a refined Dubai villa interior transformation with visible custom cabinetry and high-quality finishes, using a truthful project image from Zenos Design&#039;s portfolio.
+                </p>
+              </div>
+
+              <footer class="doc-report-footer">
+                <p class="doc-disclaimer">
+                  Illustrative strategy based on the website information reviewed. Campaign launch remains subject to ChatGPT Ads account availability and applicable advertising policies.
+                </p>
+                <span class="doc-footer-wordmark">Aepify</span>
+              </footer>
+
+              <div class="doc-page-number">Page 3 of 3 · Ad Unit &amp; Creative Direction</div>
             </div>
 
           </div>
+
+          <!-- Document Viewer Bottom Action Bar -->
+          <div class="doc-viewer-footer">
+            <span class="doc-footer-note">Get an objective review of your website before you commit marketing budget.</span>
+            <a href="https://tally.so/r/GxZpre" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              <span>Get Your FREE Opportunity Report →</span>
+            </a>
+          </div>
+
         </div>
 
       </div>
@@ -1034,7 +1259,7 @@
           <p class="footer-contact-text">
             Have questions or want to discuss your ChatGPT Ads campaign? Reach our team directly:
           </p>
-          <a href="mailto:aepifyai@gmail.com" class="footer-contact-email-card" aria-label="Email Aepify directly at aepifyai@gmail.com">
+          <a href="mailto:contact@aepify.com" class="footer-contact-email-card" aria-label="Email Aepify directly at contact@aepify.com">
             <span class="email-icon-box">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -1043,7 +1268,7 @@
             </span>
             <div class="email-details">
               <span class="email-label">EMAIL US DIRECTLY</span>
-              <strong class="email-address">aepifyai@gmail.com</strong>
+              <strong class="email-address">contact@aepify.com</strong>
             </div>
             <span class="email-action-arrow">→</span>
           </a>
