@@ -1102,9 +1102,14 @@
     const whatsappLinks = document.querySelectorAll('.whatsapp-link');
     const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     if (!isMobileDevice) {
-      const desktopUrl = 'https://web.whatsapp.com/send?phone=919000271367&text=' + encodeURIComponent("Hi Aepify, I'd like to learn more about ChatGPT Ads management.");
       whatsappLinks.forEach(function (link) {
-        link.href = desktopUrl;
+        try {
+          const currentUrl = new URL(link.href);
+          const textParam = currentUrl.searchParams.get('text') || "Hi Aepify, I'd like to learn more about ChatGPT Ads management.";
+          link.href = 'https://web.whatsapp.com/send?phone=919000271367&text=' + encodeURIComponent(textParam);
+        } catch (_) {
+          // Graceful fallback
+        }
       });
     }
   } catch (e) {
