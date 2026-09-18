@@ -4951,19 +4951,31 @@ p {
 .blog-categories-bar {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
   justify-content: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  max-width: 100%;
+  padding: 4px 4px 12px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.blog-categories-bar::-webkit-scrollbar {
+  display: none;
 }
 
 .blog-cat-btn {
   background: var(--color-card-white);
   border: 1px solid var(--color-border);
   color: var(--color-muted);
-  padding: 8px 18px;
+  padding: 8px 16px;
   border-radius: var(--radius-pill);
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
   cursor: pointer;
   transition: all var(--transition-fast);
   font-family: inherit;
