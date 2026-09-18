@@ -25,23 +25,11 @@ CATEGORY_OUTPUT_DIR = OUTPUT_BLOG_DIR / "category"
 SITE_URL = "https://aepify.com"
 BRAND_NAME = "Aepify"
 
-# 15 Required Categories with Slugs and SEO Descriptions
+# 6 Required Categories with Slugs and SEO Descriptions
 CATEGORIES_METADATA = {
     "ChatGPT Ads": {
         "slug": "chatgpt-ads",
         "description": "Insights, placement breakdowns, and strategic guides for advertising within ChatGPT and OpenAI conversational experiences."
-    },
-    "AI Advertising": {
-        "slug": "ai-advertising",
-        "description": "Strategies, formats, and best practices for advertising across emerging generative AI platforms and assistant networks."
-    },
-    "AI Search & Discovery": {
-        "slug": "ai-search-discovery",
-        "description": "How conversational AI is reshaping customer search, query habits, and online brand discovery."
-    },
-    "Buyer Intent": {
-        "slug": "buyer-intent",
-        "description": "Understanding contextual commercial signals, decision stages, and intent mapping in conversational AI."
     },
     "AI Marketing": {
         "slug": "ai-marketing",
@@ -50,10 +38,6 @@ CATEGORIES_METADATA = {
     "Performance Marketing": {
         "slug": "performance-marketing",
         "description": "Data-driven ad management, conversion rate optimization, and acquisition metrics for high-consideration businesses."
-    },
-    "Paid Advertising": {
-        "slug": "paid-advertising",
-        "description": "Modern media buying, auction dynamics, and multi-channel ad distribution strategies."
     },
     "Growth Marketing": {
         "slug": "growth-marketing",
@@ -66,26 +50,6 @@ CATEGORIES_METADATA = {
     "AEO & GEO": {
         "slug": "aeo-geo",
         "description": "Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) tactics for modern search algorithms."
-    },
-    "AI & Customer Behaviour": {
-        "slug": "ai-customer-behaviour",
-        "description": "How buyers evaluate, research, and deliberate options using AI before making major purchasing decisions."
-    },
-    "Industry Insights": {
-        "slug": "industry-insights",
-        "description": "Vertical-specific analysis for home services, B2B consulting, luxury travel, and professional advisory."
-    },
-    "ChatGPT Ads Strategy": {
-        "slug": "chatgpt-ads-strategy",
-        "description": "Tactical playbooks, copy angles, and campaign blueprints crafted specifically for ChatGPT Ads."
-    },
-    "Campaign Intelligence": {
-        "slug": "campaign-intelligence",
-        "description": "Continuous intent auditing, negative intent filtering, and performance iteration for active campaigns."
-    },
-    "Aepify Insights": {
-        "slug": "aepify-insights",
-        "description": "Behind-the-scenes methodology, product releases, and case studies from the Aepify team."
     }
 }
 
@@ -1113,6 +1077,14 @@ def main():
     print(f"✓ Generated: blog/index.html ({len(articles)} published articles)")
 
     # 2. Build Category Hub Pages (/blog/category/<slug>/index.html)
+    valid_cat_slugs = {info["slug"] for info in CATEGORIES_METADATA.values()}
+    if CATEGORY_OUTPUT_DIR.exists():
+        for existing_dir in list(CATEGORY_OUTPUT_DIR.iterdir()):
+            if existing_dir.is_dir() and existing_dir.name not in valid_cat_slugs:
+                import shutil
+                shutil.rmtree(existing_dir)
+                print(f"✓ Removed obsolete category: blog/category/{existing_dir.name}")
+
     categories_with_articles = set()
     for cat_name, cat_info in CATEGORIES_METADATA.items():
         cat_slug = cat_info["slug"]
