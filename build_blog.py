@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-build_blog.py - Zero-dependency Static Site Generator for Aepify Blog
+build_blog.py - Zero-dependency Static Site Generator for Aepify Blog & CMS
 Reads Markdown files with YAML frontmatter from content/blog/
 Generates:
-  - blog/index.html (Pre-rendered blog index with client-side live search/filtering)
-  - blog/<slug>/index.html (Pre-rendered article pages with TOC, JSON-LD schema, share buttons, CTA)
-  - sitemap.xml (SEO sitemap of published pages)
+  - blog/index.html (Blog index with live search & 15 category filters)
+  - blog/category/<category-slug>/index.html (SEO Category Hub Pages)
+  - blog/<slug>/index.html (Static article pages with TOC, JSON-LD schema, share buttons, CTA)
+  - sitemap.xml (SEO XML sitemap of all published pages and category hubs)
   - robots.txt (Robots directives referencing sitemap)
 """
 
@@ -20,19 +21,73 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 CONTENT_DIR = BASE_DIR / "content" / "blog"
 OUTPUT_BLOG_DIR = BASE_DIR / "blog"
+CATEGORY_OUTPUT_DIR = OUTPUT_BLOG_DIR / "category"
 SITE_URL = "https://aepify.com"
 BRAND_NAME = "Aepify"
 
-# Categories requested by user
-REQUIRED_CATEGORIES = [
-    "All",
-    "ChatGPT Ads",
-    "AI Marketing",
-    "Performance Marketing",
-    "Growth Marketing",
-    "Marketing Strategy",
-    "AEO & GEO"
-]
+# 15 Required Categories with Slugs and SEO Descriptions
+CATEGORIES_METADATA = {
+    "ChatGPT Ads": {
+        "slug": "chatgpt-ads",
+        "description": "Insights, placement breakdowns, and strategic guides for advertising within ChatGPT and OpenAI conversational experiences."
+    },
+    "AI Advertising": {
+        "slug": "ai-advertising",
+        "description": "Strategies, formats, and best practices for advertising across emerging generative AI platforms and assistant networks."
+    },
+    "AI Search & Discovery": {
+        "slug": "ai-search-discovery",
+        "description": "How conversational AI is reshaping customer search, query habits, and online brand discovery."
+    },
+    "Buyer Intent": {
+        "slug": "buyer-intent",
+        "description": "Understanding contextual commercial signals, decision stages, and intent mapping in conversational AI."
+    },
+    "AI Marketing": {
+        "slug": "ai-marketing",
+        "description": "High-performance AI marketing frameworks, campaign automation, and modern commercial workflows."
+    },
+    "Performance Marketing": {
+        "slug": "performance-marketing",
+        "description": "Data-driven ad management, conversion rate optimization, and acquisition metrics for high-consideration businesses."
+    },
+    "Paid Advertising": {
+        "slug": "paid-advertising",
+        "description": "Modern media buying, auction dynamics, and multi-channel ad distribution strategies."
+    },
+    "Growth Marketing": {
+        "slug": "growth-marketing",
+        "description": "Scalable growth playbooks, funnel architecture, and customer acquisition for service businesses and modern SMBs."
+    },
+    "Marketing Strategy": {
+        "slug": "marketing-strategy",
+        "description": "Long-term positioning, market timing, and strategic competitive advantages in AI-native ecosystems."
+    },
+    "AEO & GEO": {
+        "slug": "aeo-geo",
+        "description": "Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) tactics for modern search algorithms."
+    },
+    "AI & Customer Behaviour": {
+        "slug": "ai-customer-behaviour",
+        "description": "How buyers evaluate, research, and deliberate options using AI before making major purchasing decisions."
+    },
+    "Industry Insights": {
+        "slug": "industry-insights",
+        "description": "Vertical-specific analysis for home services, B2B consulting, luxury travel, and professional advisory."
+    },
+    "ChatGPT Ads Strategy": {
+        "slug": "chatgpt-ads-strategy",
+        "description": "Tactical playbooks, copy angles, and campaign blueprints crafted specifically for ChatGPT Ads."
+    },
+    "Campaign Intelligence": {
+        "slug": "campaign-intelligence",
+        "description": "Continuous intent auditing, negative intent filtering, and performance iteration for active campaigns."
+    },
+    "Aepify Insights": {
+        "slug": "aepify-insights",
+        "description": "Behind-the-scenes methodology, product releases, and case studies from the Aepify team."
+    }
+}
 
 # --- HELPER: YAML FRONTMATTER PARSER ---
 def parse_frontmatter(content):
@@ -362,7 +417,7 @@ def get_site_footer():
           </div>
         </div>
 
-        <!-- Navigation Column: Blog comes after FAQ -->
+        <!-- Navigation Column -->
         <div class="footer-nav-column">
           <h4 class="footer-column-heading">Navigation</h4>
           <nav class="footer-nav-list" aria-label="Footer navigation">
@@ -430,10 +485,12 @@ def get_site_footer():
   </a>'''
 
 def render_blog_card(article):
-    img_src = article.get("featured_image", "/assets/blog/what-are-chatgpt-ads.png")
-    img_alt = article.get("featured_image_alt", article.get("title", ""))
+    img_src = article.get("featuredImage", "/assets/blog/what-are-chatgpt-ads.png")
+    img_alt = article.get("imageAlt", article.get("title", ""))
     slug = article["slug"]
     url = f"/blog/{slug}/"
+    cat_slug = slugify(article.get("category", "chatgpt-ads"))
+    cat_url = f"/blog/category/{cat_slug}/"
     tags_attr = " ".join(article.get("tags", []))
 
     return f'''      <article class="blog-card" data-title="{escape_html(article['title'].lower())}" data-category="{escape_html(article['category'].lower())}" data-tags="{escape_html(tags_attr.lower())}">
@@ -442,18 +499,18 @@ def render_blog_card(article):
         </a>
         <div class="blog-card-content">
           <div class="blog-card-meta-top">
-            <span class="blog-card-cat-badge">{escape_html(article['category'])}</span>
+            <a href="{cat_url}" class="blog-card-cat-badge">{escape_html(article['category'])}</a>
             <span class="blog-card-read-time">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-              {article['reading_time']}
+              {article['readingTime']}
             </span>
           </div>
           <h2 class="blog-card-title">
             <a href="{url}">{escape_html(article['title'])}</a>
           </h2>
-          <p class="blog-card-excerpt">{escape_html(article['excerpt'])}</p>
+          <p class="blog-card-excerpt">{escape_html(article['description'])}</p>
           <div class="blog-card-footer">
-            <time datetime="{article['date']}">{article['formatted_date']}</time>
+            <time datetime="{article['publishedAt']}">{article['formatted_date']}</time>
             <a href="{url}" class="blog-card-link-action" aria-label="Read article: {escape_html(article['title'])}">Read article →</a>
           </div>
         </div>
@@ -462,10 +519,8 @@ def render_blog_card(article):
 def build_index_page(articles):
     cards_html = "\n".join([render_blog_card(art) for art in articles])
     cat_buttons = ['<button class="blog-cat-btn active" data-category="all">All</button>']
-    for cat in REQUIRED_CATEGORIES:
-        if cat.lower() == "all":
-            continue
-        cat_buttons.append(f'<button class="blog-cat-btn" data-category="{escape_html(cat.lower())}">{escape_html(cat)}</button>')
+    for cat_name, info in CATEGORIES_METADATA.items():
+        cat_buttons.append(f'<button class="blog-cat-btn" data-category="{escape_html(cat_name.lower())}">{escape_html(cat_name)}</button>')
     cat_buttons_html = "\n            ".join(cat_buttons)
 
     header = get_site_header(active_nav="blog")
@@ -476,22 +531,22 @@ def build_index_page(articles):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>ChatGPT Ads Blog, Insights & Strategy | Aepify</title>
-  <meta name="description" content="Explore expert insights, practical guides, and performance strategies for ChatGPT Ads, conversational AI marketing, and customer intent targeting from Aepify.">
+  <title>AI Advertising, ChatGPT Ads &amp; Buyer Intent | Aepify</title>
+  <meta name="description" content="Insights on ChatGPT Ads, AI advertising, buyer intent, AI search, performance marketing and the future of customer discovery.">
   <link rel="canonical" href="{SITE_URL}/blog/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="ChatGPT Ads Blog, Insights & Strategy | Aepify">
-  <meta property="og:description" content="Explore expert insights, practical guides, and performance strategies for ChatGPT Ads, conversational AI marketing, and customer intent targeting from Aepify.">
+  <meta property="og:title" content="AI Advertising, ChatGPT Ads &amp; Buyer Intent | Aepify">
+  <meta property="og:description" content="Insights on ChatGPT Ads, AI advertising, buyer intent, AI search, performance marketing and the future of customer discovery.">
   <meta property="og:url" content="{SITE_URL}/blog/">
   <meta property="og:image" content="{SITE_URL}/assets/blog/what-are-chatgpt-ads.png">
   <meta property="og:site_name" content="Aepify">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ChatGPT Ads Blog, Insights & Strategy | Aepify">
-  <meta name="twitter:description" content="Explore expert insights, practical guides, and performance strategies for ChatGPT Ads, conversational AI marketing, and customer intent targeting from Aepify.">
+  <meta name="twitter:title" content="AI Advertising, ChatGPT Ads &amp; Buyer Intent | Aepify">
+  <meta name="twitter:description" content="Insights on ChatGPT Ads, AI advertising, buyer intent, AI search, performance marketing and the future of customer discovery.">
   <meta name="twitter:image" content="{SITE_URL}/assets/blog/what-are-chatgpt-ads.png">
 
   <!-- Favicon -->
@@ -515,9 +570,9 @@ def build_index_page(articles):
       <div class="container">
         <div class="blog-header-box">
           <span class="blog-eyebrow-badge">AEPIFY KNOWLEDGE &amp; STRATEGY</span>
-          <h1 class="blog-title">Insights on ChatGPT Ads &amp; AI Marketing</h1>
+          <h1 class="blog-title">AI Advertising, ChatGPT Ads &amp; Buyer Intent</h1>
           <p class="blog-subtitle">
-            Practical guides, buyer intent frameworks, and strategic benchmarks<br class="desktop-br">to help businesses capture high-consideration customers in conversational AI.
+            Insights on ChatGPT Ads, AI advertising, buyer intent, AI search, performance marketing and the future of customer discovery.
           </p>
         </div>
 
@@ -529,7 +584,7 @@ def build_index_page(articles):
             </svg>
             <input type="text" id="blogSearchInput" class="blog-search-input" placeholder="Search guides by keyword, topic, or industry..." aria-label="Search blog articles">
             <button type="button" id="blogSearchClear" class="blog-search-clear" aria-label="Clear search">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/></svg>
             </button>
           </div>
 
@@ -563,21 +618,117 @@ def build_index_page(articles):
 </html>'''
     return html
 
+def build_category_page(cat_name, cat_info, cat_articles):
+    cat_slug = cat_info["slug"]
+    cat_desc = cat_info["description"]
+    canonical_url = f"{SITE_URL}/blog/category/{cat_slug}/"
+    page_title = f"{cat_name} - AI Advertising & Strategy | Aepify"
+    meta_desc = f"{cat_desc} Read expert insights and practical guides from Aepify."
+
+    if cat_articles:
+        cards_html = "\n".join([render_blog_card(art) for art in cat_articles])
+        content_html = f'''        <div class="blog-grid" style="margin-bottom: 40px;">
+{cards_html}
+        </div>'''
+    else:
+        content_html = f'''        <div class="blog-empty-state visible" style="margin-bottom: 40px;">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">New articles coming soon</h3>
+          <p style="color: var(--color-muted); font-size: 0.95rem; margin-bottom: 20px;">Our strategists are currently preparing detailed case studies and frameworks for {escape_html(cat_name)}.</p>
+          <a href="/blog/" class="btn btn-secondary btn-sm">Explore all articles →</a>
+        </div>'''
+
+    header = get_site_header(active_nav="blog")
+    footer = get_site_footer()
+
+    html = f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>{escape_html(page_title)}</title>
+  <meta name="description" content="{escape_html(meta_desc)}">
+  <link rel="canonical" href="{canonical_url}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{escape_html(page_title)}">
+  <meta property="og:description" content="{escape_html(meta_desc)}">
+  <meta property="og:url" content="{canonical_url}">
+  <meta property="og:image" content="{SITE_URL}/assets/blog/what-are-chatgpt-ads.png">
+  <meta property="og:site_name" content="Aepify">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{escape_html(page_title)}">
+  <meta name="twitter:description" content="{escape_html(meta_desc)}">
+  <meta name="twitter:image" content="{SITE_URL}/assets/blog/what-are-chatgpt-ads.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" href="/favicon.png?v=2">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles.css?v=3.3">
+</head>
+<body class="blog-page">
+  <div class="site-ambient-grid" aria-hidden="true"></div>
+
+{header}
+
+  <main>
+    <section class="blog-hero-section">
+      <div class="container">
+        <!-- Breadcrumbs -->
+        <nav class="article-breadcrumbs" aria-label="Breadcrumb" style="justify-content: center; margin-bottom: 24px;">
+          <a href="/">Home</a>
+          <span class="article-breadcrumb-sep">/</span>
+          <a href="/blog/">Blog</a>
+          <span class="article-breadcrumb-sep">/</span>
+          <a href="/blog/">Categories</a>
+          <span class="article-breadcrumb-sep">/</span>
+          <span class="current" aria-current="page">{escape_html(cat_name)}</span>
+        </nav>
+
+        <div class="blog-header-box">
+          <span class="blog-eyebrow-badge">CATEGORY HUB</span>
+          <h1 class="blog-title">{escape_html(cat_name)}</h1>
+          <p class="blog-subtitle">
+            {escape_html(cat_desc)}
+          </p>
+        </div>
+
+{content_html}
+      </div>
+    </section>
+  </main>
+
+{footer}
+
+  <script src="/js/blog.js?v=1.1"></script>
+</body>
+</html>'''
+    return html
+
 def build_article_page(article, all_articles):
     slug = article["slug"]
     title = article["title"]
     category = article.get("category", "ChatGPT Ads")
-    date_str = article.get("date", "")
+    cat_slug = slugify(category)
+    date_str = article.get("publishedAt", "")
     formatted_date = article.get("formatted_date", date_str)
-    modified_date = article.get("modified_date", date_str)
-    reading_time = article.get("reading_time", "5 min read")
-    author = article.get("author", "Aepify Team")
-    author_role = article.get("author_role", "ChatGPT Ads Strategists")
-    excerpt = article.get("excerpt", "")
-    featured_img = article.get("featured_image", "/assets/blog/what-are-chatgpt-ads.png")
-    featured_img_alt = article.get("featured_image_alt", title)
-    meta_title = article.get("meta_title", f"{title} | Aepify")
-    meta_desc = article.get("meta_description", excerpt)
+    updated_date = article.get("updatedAt", date_str)
+    formatted_updated = format_date(updated_date) if updated_date else None
+    reading_time = article.get("readingTime", "6 min read")
+    author = article.get("author", "Aepify")
+    description = article.get("description", "")
+    featured_img = article.get("featuredImage", "/assets/blog/what-are-chatgpt-ads.png")
+    image_alt = article.get("imageAlt", title)
+    seo_title = article.get("seoTitle", f"{title} | Aepify")
+    meta_desc = article.get("metaDescription", description)
     canonical_url = f"{SITE_URL}/blog/{slug}/"
     full_img_url = f"{SITE_URL}{featured_img}" if featured_img.startswith("/") else featured_img
 
@@ -592,10 +743,24 @@ def build_article_page(article, all_articles):
     toc_nav_html = "\n            ".join(toc_links)
     mobile_toc_nav_html = "\n          ".join(mobile_toc_links)
 
-    related = [a for a in all_articles if a["slug"] != slug][:2]
+    # Pick up to 3 relevant published articles based on category or shared tags
+    other_articles = [a for a in all_articles if a["slug"] != slug]
+    # Score relevance: same category = 2 points, matching tags = 1 point each
+    def relevance_score(other):
+        score = 0
+        if other.get("category") == category:
+            score += 2
+        art_tags = set(t.lower() for t in article.get("tags", []))
+        other_tags = set(t.lower() for t in other.get("tags", []))
+        score += len(art_tags.intersection(other_tags))
+        return score
+
+    other_articles.sort(key=relevance_score, reverse=True)
+    related = other_articles[:3]
+
     related_cards_html = "\n".join([render_blog_card(r) for r in related]) if related else ""
     related_section_html = f'''    <section class="article-related-section">
-      <h3 class="article-related-title">Related Reading</h3>
+      <h3 class="article-related-title">Related Articles</h3>
       <div class="blog-grid" style="margin-bottom: 0;">
 {related_cards_html}
       </div>
@@ -626,7 +791,7 @@ def build_article_page(article, all_articles):
             }
         },
         "datePublished": str(date_str),
-        "dateModified": str(modified_date)
+        "dateModified": str(updated_date if updated_date else date_str)
     }
 
     json_ld_breadcrumbs = {
@@ -662,29 +827,31 @@ def build_article_page(article, all_articles):
     json_article_str = json.dumps(json_ld_article, indent=2)
     json_breadcrumbs_str = json.dumps(json_ld_breadcrumbs, indent=2)
 
+    updated_meta_html = f'<span style="margin-left: 6px;">(Updated: <time datetime="{updated_date}">{formatted_updated}</time>)</span>' if (updated_date and updated_date != date_str) else ''
+
     html = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>{escape_html(meta_title)}</title>
+  <title>{escape_html(seo_title)}</title>
   <meta name="description" content="{escape_html(meta_desc)}">
   <link rel="canonical" href="{canonical_url}">
 
   <!-- Open Graph -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="{escape_html(meta_title)}">
+  <meta property="og:title" content="{escape_html(seo_title)}">
   <meta property="og:description" content="{escape_html(meta_desc)}">
   <meta property="og:url" content="{canonical_url}">
   <meta property="og:image" content="{full_img_url}">
   <meta property="og:site_name" content="Aepify">
   <meta property="article:published_time" content="{date_str}">
-  <meta property="article:modified_time" content="{modified_date}">
+  <meta property="article:modified_time" content="{updated_date}">
   <meta property="article:section" content="{escape_html(category)}">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{escape_html(meta_title)}">
+  <meta name="twitter:title" content="{escape_html(seo_title)}">
   <meta name="twitter:description" content="{escape_html(meta_desc)}">
   <meta name="twitter:image" content="{full_img_url}">
 
@@ -724,15 +891,18 @@ def build_article_page(article, all_articles):
 
     <!-- Article Header -->
     <header class="article-header">
-      <span class="article-category-badge">{escape_html(category)}</span>
+      <a href="/blog/category/{cat_slug}/" class="article-category-badge">{escape_html(category)}</a>
       <h1 class="article-h1">{escape_html(title)}</h1>
+      <p class="article-subtitle" style="font-size: 1.18rem; color: var(--color-muted); line-height: 1.6; margin-bottom: 24px;">
+        {escape_html(description)}
+      </p>
 
       <div class="article-meta-row">
         <div class="article-author-info">
           <div class="article-author-avatar" aria-hidden="true">A</div>
           <div class="article-author-details">
             <span class="article-author-name">{escape_html(author)}</span>
-            <span class="article-author-role">{escape_html(author_role)}</span>
+            <span class="article-author-role">ChatGPT Ads Strategy</span>
           </div>
         </div>
 
@@ -740,6 +910,7 @@ def build_article_page(article, all_articles):
           <div class="article-date-item">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
             <time datetime="{date_str}">{formatted_date}</time>
+            {updated_meta_html}
           </div>
           <span>•</span>
           <div class="article-date-item">
@@ -752,7 +923,7 @@ def build_article_page(article, all_articles):
 
     <!-- Featured Image -->
     <div class="article-featured-hero">
-      <img src="{featured_img}" alt="{escape_html(featured_img_alt)}" width="1024" height="564">
+      <img src="{featured_img}" alt="{escape_html(image_alt)}" width="1200" height="630">
     </div>
 
     <!-- Mobile Table of Contents Accordion -->
@@ -808,16 +979,16 @@ def build_article_page(article, all_articles):
           </div>
         </div>
 
-        <!-- End of Article Conversion CTA Card with Explicit High-Contrast Colors -->
+        <!-- End of Article Conversion CTA Card -->
         <div class="article-cta-box">
           <span class="article-cta-eyebrow">FOUNDING 10 LAUNCH · CHATGPT ADS STRATEGY</span>
-          <h3 class="article-cta-title">Ready to turn buying conversations into high-converting campaigns?</h3>
+          <h3 class="article-cta-title">Ready to explore ChatGPT Ads?</h3>
           <p class="article-cta-desc">
-            Discover what ChatGPT Ads can do for your business. We map your commercial conversations, build context-native campaigns, and manage performance for a flat $99/month.
+            Find out where your business could show up in high-intent AI conversations.
           </p>
           <div class="article-cta-actions">
             <a href="https://tally.so/r/GxZpre" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-              <span>Get Your FREE Opportunity Report →</span>
+              <span>Get Your FREE Opportunity Score →</span>
             </a>
             <a href="mailto:contact@aepify.com" class="btn btn-secondary btn-lg">
               <span>Contact Us →</span>
@@ -839,7 +1010,7 @@ def build_article_page(article, all_articles):
 </html>'''
     return html
 
-def build_sitemap(articles):
+def build_sitemap(articles, categories_with_articles):
     xml_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -855,15 +1026,24 @@ def build_sitemap(articles):
         '  </url>'
     ]
 
+    # Published articles
     for art in articles:
         slug = art["slug"]
-        lastmod = art.get("modified_date") or art.get("date")
+        lastmod = art.get("updatedAt") or art.get("publishedAt")
         xml_lines.append('  <url>')
         xml_lines.append(f'    <loc>{SITE_URL}/blog/{slug}/</loc>')
         if lastmod:
             xml_lines.append(f'    <lastmod>{lastmod}</lastmod>')
         xml_lines.append('    <changefreq>monthly</changefreq>')
         xml_lines.append('    <priority>0.8</priority>')
+        xml_lines.append('  </url>')
+
+    # Category hub pages that have published articles
+    for cat_slug in categories_with_articles:
+        xml_lines.append('  <url>')
+        xml_lines.append(f'    <loc>{SITE_URL}/blog/category/{cat_slug}/</loc>')
+        xml_lines.append('    <changefreq>weekly</changefreq>')
+        xml_lines.append('    <priority>0.7</priority>')
         xml_lines.append('  </url>')
 
     xml_lines.append('</urlset>')
@@ -884,6 +1064,7 @@ def main():
         return 1
 
     OUTPUT_BLOG_DIR.mkdir(parents=True, exist_ok=True)
+    CATEGORY_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     articles = []
 
@@ -892,14 +1073,29 @@ def main():
             raw_text = f.read()
 
         meta, body = parse_frontmatter(raw_text)
-        if not meta.get("published", True):
+        
+        # Check published flag
+        published = meta.get("published", True)
+        if isinstance(published, str):
+            published = published.lower() == "true"
+        if not published:
             print(f"Skipping unpublished draft: {md_file.name}")
             continue
 
         slug = meta.get("slug") or md_file.stem
         meta["slug"] = slug
-        meta["reading_time"] = calculate_reading_time(body)
-        meta["formatted_date"] = format_date(meta.get("date", ""))
+
+        # Normalize frontmatter keys
+        meta["publishedAt"] = meta.get("publishedAt") or meta.get("date", "")
+        meta["updatedAt"] = meta.get("updatedAt") or meta.get("modified_date") or meta["publishedAt"]
+        meta["featuredImage"] = meta.get("featuredImage") or meta.get("featured_image", "/assets/blog/what-are-chatgpt-ads.png")
+        meta["imageAlt"] = meta.get("imageAlt") or meta.get("featured_image_alt", meta.get("title", ""))
+        meta["description"] = meta.get("description") or meta.get("excerpt", "")
+        meta["seoTitle"] = meta.get("seoTitle") or meta.get("meta_title", f"{meta.get('title', '')} | Aepify")
+        meta["metaDescription"] = meta.get("metaDescription") or meta.get("meta_description", meta["description"])
+        meta["category"] = meta.get("category", "ChatGPT Ads")
+        meta["readingTime"] = meta.get("readingTime") or calculate_reading_time(body)
+        meta["formatted_date"] = format_date(meta["publishedAt"])
 
         body_html, toc_items = markdown_to_html(body)
         meta["body_html"] = body_html
@@ -907,15 +1103,30 @@ def main():
 
         articles.append(meta)
 
-    articles.sort(key=lambda x: str(x.get("date", "")), reverse=True)
+    # Sort articles by published date descending
+    articles.sort(key=lambda x: str(x.get("publishedAt", "")), reverse=True)
 
-    # 1. Build blog index
+    # 1. Build blog index (/blog/index.html)
     index_html = build_index_page(articles)
     with open(OUTPUT_BLOG_DIR / "index.html", "w", encoding="utf-8") as f:
         f.write(index_html)
-    print(f"✓ Generated: blog/index.html ({len(articles)} articles)")
+    print(f"✓ Generated: blog/index.html ({len(articles)} published articles)")
 
-    # 2. Build individual article pages
+    # 2. Build Category Hub Pages (/blog/category/<slug>/index.html)
+    categories_with_articles = set()
+    for cat_name, cat_info in CATEGORIES_METADATA.items():
+        cat_slug = cat_info["slug"]
+        cat_dir = CATEGORY_OUTPUT_DIR / cat_slug
+        cat_dir.mkdir(parents=True, exist_ok=True)
+        cat_articles = [a for a in articles if a.get("category", "").lower() == cat_name.lower()]
+        if cat_articles:
+            categories_with_articles.add(cat_slug)
+        cat_html = build_category_page(cat_name, cat_info, cat_articles)
+        with open(cat_dir / "index.html", "w", encoding="utf-8") as f:
+            f.write(cat_html)
+        print(f"✓ Generated: blog/category/{cat_slug}/index.html ({len(cat_articles)} articles)")
+
+    # 3. Build individual article pages (/blog/<slug>/index.html)
     for art in articles:
         art_dir = OUTPUT_BLOG_DIR / art["slug"]
         art_dir.mkdir(parents=True, exist_ok=True)
@@ -924,19 +1135,19 @@ def main():
             f.write(art_html)
         print(f"✓ Generated: blog/{art['slug']}/index.html")
 
-    # 3. Generate sitemap.xml
-    sitemap_xml = build_sitemap(articles)
+    # 4. Generate sitemap.xml
+    sitemap_xml = build_sitemap(articles, categories_with_articles)
     with open(BASE_DIR / "sitemap.xml", "w", encoding="utf-8") as f:
         f.write(sitemap_xml)
     print("✓ Generated: sitemap.xml")
 
-    # 4. Generate robots.txt
+    # 5. Generate robots.txt
     robots_txt = build_robots()
     with open(BASE_DIR / "robots.txt", "w", encoding="utf-8") as f:
         f.write(robots_txt)
     print("✓ Generated: robots.txt")
 
-    print("\nBlog build complete successfully!")
+    print("\nAepify Blog & Category Hub Build completed successfully!")
     return 0
 
 if __name__ == "__main__":
