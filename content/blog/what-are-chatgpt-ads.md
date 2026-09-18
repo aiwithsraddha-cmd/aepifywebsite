@@ -1,8 +1,8 @@
 ---
 title: "What Are ChatGPT Ads? A Practical Guide for Businesses"
 slug: "what-are-chatgpt-ads"
-date: "2025-02-15"
-modified_date: "2025-02-15"
+date: "2026-09-18"
+modified_date: "2026-09-18"
 author: "Aepify Team"
 author_role: "ChatGPT Ads Strategists"
 category: "ChatGPT Ads"
