@@ -40,8 +40,8 @@ collections:
       - { label: "Image Alt Text", name: "imageAlt", widget: "string", required: false, hint: "Descriptive alt text for the featured image" }
       - { label: "Excerpt / Description", name: "description", widget: "text", hint: "Short summary for cards and search results (1-2 sentences)" }
       - { label: "Author", name: "author", widget: "string", default: "Aepify" }
-      - { label: "Published Date", name: "publishedAt", widget: "date", format: "YYYY-MM-DD", default: "{{year}}-{{month}}-{{date}}" }
-      - { label: "Updated Date", name: "updatedAt", widget: "date", format: "YYYY-MM-DD", required: false }
+      - { label: "Published Date", name: "publishedAt", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Updated Date", name: "updatedAt", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
       - { label: "Reading Time", name: "readingTime", widget: "string", required: false, hint: "e.g. 6 min read (auto-calculated if omitted)" }
       - { label: "SEO Title", name: "seoTitle", widget: "string", hint: "SEO Title Tag (50-60 characters)" }
       - { label: "Meta Description", name: "metaDescription", widget: "text", hint: "SEO Meta Description (140-160 characters)" }
