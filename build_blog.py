@@ -23,6 +23,17 @@ OUTPUT_BLOG_DIR = BASE_DIR / "blog"
 SITE_URL = "https://aepify.com"
 BRAND_NAME = "Aepify"
 
+# Categories requested by user
+REQUIRED_CATEGORIES = [
+    "All",
+    "ChatGPT Ads",
+    "AI Marketing",
+    "Performance Marketing",
+    "Growth Marketing",
+    "Marketing Strategy",
+    "AEO & GEO"
+]
+
 # --- HELPER: YAML FRONTMATTER PARSER ---
 def parse_frontmatter(content):
     if not content.startswith("---"):
@@ -284,9 +295,9 @@ def get_site_header(active_nav="blog"):
         <a href="/#who-its-for" class="nav-link">Who It's For</a>
         <a href="/#how-it-works" class="nav-link">How It Works</a>
         <a href="/#opportunity-engine" class="nav-link">Opportunity Score</a>
-        <a href="/blog/" class="nav-link{' active' if active_nav == 'blog' else ''}">Blog</a>
         <a href="/#pricing" class="nav-link">Pricing</a>
         <a href="/#faq" class="nav-link">FAQ</a>
+        <a href="/blog/" class="nav-link{' active' if active_nav == 'blog' else ''}">Blog</a>
       </nav>
 
       <div class="nav-actions">
@@ -307,9 +318,9 @@ def get_site_header(active_nav="blog"):
         <a href="/#who-its-for" class="mobile-nav-link">Who It's For</a>
         <a href="/#how-it-works" class="mobile-nav-link">How It Works</a>
         <a href="/#opportunity-engine" class="mobile-nav-link">Opportunity Score</a>
-        <a href="/blog/" class="mobile-nav-link{' active' if active_nav == 'blog' else ''}">Blog</a>
         <a href="/#pricing" class="mobile-nav-link">Pricing</a>
         <a href="/#faq" class="mobile-nav-link">FAQ</a>
+        <a href="/blog/" class="mobile-nav-link{' active' if active_nav == 'blog' else ''}">Blog</a>
         <div class="mobile-menu-cta">
           <a href="https://tally.so/r/GxZpre" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full mobile-cta-btn">
             Get Your FREE Opportunity Report →
@@ -351,16 +362,16 @@ def get_site_footer():
           </div>
         </div>
 
-        <!-- Navigation Column -->
+        <!-- Navigation Column: Blog comes after FAQ -->
         <div class="footer-nav-column">
           <h4 class="footer-column-heading">Navigation</h4>
           <nav class="footer-nav-list" aria-label="Footer navigation">
             <a href="/#who-its-for" class="footer-link">Who It's For</a>
             <a href="/#how-it-works" class="footer-link">How It Works</a>
             <a href="/#opportunity-engine" class="footer-link">Opportunity Score</a>
-            <a href="/blog/" class="footer-link">Blog</a>
             <a href="/#pricing" class="footer-link">Pricing</a>
             <a href="/#faq" class="footer-link">FAQ</a>
+            <a href="/blog/" class="footer-link">Blog</a>
           </nav>
         </div>
 
@@ -443,17 +454,19 @@ def render_blog_card(article):
           <p class="blog-card-excerpt">{escape_html(article['excerpt'])}</p>
           <div class="blog-card-footer">
             <time datetime="{article['date']}">{article['formatted_date']}</time>
-            <span class="blog-card-link-action">Read article →</span>
+            <a href="{url}" class="blog-card-link-action" aria-label="Read article: {escape_html(article['title'])}">Read article →</a>
           </div>
         </div>
       </article>'''
 
-def build_index_page(articles, categories):
+def build_index_page(articles):
     cards_html = "\n".join([render_blog_card(art) for art in articles])
     cat_buttons = ['<button class="blog-cat-btn active" data-category="all">All</button>']
-    for cat in sorted(categories):
+    for cat in REQUIRED_CATEGORIES:
+        if cat.lower() == "all":
+            continue
         cat_buttons.append(f'<button class="blog-cat-btn" data-category="{escape_html(cat.lower())}">{escape_html(cat)}</button>')
-    cat_buttons_html = "\n        ".join(cat_buttons)
+    cat_buttons_html = "\n            ".join(cat_buttons)
 
     header = get_site_header(active_nav="blog")
     footer = get_site_footer()
@@ -490,7 +503,7 @@ def build_index_page(articles, categories):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/styles.css?v=3.2">
+  <link rel="stylesheet" href="/styles.css?v=3.3">
 </head>
 <body class="blog-page">
   <div class="site-ambient-grid" aria-hidden="true"></div>
@@ -504,7 +517,7 @@ def build_index_page(articles, categories):
           <span class="blog-eyebrow-badge">AEPIFY KNOWLEDGE &amp; STRATEGY</span>
           <h1 class="blog-title">Insights on ChatGPT Ads &amp; AI Marketing</h1>
           <p class="blog-subtitle">
-            Practical guides, buyer intent frameworks, and strategic benchmarks to help businesses capture high-consideration customers in conversational AI.
+            Practical guides, buyer intent frameworks, and strategic benchmarks<br class="desktop-br">to help businesses capture high-consideration customers in conversational AI.
           </p>
         </div>
 
@@ -536,7 +549,7 @@ def build_index_page(articles, categories):
             <line x1="8" y1="11" x2="14" y2="11"></line>
           </svg>
           <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">No matching articles found</h3>
-          <p style="color: var(--color-muted); font-size: 0.95rem; margin-bottom: 18px;">Try adjusting your search terms or clearing your filter selection.</p>
+          <p style="color: var(--color-muted); font-size: 0.95rem; margin-bottom: 18px;">Try adjusting your search terms or selecting another category.</p>
           <button type="button" class="btn btn-secondary btn-sm" id="btnResetFilters">Reset all filters</button>
         </div>
       </div>
@@ -545,7 +558,7 @@ def build_index_page(articles, categories):
 
 {footer}
 
-  <script src="/js/blog.js?v=1.0"></script>
+  <script src="/js/blog.js?v=1.1"></script>
 </body>
 </html>'''
     return html
@@ -684,7 +697,7 @@ def build_article_page(article, all_articles):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/styles.css?v=3.2">
+  <link rel="stylesheet" href="/styles.css?v=3.3">
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -795,7 +808,7 @@ def build_article_page(article, all_articles):
           </div>
         </div>
 
-        <!-- End of Article Conversion CTA Card -->
+        <!-- End of Article Conversion CTA Card with Explicit High-Contrast Colors -->
         <div class="article-cta-box">
           <span class="article-cta-eyebrow">FOUNDING 10 LAUNCH · CHATGPT ADS STRATEGY</span>
           <h3 class="article-cta-title">Ready to turn buying conversations into high-converting campaigns?</h3>
@@ -804,10 +817,10 @@ def build_article_page(article, all_articles):
           </p>
           <div class="article-cta-actions">
             <a href="https://tally.so/r/GxZpre" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-              Get Your FREE Opportunity Report →
+              <span>Get Your FREE Opportunity Report →</span>
             </a>
-            <a href="mailto:contact@aepify.com" class="btn btn-secondary btn-lg" style="color: #FFFFFF; border-color: rgba(255,255,255,0.3);">
-              Contact Us →
+            <a href="mailto:contact@aepify.com" class="btn btn-secondary btn-lg">
+              <span>Contact Us →</span>
             </a>
           </div>
         </div>
@@ -821,7 +834,7 @@ def build_article_page(article, all_articles):
 
 {footer}
 
-  <script src="/js/blog.js?v=1.0"></script>
+  <script src="/js/blog.js?v=1.1"></script>
 </body>
 </html>'''
     return html
@@ -873,7 +886,6 @@ def main():
     OUTPUT_BLOG_DIR.mkdir(parents=True, exist_ok=True)
 
     articles = []
-    categories = set()
 
     for md_file in sorted(CONTENT_DIR.glob("*.md")):
         with open(md_file, "r", encoding="utf-8") as f:
@@ -893,15 +905,12 @@ def main():
         meta["body_html"] = body_html
         meta["toc_items"] = toc_items
 
-        cat = meta.get("category", "General")
-        categories.add(cat)
-
         articles.append(meta)
 
     articles.sort(key=lambda x: str(x.get("date", "")), reverse=True)
 
     # 1. Build blog index
-    index_html = build_index_page(articles, categories)
+    index_html = build_index_page(articles)
     with open(OUTPUT_BLOG_DIR / "index.html", "w", encoding="utf-8") as f:
         f.write(index_html)
     print(f"✓ Generated: blog/index.html ({len(articles)} articles)")
