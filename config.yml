@@ -20,20 +20,11 @@ collections:
       - { label: "Slug", name: "slug", widget: "string", hint: "URL slug, e.g. what-are-chatgpt-ads" }
       - { label: "Category", name: "category", widget: "select", options: [
           "ChatGPT Ads",
-          "AI Advertising",
-          "AI Search & Discovery",
-          "Buyer Intent",
           "AI Marketing",
           "Performance Marketing",
-          "Paid Advertising",
           "Growth Marketing",
           "Marketing Strategy",
-          "AEO & GEO",
-          "AI & Customer Behaviour",
-          "Industry Insights",
-          "ChatGPT Ads Strategy",
-          "Campaign Intelligence",
-          "Aepify Insights"
+          "AEO & GEO"
         ], default: "ChatGPT Ads" }
       - { label: "Tags", name: "tags", widget: "list", default: ["ChatGPT Ads", "AI Advertising", "Digital Marketing"] }
       - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }
