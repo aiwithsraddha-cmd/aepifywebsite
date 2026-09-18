@@ -1,0 +1,49 @@
+backend:
+  name: turbo-github
+  repo: aiwithsraddha-cmd/aepifywebsite
+  branch: main
+  turbo_site_id: 86334997-596c-47d5-a5a3-01388ecbd44a
+
+media_folder: "assets/blog"
+public_folder: "/assets/blog"
+
+publish_mode: simple
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL slug, e.g. what-are-chatgpt-ads" }
+      - { label: "Category", name: "category", widget: "select", options: [
+          "ChatGPT Ads",
+          "AI Advertising",
+          "AI Search & Discovery",
+          "Buyer Intent",
+          "AI Marketing",
+          "Performance Marketing",
+          "Paid Advertising",
+          "Growth Marketing",
+          "Marketing Strategy",
+          "AEO & GEO",
+          "AI & Customer Behaviour",
+          "Industry Insights",
+          "ChatGPT Ads Strategy",
+          "Campaign Intelligence",
+          "Aepify Insights"
+        ], default: "ChatGPT Ads" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["ChatGPT Ads", "AI Advertising", "Digital Marketing"] }
+      - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }
+      - { label: "Image Alt Text", name: "imageAlt", widget: "string", required: false, hint: "Descriptive alt text for the featured image" }
+      - { label: "Excerpt / Description", name: "description", widget: "text", hint: "Short summary for cards and search results (1-2 sentences)" }
+      - { label: "Author", name: "author", widget: "string", default: "Aepify" }
+      - { label: "Published Date", name: "publishedAt", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Updated Date", name: "updatedAt", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      - { label: "Reading Time", name: "readingTime", widget: "string", required: false, hint: "e.g. 6 min read (auto-calculated if omitted)" }
+      - { label: "SEO Title", name: "seoTitle", widget: "string", hint: "SEO Title Tag (50-60 characters)" }
+      - { label: "Meta Description", name: "metaDescription", widget: "text", hint: "SEO Meta Description (140-160 characters)" }
+      - { label: "Published", name: "published", widget: "boolean", default: true }
+      - { label: "Article Content", name: "body", widget: "markdown" }
