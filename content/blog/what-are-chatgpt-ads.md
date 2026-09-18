@@ -1,25 +1,25 @@
 ---
 title: "What Are ChatGPT Ads? A Practical Guide for Businesses"
 slug: "what-are-chatgpt-ads"
-date: "2026-09-18"
-modified_date: "2026-09-18"
-author: "Aepify Team"
-author_role: "ChatGPT Ads Strategists"
+description: "A practical guide to ChatGPT Ads and what businesses should know before advertising in AI conversations."
 category: "ChatGPT Ads"
 tags:
-  - "chatgpt ads"
-  - "ai advertising"
-  - "openai ads"
-  - "ad management"
-  - "intent mapping"
-excerpt: "Discover how ChatGPT Ads work, how they fundamentally differ from Google Search Ads, and how forward-thinking businesses can prepare to capture high-intent buyer conversations in conversational AI."
-featured_image: "/assets/blog/what-are-chatgpt-ads.png"
-featured_image_alt: "ChatGPT Ads Manager dashboard overview showing conversational campaign targeting and intent analytics"
-meta_title: "What Are ChatGPT Ads? A Practical Guide for Businesses | Aepify"
-meta_description: "Discover how ChatGPT Ads work, how they differ from Google Search Ads, and how businesses can prepare to capture high-intent buyer conversations in conversational AI."
-canonical: "https://aepify.com/blog/what-are-chatgpt-ads/"
+  - "ChatGPT Ads"
+  - "AI Advertising"
+  - "Digital Marketing"
+  - "Conversational Advertising"
+  - "Intent Mapping"
+author: "Aepify"
+publishedAt: "2026-09-18"
+updatedAt: "2026-09-18"
+featuredImage: "/assets/blog/what-are-chatgpt-ads.png"
+imageAlt: "Illustration representing ChatGPT advertising and conversational buyer intent"
+readingTime: "6 min read"
 published: true
+seoTitle: "What Are ChatGPT Ads? A Guide for Businesses | Aepify"
+metaDescription: "Learn what ChatGPT Ads are, how AI advertising works, and what businesses should consider before launching campaigns."
 ---
+
 
 For more than twenty-five years, digital marketing revolved around a single, undisputed center of gravity: the keyword search box. When potential customers needed a service or product, they typed a 2-to-4 word fragment into Google, scanned ten blue links, and clicked through to various websites.
 
