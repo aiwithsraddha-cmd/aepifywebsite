@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Cost Per Qualified Intent (CPQI): Essential AI Ad Metric | Aepify</title>
+  <meta name="description" content="Discover why CPQI replaces CPL and CPC in conversational AI advertising. Learn the formula, benchmarks, and attribution frameworks with Aepify.">
+  <link rel="canonical" href="https://aepify.com/blog/cost-per-qualified-intent-cpqi-guide/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cost Per Qualified Intent (CPQI): Essential AI Ad Metric | Aepify">
+  <meta property="og:description" content="Discover why CPQI replaces CPL and CPC in conversational AI advertising. Learn the formula, benchmarks, and attribution frameworks with Aepify.">
+  <meta property="og:url" content="https://aepify.com/blog/cost-per-qualified-intent-cpqi-guide/">
+  <meta property="og:image" content="https://aepify.com/assets/blog/cost-per-qualified-intent-cpqi-guide.png">
+  <meta property="og:site_name" content="Aepify">
+  <meta property="article:published_time" content="2026-09-21">
+  <meta property="article:modified_time" content="2026-09-21">
+  <meta property="article:section" content="Performance Marketing">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cost Per Qualified Intent (CPQI): Essential AI Ad Metric | Aepify">
+  <meta name="twitter:description" content="Discover why CPQI replaces CPL and CPC in conversational AI advertising. Learn the formula, benchmarks, and attribution frameworks with Aepify.">
+  <meta name="twitter:image" content="https://aepify.com/assets/blog/cost-per-qualified-intent-cpqi-guide.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" href="/favicon.png?v=2">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles.css?v=3.3">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aepify.com/blog/cost-per-qualified-intent-cpqi-guide/"
+  },
+  "headline": "Cost Per Qualified Intent (CPQI): The Essential Performance Metric for AI Advertising",
+  "description": "Discover why CPQI replaces CPL and CPC in conversational AI advertising. Learn the formula, benchmarks, and attribution frameworks with Aepify.",
+  "image": "https://aepify.com/assets/blog/cost-per-qualified-intent-cpqi-guide.png",
+  "author": {
+    "@type": "Organization",
+    "name": "Aepify",
+    "url": "https://aepify.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Aepify",
+    "url": "https://aepify.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aepify.com/logo-cropped.png"
+    }
+  },
+  "datePublished": "2026-09-21",
+  "dateModified": "2026-09-21"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://aepify.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://aepify.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Cost Per Qualified Intent (CPQI): The Essential Performance Metric for AI Advertising",
+      "item": "https://aepify.com/blog/cost-per-qualified-intent-cpqi-guide/"
+    }
+  ]
+}
+  </script>
+</head>
+<body class="article-page">
+  <div class="site-ambient-grid" aria-hidden="true"></div>
+
+  <!-- STICKY COMPACTING NAVIGATION -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="/" class="brand-link" aria-label="Aepify Home">
+        <img src="/logo-cropped.png" alt="Aepify" class="brand-logo" width="132" height="52">
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
+        <a href="/#who-its-for" class="nav-link">Who It's For</a>
+        <a href="/#how-it-works" class="nav-link">How It Works</a>
+        <a href="/#opportunity-engine" class="nav-link">Opportunity Score</a>
+        <a href="/#pricing" class="nav-link">Pricing</a>
+        <a href="/#faq" class="nav-link">FAQ</a>
+        <a href="/blog/" class="nav-link active">Blog</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://tally.so/r/GxZpre" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm nav-cta">
+          <span class="nav-cta-desktop">Get Your FREE Opportunity Report →</span>
+          <span class="nav-cta-mobile">Report →</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <a href="/#who-its-for" class="mobile-nav-link">Who It's For</a>
+        <a href="/#how-it-works" class="mobile-nav-link">How It Works</a>
+        <a href="/#opportunity-engine" class="mobile-nav-link">Opportunity Score</a>
+        <a href="/#pricing" class="mobile-nav-link">Pricing</a>
+        <a href="/#faq" class="mobile-nav-link">FAQ</a>
+        <a href="/blog/" class="mobile-nav-link active">Blog</a>
+        <div class="mobile-menu-cta">
+          <a href="https://tally.so/r/GxZpre" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full mobile-cta-btn">
+            Get Your FREE Opportunity Report →
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="article-main-container">
+    <!-- Breadcrumbs -->
+    <nav class="article-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="article-breadcrumb-sep">/</span>
+      <a href="/blog/">Blog</a>
+      <span class="article-breadcrumb-sep">/</span>
+      <span class="current" aria-current="page">Cost Per Qualified Intent (CPQI): The Essential Performance Metric for AI Advertising</span>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header">
+      <a href="/blog/category/performance-marketing/" class="article-category-badge">Performance Marketing</a>
+      <h1 class="article-h1">Cost Per Qualified Intent (CPQI): The Essential Performance Metric for AI Advertising</h1>
+      <p class="article-subtitle" style="font-size: 1.18rem; color: var(--color-muted); line-height: 1.6; margin-bottom: 24px;">
+        Why traditional Cost Per Lead (CPL) is broken for high-ticket businesses and how Cost Per Qualified Intent (CPQI) provides accurate unit economics in conversational AI.
+      </p>
+
+      <div class="article-meta-row">
+        <div class="article-author-info">
+          <div class="article-author-avatar" aria-hidden="true">A</div>
+          <div class="article-author-details">
+            <span class="article-author-name">Aepify</span>
+            <span class="article-author-role">ChatGPT Ads Strategy</span>
+          </div>
+        </div>
+
+        <div class="article-dates-read">
+          <div class="article-date-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <time datetime="2026-09-21">September 21, 2026</time>
+            
+          </div>
+          <span>•</span>
+          <div class="article-date-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>8 min read</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Featured Image -->
+    <div class="article-featured-hero">
+      <img src="/assets/blog/cost-per-qualified-intent-cpqi-guide.png" alt="Cost Per Qualified Intent CPQI Formula and Performance Marketing Analytics" width="1200" height="630">
+    </div>
+
+    <!-- Mobile Table of Contents Accordion -->
+    <details class="article-toc-mobile">
+      <summary>
+        <span>Table of Contents</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="article-toc-mobile-list">
+        <a href="#why-cost-per-lead-cpl-is-dangerously-deceptive">Why Cost Per Lead (CPL) Is Dangerously Deceptive</a>
+          <a href="#the-formula-how-to-calculate-cpqi">The Formula: How to Calculate CPQI</a>
+          <a href="#what-qualifies-as-a-verified-high-intent-dialogue">What Qualifies as a "Verified High-Intent Dialogue"?</a>
+          <a href="#cpqi-benchmarks-across-key-high-consideration-verticals">CPQI Benchmarks Across Key High-Consideration Verticals</a>
+          <a href="#4-tactics-to-lower-your-cpqi">4 Tactics to Lower Your CPQI</a>
+          <a href="#tactic-1-deep-semantic-negative-filtering">Tactic 1: Deep Semantic Negative Filtering</a>
+          <a href="#tactic-2-dynamic-value-proposition-adaptation">Tactic 2: Dynamic Value Proposition Adaptation</a>
+          <a href="#tactic-3-zero-friction-contextual-diagnostic-bridges">Tactic 3: Zero-Friction Contextual Diagnostic Bridges</a>
+          <a href="#tactic-4-blending-aeo-citations-with-paid-conversational-placements">Tactic 4: Blending AEO Citations with Paid Conversational Placements</a>
+          <a href="#measuring-conversational-roas-the-executive-dashboard">Measuring Conversational ROAS: The Executive Dashboard</a>
+          <a href="#summary-stop-paying-for-low-intent-clicks">Summary: Stop Paying for Low-Intent Clicks</a>
+          <a href="#audit-your-performance-economics-today">Audit Your Performance Economics Today</a>
+      </div>
+    </details>
+
+    <!-- Two-column Layout: TOC Sidebar + Article Body -->
+    <div class="article-layout">
+      <aside class="article-toc-aside" aria-label="Table of contents">
+        <div class="article-toc-box">
+          <div class="article-toc-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+            Table of Contents
+          </div>
+          <nav class="article-toc-nav">
+            <ul>
+              <li class="toc-h2"><a href="#why-cost-per-lead-cpl-is-dangerously-deceptive">Why Cost Per Lead (CPL) Is Dangerously Deceptive</a></li>
+            <li class="toc-h2"><a href="#the-formula-how-to-calculate-cpqi">The Formula: How to Calculate CPQI</a></li>
+            <li class="toc-h3"><a href="#what-qualifies-as-a-verified-high-intent-dialogue">What Qualifies as a "Verified High-Intent Dialogue"?</a></li>
+            <li class="toc-h2"><a href="#cpqi-benchmarks-across-key-high-consideration-verticals">CPQI Benchmarks Across Key High-Consideration Verticals</a></li>
+            <li class="toc-h2"><a href="#4-tactics-to-lower-your-cpqi">4 Tactics to Lower Your CPQI</a></li>
+            <li class="toc-h3"><a href="#tactic-1-deep-semantic-negative-filtering">Tactic 1: Deep Semantic Negative Filtering</a></li>
+            <li class="toc-h3"><a href="#tactic-2-dynamic-value-proposition-adaptation">Tactic 2: Dynamic Value Proposition Adaptation</a></li>
+            <li class="toc-h3"><a href="#tactic-3-zero-friction-contextual-diagnostic-bridges">Tactic 3: Zero-Friction Contextual Diagnostic Bridges</a></li>
+            <li class="toc-h3"><a href="#tactic-4-blending-aeo-citations-with-paid-conversational-placements">Tactic 4: Blending AEO Citations with Paid Conversational Placements</a></li>
+            <li class="toc-h2"><a href="#measuring-conversational-roas-the-executive-dashboard">Measuring Conversational ROAS: The Executive Dashboard</a></li>
+            <li class="toc-h2"><a href="#summary-stop-paying-for-low-intent-clicks">Summary: Stop Paying for Low-Intent Clicks</a></li>
+            <li class="toc-h3"><a href="#audit-your-performance-economics-today">Audit Your Performance Economics Today</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <article class="article-content">
+<p>If you ask most performance marketing agencies how a campaign is performing, they will proudly report on <strong>Cost Per Click (CPC)</strong> and <strong>Cost Per Lead (CPL)</strong>.</p>
+<p><em>"We generated 140 leads at an average CPL of \$38!"</em></p>
+<p>Yet when you speak with the sales VP or inspect closed-won CRM records, the reality is sobering: 80% of those leads never picked up the phone, had zero budget, or were completely unqualified. The true blended Customer Acquisition Cost (CAC) ended up north of \$6,000.</p>
+<p>In traditional digital marketing, CPL has become a vanity metric that hides operational waste.</p>
+<p>In conversational AI platforms—where prospects detail their exact company size, budget, and commercial requirements—performance marketers have access to a vastly more accurate metric: <strong>Cost Per Qualified Intent (CPQI)</strong>.</p>
+<p>This guide explains how CPQI works, how to calculate it, and why it is the definitive North Star metric for measuring conversational advertising performance.</p>
+<hr class="article-divider">
+<h2 id="why-cost-per-lead-cpl-is-dangerously-deceptive">Why Cost Per Lead (CPL) Is Dangerously Deceptive</h2>
+<p>In high-consideration businesses—where deal sizes range from \$5,000 to \$250,000+—measuring raw leads incentivizes the wrong marketing behaviors:</p>
+<ol>
+<li><strong>Volume Over Quality</strong>: Marketing teams run broad Facebook or Google Display ads offering a generic free PDF download. They hit their monthly "lead" quota, while sales reps waste hundreds of hours chasing tire-kickers.</li>
+<li><strong>Signal Blindness</strong>: A lead form fill only tells you that someone typed their name and email. It doesn't reveal whether they have an active budget, authority to sign contracts, or immediate timeline urgency.</li>
+<li><strong>Hidden Sales Development Representative (SDR) Overhead</strong>: Filtering out unqualified leads costs real money in SDR salaries, CRM subscriptions, and sales fatigue.</li>
+</ol>
+<pre><code class="language-">THE CPL VANITY TRAP:
+1,000 Ad Clicks (\$15 CPC = \$15,000 Spend)
+     │
+     ▼
+60 Leads Captured (CPL = \$250)
+     │
+     ▼
+52 Leads Disqualified (Wrong size, no budget, student research)
+     │
+     ▼
+8 Qualified Sales Opportunities (True Cost Per Opp = \$1,875)</code></pre>
+<p>In contrast, <strong>Cost Per Qualified Intent</strong> measures only the commercial interactions that meet strict qualification standards.</p>
+<hr class="article-divider">
+<h2 id="the-formula-how-to-calculate-cpqi">The Formula: How to Calculate CPQI</h2>
+<p><strong>Cost Per Qualified Intent (CPQI)</strong> measures the exact media and management investment required to place your verified solution into an AI conversation where the prospective buyer has explicitly satisfied your Ideal Customer Profile (ICP) criteria.</p>
+<p>$$\text{CPQI} = \frac{\text{Total Conversational Advertising Spend}}{\text{Total Verified High-Intent Buyer Dialogues Triggered}}$$</p>
+<pre><code class="language-">┌─────────────────────────────────────────────────────────────┐
+│                    THE CPQI FORMULA                         │
+│                                                             │
+│       Total Campaign Spend (Media + Management)            │
+│  CPQI = ─────────────────────────────────────────────────── │
+│          Number of Verified ICP Dialogues Intercepted       │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="what-qualifies-as-a-verified-high-intent-dialogue">What Qualifies as a "Verified High-Intent Dialogue"?</h3>
+<p>Unlike a passive page impression, a dialogue is classified as a verified intent trigger only when the user prompt contains:</p>
+<ul>
+<li>An <strong>explicit commercial requirement</strong> (e.g., <em>"We need to hire an agency..."</em>)</li>
+<li>A <strong>declared budget or scale parameter</strong> matching your minimum service tier</li>
+<li>A <strong>viable timeline</strong> for purchasing or implementation</li>
+</ul>
+<p>If a user prompt does not meet these criteria, your ad does not trigger, and zero budget is consumed.</p>
+<hr class="article-divider">
+<h2 id="cpqi-benchmarks-across-key-high-consideration-verticals">CPQI Benchmarks Across Key High-Consideration Verticals</h2>
+<p>Based on comparative analysis between traditional Google Search PPC and conversational AI placements (including <a href="/blog/what-are-chatgpt-ads/">ChatGPT Ads</a>):</p>
+<div class="article-table-wrapper">
+<table>
+<thead><tr>
+<th>Industry Vertical</th>
+<th>Typical Google Search CPL</th>
+<th>Conversational CPQI</th>
+<th>Opportunity-to-Close Rate</th>
+<th>True Blended CAC Advantage</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>B2B SaaS & Tech</strong></td>
+<td>\$185 – \$340</td>
+<td>\$85 – \$140</td>
+<td><strong>38% vs 15%</strong></td>
+<td><strong>42% Lower Blended CAC</strong></td>
+</tr>
+<tr>
+<td><strong>Specialized Healthcare & Clinics</strong></td>
+<td>\$95 – \$220</td>
+<td>\$45 – \$80</td>
+<td><strong>44% vs 18%</strong></td>
+<td><strong>55% Lower Blended CAC</strong></td>
+</tr>
+<tr>
+<td><strong>Commercial Construction / Design</strong></td>
+<td>\$220 – \$480</td>
+<td>\$110 – \$190</td>
+<td><strong>32% vs 12%</strong></td>
+<td><strong>48% Lower Blended CAC</strong></td>
+</tr>
+<tr>
+<td><strong>Legal & Professional Advisory</strong></td>
+<td>\$310 – \$750</td>
+<td>\$140 – \$280</td>
+<td><strong>41% vs 14%</strong></td>
+<td><strong>60% Lower Blended CAC</strong></td>
+</tr>
+<tr>
+<td><strong>High-End Wealth Management</strong></td>
+<td>\$400 – \$950</td>
+<td>\$180 – \$320</td>
+<td><strong>29% vs 9%</strong></td>
+<td><strong>52% Lower Blended CAC</strong></td>
+</tr>
+</tbody></table></div>
+<hr class="article-divider">
+<h2 id="4-tactics-to-lower-your-cpqi">4 Tactics to Lower Your CPQI</h2>
+<p>To maximize your conversational return on ad spend (cROAS), performance marketers should execute these four optimization levers:</p>
+<h3 id="tactic-1-deep-semantic-negative-filtering">Tactic 1: Deep Semantic Negative Filtering</h3>
+<p>In Google Ads, you exclude keywords like <code>free</code>, <code>jobs</code>, or <code>salary</code>. In conversational AI advertising, you exclude entire <strong>prompt archetypes</strong>.</p>
+<p>Configure negative intent rules to suppress placements on queries where the user expresses:</p>
+<ul>
+<li>DIY troubleshooting or academic research intent</li>
+<li>Budget constraints below your service thresholds</li>
+<li>Geographies outside your licensed operating territories</li>
+</ul>
+<h3 id="tactic-2-dynamic-value-proposition-adaptation">Tactic 2: Dynamic Value Proposition Adaptation</h3>
+<p>Static ad copy suffers from generic messaging. In conversational advertising, the ad creative dynamically mirrors the specific trade-off the user is deliberating with the AI.</p>
+<p>If the user is asking how to migrate clinical software without patient record downtime, your placement highlights:</p>
+<blockquote><p><em>"Aepify-certified implementation partner providing zero-downtime EHR transitions backed by financial SLA guarantees."</em></p></blockquote>
+<h3 id="tactic-3-zero-friction-contextual-diagnostic-bridges">Tactic 3: Zero-Friction Contextual Diagnostic Bridges</h3>
+<p>Never route a user who just explained their complex business context to an AI assistant to an empty, generic contact form.</p>
+<p>Route them to an <strong>interactive diagnostic tool</strong> (such as our <a href="https://tally.so/r/GxZpre">Free Opportunity Report</a>) that carries their conversation context forward. When prospects don't have to re-explain their challenges, completion rates frequently exceed 65%.</p>
+<h3 id="tactic-4-blending-aeo-citations-with-paid-conversational-placements">Tactic 4: Blending AEO Citations with Paid Conversational Placements</h3>
+<p>When an AI assistant naturally cites your company as an industry benchmark via organic <a href="/blog/aeo-geo-complete-optimization-guide/">Answer Engine Optimization (AEO)</a> and your sponsored placement appears directly within the dialogue, prospective buyers perceive unmatched category authority.</p>
+<hr class="article-divider">
+<h2 id="measuring-conversational-roas-the-executive-dashboard">Measuring Conversational ROAS: The Executive Dashboard</h2>
+<p>To report conversational performance to your executive team or CFO, structure your reporting around these four metrics:</p>
+<ol>
+<li><strong>CPQI (Cost Per Qualified Intent)</strong>: Total spend divided by ICP-verified dialogues.</li>
+<li><strong>Intent-to-Opportunity Velocity</strong>: Number of days from first AI interaction to qualified sales meeting (typically 50% faster than traditional inbound).</li>
+<li><strong>Conversational Opportunity Win Rate</strong>: Percentage of AI-referred opportunities that convert to closed-won revenue.</li>
+<li><strong>Conversational ROAS (cROAS)</strong>: Total closed-won revenue divided by total campaign investment.</li>
+</ol>
+<hr class="article-divider">
+<h2 id="summary-stop-paying-for-low-intent-clicks">Summary: Stop Paying for Low-Intent Clicks</h2>
+<p>The era of paying \$50 for blind Google clicks is rapidly closing.</p>
+<p>By anchoring your performance marketing around <strong>Cost Per Qualified Intent</strong>, your business can eliminate wasted media spend, accelerate sales pipeline velocity, and generate predictable, high-margin customer acquisitions.</p>
+<hr class="article-divider">
+<h3 id="audit-your-performance-economics-today">Audit Your Performance Economics Today</h3>
+<p>Want to calculate your target CPQI and see how much pipeline your business could generate through conversational advertising?</p>
+<p>👉 <strong><a href="https://tally.so/r/GxZpre">Get Your Free Opportunity Report</a></strong> — Our performance strategists will audit your customer acquisition metrics, map your conversational intent landscape, and calculate your projected CPQI.</p>
+
+        <!-- Social Share Bar -->
+        <div class="article-share-section">
+          <span class="article-share-label">Share this guide</span>
+          <div class="article-share-buttons">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Faepify.com%2Fblog%2Fcost-per-qualified-intent-cpqi-guide%2F" target="_blank" rel="noopener noreferrer" class="article-share-btn" aria-label="Share on LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Faepify.com%2Fblog%2Fcost-per-qualified-intent-cpqi-guide%2F&text=Cost%20Per%20Qualified%20Intent%20(CPQI):%20The%20Essential%20Performance%20Metric%20for%20AI%20Advertising" target="_blank" rel="noopener noreferrer" class="article-share-btn" aria-label="Share on X">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              <span>X (Twitter)</span>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Faepify.com%2Fblog%2Fcost-per-qualified-intent-cpqi-guide%2F" target="_blank" rel="noopener noreferrer" class="article-share-btn" aria-label="Share on Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Facebook</span>
+            </a>
+            <button type="button" class="article-share-btn" id="btnCopyArticleLink" aria-label="Copy article link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+              <span>Copy Link</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- End of Article Conversion CTA Card -->
+        <div class="article-cta-box">
+          <span class="article-cta-eyebrow">FOUNDING 10 LAUNCH · CHATGPT ADS STRATEGY</span>
+          <h3 class="article-cta-title">Ready to explore ChatGPT Ads?</h3>
+          <p class="article-cta-desc">
+            Find out where your business could show up in high-intent AI conversations.
+          </p>
+          <div class="article-cta-actions">
+            <a href="https://tally.so/r/GxZpre" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+              <span>Get Your FREE Opportunity Score →</span>
+            </a>
+            <a href="mailto:contact@aepify.com" class="btn btn-secondary btn-lg">
+              <span>Contact Us →</span>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <section class="article-related-section">
+      <h3 class="article-related-title">Related Articles</h3>
+      <div class="blog-grid" style="margin-bottom: 0;">
+      <article class="blog-card" data-title="performance marketing in the ai era: beyond traditional cac, roas, and keywords" data-category="performance marketing" data-tags="performance marketing conversational roas cac optimization ai advertising attribution">
+        <a href="/blog/performance-marketing-in-the-ai-era/" class="blog-card-thumb-wrap" aria-label="Performance Marketing in the AI Era: Beyond Traditional CAC, ROAS, and Keywords">
+          <img src="/assets/blog/performance-marketing-in-the-ai-era.png" alt="Performance Marketing Command Center and Conversational Acquisition Metrics" class="blog-card-thumb" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+          <div class="blog-card-meta-top">
+            <a href="/blog/category/performance-marketing/" class="blog-card-cat-badge">Performance Marketing</a>
+            <span class="blog-card-read-time">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              8 min read
+            </span>
+          </div>
+          <h2 class="blog-card-title">
+            <a href="/blog/performance-marketing-in-the-ai-era/">Performance Marketing in the AI Era: Beyond Traditional CAC, ROAS, and Keywords</a>
+          </h2>
+          <p class="blog-card-excerpt">Why traditional performance marketing channels are facing declining returns and how to engineer profitable acquisition in conversational AI.</p>
+          <div class="blog-card-footer">
+            <time datetime="2026-09-21">September 21, 2026</time>
+            <a href="/blog/performance-marketing-in-the-ai-era/" class="blog-card-link-action" aria-label="Read article: Performance Marketing in the AI Era: Beyond Traditional CAC, ROAS, and Keywords">Read article →</a>
+          </div>
+        </div>
+      </article>
+      <article class="blog-card" data-title="aeo &amp; geo: the complete guide to answer engine and generative optimization" data-category="aeo &amp; geo" data-tags="aeo geo answer engine optimization generative engine optimization ai search optimization perplexity seo chatgpt citations">
+        <a href="/blog/aeo-geo-complete-optimization-guide/" class="blog-card-thumb-wrap" aria-label="AEO &amp; GEO: The Complete Guide to Answer Engine and Generative Optimization">
+          <img src="/assets/blog/aeo-geo-complete-optimization-guide.png" alt="AEO and GEO Architecture, Neural Knowledge Graph, and Generative Model Citations" class="blog-card-thumb" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+          <div class="blog-card-meta-top">
+            <a href="/blog/category/aeo-geo/" class="blog-card-cat-badge">AEO &amp; GEO</a>
+            <span class="blog-card-read-time">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              9 min read
+            </span>
+          </div>
+          <h2 class="blog-card-title">
+            <a href="/blog/aeo-geo-complete-optimization-guide/">AEO &amp; GEO: The Complete Guide to Answer Engine and Generative Optimization</a>
+          </h2>
+          <p class="blog-card-excerpt">Master Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) to ensure your brand is cited and recommended by AI models.</p>
+          <div class="blog-card-footer">
+            <time datetime="2026-09-21">September 21, 2026</time>
+            <a href="/blog/aeo-geo-complete-optimization-guide/" class="blog-card-link-action" aria-label="Read article: AEO &amp; GEO: The Complete Guide to Answer Engine and Generative Optimization">Read article →</a>
+          </div>
+        </div>
+      </article>
+      <article class="blog-card" data-title="ai marketing in 2026: the strategic guide for high-consideration businesses" data-category="ai marketing" data-tags="ai marketing conversational ai buyer intent b2b marketing chatgpt ads">
+        <a href="/blog/ai-marketing-for-high-consideration-businesses/" class="blog-card-thumb-wrap" aria-label="AI Marketing in 2026: The Strategic Guide for High-Consideration Businesses">
+          <img src="/assets/blog/ai-marketing-for-high-consideration-businesses.png" alt="AI Marketing Intelligence and Conversational Customer Decision Journey" class="blog-card-thumb" loading="lazy">
+        </a>
+        <div class="blog-card-content">
+          <div class="blog-card-meta-top">
+            <a href="/blog/category/ai-marketing/" class="blog-card-cat-badge">AI Marketing</a>
+            <span class="blog-card-read-time">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              7 min read
+            </span>
+          </div>
+          <h2 class="blog-card-title">
+            <a href="/blog/ai-marketing-for-high-consideration-businesses/">AI Marketing in 2026: The Strategic Guide for High-Consideration Businesses</a>
+          </h2>
+          <p class="blog-card-excerpt">How high-consideration businesses use conversational AI, intent mapping, and agentic workflows to capture ready-to-buy customers.</p>
+          <div class="blog-card-footer">
+            <time datetime="2026-09-21">September 21, 2026</time>
+            <a href="/blog/ai-marketing-for-high-consideration-businesses/" class="blog-card-link-action" aria-label="Read article: AI Marketing in 2026: The Strategic Guide for High-Consideration Businesses">Read article →</a>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="copy-toast" id="copyToast">Link copied to clipboard!</div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top-grid">
+        
+        <!-- Brand & Social Column -->
+        <div class="footer-brand-column">
+          <a href="/" class="footer-logo-link" aria-label="Aepify Home">
+            <img src="/logo-cropped.png" alt="Aepify" class="footer-logo" width="118" height="46">
+          </a>
+          <p class="footer-desc">
+            ChatGPT Ads readiness, strategy and management for businesses.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://www.instagram.com/aepify.ai/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Aepify on Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.linkedin.com/company/aepify/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Follow Aepify on LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Column -->
+        <div class="footer-nav-column">
+          <h4 class="footer-column-heading">Navigation</h4>
+          <nav class="footer-nav-list" aria-label="Footer navigation">
+            <a href="/#who-its-for" class="footer-link">Who It's For</a>
+            <a href="/#how-it-works" class="footer-link">How It Works</a>
+            <a href="/#opportunity-engine" class="footer-link">Opportunity Score</a>
+            <a href="/#pricing" class="footer-link">Pricing</a>
+            <a href="/#faq" class="footer-link">FAQ</a>
+            <a href="/blog/" class="footer-link">Blog</a>
+          </nav>
+        </div>
+
+        <!-- Contact Us Column with Explicit Email -->
+        <div class="footer-contact-column">
+          <h4 class="footer-column-heading">Contact Us</h4>
+          <p class="footer-contact-text">
+            Have questions or want to discuss your ChatGPT Ads campaign? Reach our team directly:
+          </p>
+          <a href="mailto:contact@aepify.com" class="footer-contact-email-card" aria-label="Email Aepify directly at contact@aepify.com">
+            <span class="email-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </span>
+            <div class="email-details">
+              <span class="email-label">EMAIL US DIRECTLY</span>
+              <strong class="email-address">contact@aepify.com</strong>
+            </div>
+            <span class="email-action-arrow">→</span>
+          </a>
+          <div class="footer-contact-badge">
+            <span class="badge-dot"></span>
+            <span>We typically respond within 24 hours</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-row">
+        <div class="footer-legal-links">
+          <a href="/#faq" class="legal-link">Privacy Policy</a>
+          <span class="legal-separator">·</span>
+          <a href="/#faq" class="legal-link">Terms</a>
+        </div>
+        <p class="footer-disclaimer">
+          Aepify is an independent ChatGPT Ads management service and is not affiliated with or endorsed by OpenAI.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a 
+    href="https://wa.me/919000271367?text=Hi%20Aepify%2C%20I%27d%20like%20to%20learn%20more%20about%20ChatGPT%20Ads%20management." 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="whatsapp-floating-btn whatsapp-link" 
+    id="whatsappFloatingBtn" 
+    aria-label="Chat with Aepify on WhatsApp"
+  >
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.216 8.216 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.01 4.54-3.69 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.09-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.12-.22-.18-.47-.3z"/>
+    </svg>
+  </a>
+
+  <script src="/js/blog.js?v=1.1"></script>
+</body>
+</html>
