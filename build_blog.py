@@ -114,8 +114,11 @@ def escape_html(text):
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 def inline_markdown(text):
-    text = re.sub(r"!\[(.*?)\]\((.*?)\)", r'<img src="\2" alt="\1" loading="lazy" class="article-inline-img">', text)
-    text = re.sub(r"\[(.*?)\]\((.*?)\)", r'<a href="\2">\1</a>', text)
+    # Support checkbox items
+    text = re.sub(r"^\[ \]\s*", "☐ ", text)
+    text = re.sub(r"^\[x\]\s*", "☑ ", text, flags=re.IGNORECASE)
+    text = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", r'<img src="\2" alt="\1" loading="lazy" class="article-inline-img">', text)
+    text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', text)
     text = re.sub(r"`([^`]+)`", r'<code>\1</code>', text)
     text = re.sub(r"\*\*(.*?)\*\*", r'<strong>\1</strong>', text)
     text = re.sub(r"__(.*?)__", r'<strong>\1</strong>', text)
