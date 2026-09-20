@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" style="background:#0a0d14; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <radialGradient id="glow1" cx="25%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0a0d14" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="80%" cy="70%" r="60%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0a0d14" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b202e" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0f121a" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#0a0d14"/>
+  <rect width="1600" height="900" fill="url(#glow1)"/>
+  <rect width="1600" height="900" fill="url(#glow2)"/>
+
+  <!-- Ambient Grid Lines -->
+  <g stroke="rgba(255, 255, 255, 0.04)" stroke-width="1">
+    <line x1="150" y1="0" x2="150" y2="900"/>
+    <line x1="450" y1="0" x2="450" y2="900"/>
+    <line x1="800" y1="0" x2="800" y2="900"/>
+    <line x1="1150" y1="0" x2="1150" y2="900"/>
+    <line x1="1450" y1="0" x2="1450" y2="900"/>
+    <line x1="0" y1="180" x2="1600" y2="180"/>
+    <line x1="0" y1="420" x2="1600" y2="420"/>
+    <line x1="0" y1="680" x2="1600" y2="680"/>
+  </g>
+
+  <!-- Eyebrow Badge -->
+  <g transform="translate(140, 105)">
+    <rect width="360" height="38" rx="19" fill="#151924" stroke="rgba(6, 182, 212, 0.4)" stroke-width="1.5"/>
+    <circle cx="22" cy="19" r="5" fill="#06b6d4"/>
+    <text x="38" y="24" fill="#06b6d4" font-size="13" font-weight="700" letter-spacing="1.5">INTENT MAPPING FRAMEWORK</text>
+  </g>
+
+  <!-- Headline -->
+  <text x="140" y="210" fill="#FFFFFF" font-size="50" font-weight="800" letter-spacing="-1">INTENT MAPPING IN AI MARKETING</text>
+  <text x="140" y="270" fill="#94a3b8" font-size="23" font-weight="500">Reverse-Engineering High-Consideration Buyer Prompts into Revenue</text>
+
+  <!-- Cards -->
+  <g transform="translate(140, 370)" filter="url(#shadow)">
+  <rect width="400" height="410" rx="16" fill="url(#cardGrad)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.5"/>
+  <rect x="28" y="28" width="160" height="28" rx="14" fill="rgba(56, 189, 248, 0.2)" stroke="#38bdf8"/>
+  <text x="44" y="47" fill="#38bdf8" font-size="12" font-weight="700">LAYER 1: PROBLEM STATE</text>
+  <text x="28" y="95" fill="#f1f5f9" font-size="22" font-weight="700">Operational Bottlenecks</text>
+  <g transform="translate(28, 125)">
+    <text x="0" y="20" fill="#94a3b8" font-size="15">• Explicit pain points stated in natural prose</text>
+    <text x="0" y="55" fill="#94a3b8" font-size="15">• Workflow friction &amp; operational failures</text>
+    <text x="0" y="90" fill="#94a3b8" font-size="15">• Regulatory &amp; compliance deadlines</text>
+    <text x="0" y="125" fill="#94a3b8" font-size="15">• Architecture migration challenges</text>
+  </g>
+  <line x1="28" y1="290" x2="372" y2="290" stroke="rgba(255,255,255,0.08)"/>
+  <text x="28" y="330" fill="#38bdf8" font-size="13" font-weight="700">MAPPING GOAL</text>
+  <text x="28" y="360" fill="#cbd5e1" font-size="16" font-weight="600">Extract Core Operational Catalyst</text>
+</g>
+  <g transform="translate(580, 410)" filter="url(#shadow)">
+  <rect width="440" height="350" rx="16" fill="#121826" stroke="#06b6d4" stroke-width="2"/>
+  <rect x="28" y="24" width="170" height="28" rx="14" fill="rgba(6, 182, 212, 0.2)" stroke="#06b6d4"/>
+  <text x="44" y="43" fill="#06b6d4" font-size="12" font-weight="800">LAYER 2: CONSTRAINTS</text>
+  <text x="28" y="90" fill="#ffffff" font-size="22" font-weight="800">Buyer Context Matrix</text>
+  <g transform="translate(28, 120)">
+    <rect width="384" height="60" rx="8" fill="rgba(6, 182, 212, 0.08)" stroke="rgba(6, 182, 212, 0.25)"/>
+    <text x="18" y="28" fill="#94a3b8" font-size="11" font-weight="700">SCALE &amp; BUDGET THRESHOLD</text>
+    <text x="18" y="49" fill="#06b6d4" font-size="18" font-weight="800">Declared Company Size &amp; Spend</text>
+    <rect y="72" width="384" height="60" rx="8" fill="rgba(56, 189, 248, 0.08)" stroke="rgba(56, 189, 248, 0.25)"/>
+    <text x="18" y="100" fill="#94a3b8" font-size="11" font-weight="700">DECISION TIMELINE</text>
+    <text x="18" y="121" fill="#38bdf8" font-size="18" font-weight="800">Immediate Need vs Strategic</text>
+  </g>
+  <text x="28" y="315" fill="#06b6d4" font-size="13" font-weight="700">Multi-Dimensional Qualification →</text>
+</g>
+  <g transform="translate(1060, 370)" filter="url(#shadow)">
+  <rect width="400" height="410" rx="16" fill="url(#cardGrad)" stroke="rgba(255, 85, 0, 0.4)" stroke-width="1.5"/>
+  <rect x="28" y="28" width="160" height="28" rx="14" fill="#ff5500"/>
+  <text x="44" y="47" fill="#ffffff" font-size="12" font-weight="800">LAYER 3: COMMERCIAL</text>
+  <text x="28" y="95" fill="#ffffff" font-size="22" font-weight="700">Active Vendor Evaluation</text>
+  <g transform="translate(28, 125)">
+    <text x="0" y="20" fill="#f1f5f9" font-size="15">• "Which vendor specializes in X?"</text>
+    <text x="0" y="55" fill="#f1f5f9" font-size="15">• Trade-off calculations between providers</text>
+    <text x="0" y="90" fill="#f1f5f9" font-size="15">• High-value purchase deliberation</text>
+    <text x="0" y="125" fill="#f1f5f9" font-size="15">• Ready-to-convert next steps</text>
+  </g>
+  <line x1="28" y1="290" x2="372" y2="290" stroke="rgba(255,255,255,0.08)"/>
+  <text x="28" y="330" fill="#ff5500" font-size="13" font-weight="700">REVENUE TRIGGER</text>
+  <text x="28" y="360" fill="#ffffff" font-size="16" font-weight="600">Contextual Ad Placement Handoff</text>
+</g>
+</svg>
