@@ -280,6 +280,22 @@ def markdown_to_html(md_text):
             flush_blockquote()
             continue
 
+        img_match = re.match(r"^!\[([^\]]*)\]\(([^)]+)\)$", stripped)
+        if img_match:
+            flush_list()
+            flush_blockquote()
+            alt_text = img_match.group(1)
+            img_url = img_match.group(2)
+            caption_html = f'<figcaption class="article-figcaption">{escape_html(alt_text)}</figcaption>' if alt_text else ''
+            html_lines.append(f'<figure class="article-figure"><img src="{img_url}" alt="{escape_html(alt_text)}" class="article-inline-img" loading="lazy">{caption_html}</figure>')
+            continue
+
+        if stripped.startswith("<"):
+            flush_list()
+            flush_blockquote()
+            html_lines.append(stripped)
+            continue
+
         flush_list()
         flush_blockquote()
         html_lines.append(f"<p>{inline_markdown(stripped)}</p>")

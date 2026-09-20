@@ -242,11 +242,38 @@
       </aside>
 
       <article class="article-content">
+<div class="article-takeaway-box">
+<div class="article-takeaway-title">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+<p>Executive Summary & Key Takeaways</p>
+</div>
+<ul class="article-takeaway-list">
+<li><strong>Keywords Are Fragmented, Prompts Are Multi-Layered:</strong> Buyers using conversational AI outline complex operational roadblocks, compliance bounds, and timelines in full sentences.</li>
+<li><strong>The 4-Layer Intent Architecture:</strong> Problem State &rarr; Constraint Matrix &rarr; Comparative Evaluation &rarr; Commercial Trigger.</li>
+<li><strong>Proprietary Intent Matrix:</strong> Mapping real sales audio and discovery transcripts into structured triggers allows brands to capture high-consideration buyers right before the purchase decision.</li>
+</ul>
+</div>
 <p>For twenty-five years, digital marketers relied on <strong>keyword research</strong>. Tools like Ahrefs, SEMrush, and Google Keyword Planner allowed brands to identify high-volume search phrases, group them into keyword clusters, and write blog posts or bid on search ads.</p>
 <p>In the era of conversational AI, <strong>keyword research is obsolete</strong>.</p>
 <p>When prospective clients consult platforms like <strong>ChatGPT</strong>, <strong>Claude</strong>, or <strong>Perplexity</strong>, they don't enter two-word fragments like <code>crm software</code> or <code>tax lawyer</code>. They write multi-sentence narratives detailing their exact business scenario, revenue stage, technical debt, budget constraints, and regulatory pressures.</p>
 <p>To capture these high-value commercial opportunities, modern marketing teams must replace keyword clustering with <strong>Intent Mapping</strong>.</p>
-<p>This tactical guide explains the 4-layer architecture of buyer prompts, how to build a proprietary Intent Matrix, and how to turn conversational inquiries into qualified pipeline.</p>
+<div class="article-stat-grid">
+<div class="article-stat-card">
+<div class="article-stat-num">4.2x</div>
+<div class="article-stat-label">Higher Sales Conversion</div>
+<div class="article-stat-sub">Compared to generic keyword CPC traffic</div>
+</div>
+<div class="article-stat-card">
+<div class="article-stat-num">82%</div>
+<div class="article-stat-label">Multi-Sentence Queries</div>
+<div class="article-stat-sub">Average AI buyer prompts contain 3+ constraints</div>
+</div>
+<div class="article-stat-card">
+<div class="article-stat-num">-64%</div>
+<div class="article-stat-label">Acquisition Cost</div>
+<div class="article-stat-sub">Targeting explicit commercial triggers vs bid wars</div>
+</div>
+</div>
 <hr class="article-divider">
 <h2 id="what-is-intent-mapping-in-ai-marketing">What Is Intent Mapping in AI Marketing?</h2>
 <p><strong>Intent Mapping</strong> is the methodological process of identifying, decomposing, and modeling the natural language prompts that prospective buyers use when evaluating commercial solutions inside conversational artificial intelligence systems.</p>
@@ -257,16 +284,27 @@
 <li>What evaluation criteria are they using to compare candidate solutions?</li>
 <li>What commercial threshold indicates they are ready to hire a verified partner?</li>
 </ol>
-<pre><code class="language-">TRADITIONAL KEYWORD MODEL:
-[ "enterprise crm" ] ──► (Zero context on company size, industry, or budget)
-
-AI INTENT MAPPING MODEL:
-┌────────────────────────────────────────────────────────────────────────┐
-│ 1. Problem State: "Our 60-person fintech is failing SOC 2 audit..."   │
-│ 2. Constraints: "...due to unencrypted customer logs on AWS..."       │
-│ 3. Evaluation: "...comparing automated compliance vs outside audit..." │
-│ 4. Commercial Trigger: "...need a verified partner ready this month."  │
-└────────────────────────────────────────────────────────────────────────┘</code></pre>
+<div class="article-comparison-grid">
+<div class="article-comp-card negative">
+<h4>Legacy Keyword Search Model</h4>
+<p>A single ambiguous phrase like <code>"enterprise crm"</code> provides zero context on company headcount, current tech stack, compliance hurdles, or timeline urgency.</p>
+<ul>
+<li>High bounce rates from irrelevant visitors</li>
+<li>Costly CPC bid wars against massive aggregators</li>
+<li>Requires lengthy qualification forms to filter leads</li>
+</ul>
+</div>
+<div class="article-comp-card positive">
+<h4>AI Conversational Intent Model</h4>
+<p>A multi-dimensional buyer prompt reveals the entire context: <em>"Our 60-person fintech is failing SOC 2 audit due to unencrypted AWS logs... comparing automated compliance vs outside audit... need a verified partner this month."</em></p>
+<ul>
+<li>Pre-qualified buyer with explicit budget and urgency</li>
+<li>Context-native ad recommendations match the exact need</li>
+<li>Zero friction handoff to diagnostic evaluations</li>
+</ul>
+</div>
+</div>
+<figure class="article-figure"><img src="/assets/blog/inline-intent-mapping-pyramid.png" alt="Intent Mapping Architecture &amp; Multi-Layer Prompt Hierarchy" class="article-inline-img" loading="lazy"><figcaption class="article-figcaption">Intent Mapping Architecture &amp; Multi-Layer Prompt Hierarchy</figcaption></figure>
 <hr class="article-divider">
 <h2 id="the-4-layers-of-high-consideration-buyer-prompts">The 4 Layers of High-Consideration Buyer Prompts</h2>
 <p>Every complex buying conversation in an LLM contains four structural layers. Understanding these layers allows you to craft high-precision targeting rules for conversational ad placements and <a href="/blog/ai-marketing-for-high-consideration-businesses/">AI Marketing Strategy</a>.</p>
@@ -302,16 +340,28 @@ AI INTENT MAPPING MODEL:
 <hr class="article-divider">
 <h2 id="how-to-build-a-proprietary-intent-matrix-step-by-step">How to Build a Proprietary Intent Matrix (Step-by-Step)</h2>
 <p>Follow this 4-step framework to construct your company’s conversational intent matrix:</p>
-<pre><code class="language-">┌─────────────────┐       ┌─────────────────┐       ┌─────────────────┐
-│ Step 1: Mine    │ ───►  │ Step 2: Extract │ ───►  │ Step 3: Cluster │
-│ Sales Audio/CRM │       │ Constraint Data │       │ Intent Vectors  │
-└─────────────────┘       └─────────────────┘       └────────┬────────┘
-                                                             │
-                                                             ▼
-                                                    ┌─────────────────┐
-                                                    │ Step 4: Deploy  │
-                                                    │ AI Ad Triggers  │
-                                                    └─────────────────┘</code></pre>
+<div class="article-step-grid">
+<div class="article-step-card">
+<div class="article-step-num">1</div>
+<div class="article-step-title">Mine Sales Transcripts</div>
+<div class="article-step-desc">Audit 50+ closed-won discovery calls to extract verbatim phrasing, operational triggers, and objections.</div>
+</div>
+<div class="article-step-card">
+<div class="article-step-num">2</div>
+<div class="article-step-title">Extract Constraints</div>
+<div class="article-step-desc">Catalog recurring variables: revenue scale, compliance frameworks (HIPAA/SOC2), legacy software, and target milestones.</div>
+</div>
+<div class="article-step-card">
+<div class="article-step-num">3</div>
+<div class="article-step-title">Set Negative Filters</div>
+<div class="article-step-desc">Establish strict suppression triggers to eliminate DIY tutorials, student questions, and sub-scale budgets.</div>
+</div>
+<div class="article-step-card">
+<div class="article-step-num">4</div>
+<div class="article-step-title">Deploy Verified Triggers</div>
+<div class="article-step-desc">Connect verified, context-native brand recommendations directly to high-consideration commercial prompts.</div>
+</div>
+</div>
 <h3 id="step-1-mine-real-customer-sales-audio-crm-records">Step 1: Mine Real Customer Sales Audio & CRM Records</h3>
 <p>Do not guess what buyers ask AI. Review your last 50 closed-won sales calls and enterprise discovery transcripts:</p>
 <ul>
