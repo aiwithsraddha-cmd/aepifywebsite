@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" style="background:#0a0c16; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <radialGradient id="aeoGlow1" cx="30%" cy="25%" r="65%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0a0c16" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="aeoGlow2" cx="75%" cy="65%" r="60%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0a0c16" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#241b38" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#121020" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="cyanPill" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <filter id="aeoShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#0a0c16"/>
+  <rect width="1600" height="900" fill="url(#aeoGlow1)"/>
+  <rect width="1600" height="900" fill="url(#aeoGlow2)"/>
+
+  <!-- Subtle Ambient Circuit Grid -->
+  <g stroke="rgba(255, 255, 255, 0.035)" stroke-width="1">
+    <line x1="200" y1="0" x2="200" y2="900"/>
+    <line x1="450" y1="0" x2="450" y2="900"/>
+    <line x1="800" y1="0" x2="800" y2="900"/>
+    <line x1="1150" y1="0" x2="1150" y2="900"/>
+    <line x1="1400" y1="0" x2="1400" y2="900"/>
+
+    <line x1="0" y1="200" x2="1600" y2="200"/>
+    <line x1="0" y1="450" x2="1600" y2="450"/>
+    <line x1="0" y1="700" x2="1600" y2="700"/>
+  </g>
+
+  <!-- Eyebrow Badge -->
+  <g transform="translate(140, 105)">
+    <rect width="380" height="38" rx="19" fill="#19152b" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.5"/>
+    <circle cx="22" cy="19" r="5" fill="#a855f7"/>
+    <text x="38" y="24" fill="#c084fc" font-size="13" font-weight="700" letter-spacing="1.5">OPTIMIZATION FRAMEWORK</text>
+  </g>
+
+  <!-- Title -->
+  <text x="140" y="210" fill="#FFFFFF" font-size="52" font-weight="800" letter-spacing="-1">AEO &amp; GEO DEFINITIVE GUIDE</text>
+  <text x="140" y="270" fill="#94a3b8" font-size="24" font-weight="500">Answer Engine Optimization &amp; Generative Engine Optimization</text>
+
+  <!-- Model Badges -->
+  <g transform="translate(140, 310)">
+    <rect x="0" y="0" width="130" height="32" rx="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)"/>
+    <text x="18" y="21" fill="#e2e8f0" font-size="13" font-weight="600">ChatGPT</text>
+
+    <rect x="145" y="0" width="135" height="32" rx="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)"/>
+    <text x="163" y="21" fill="#e2e8f0" font-size="13" font-weight="600">Perplexity AI</text>
+
+    <rect x="295" y="0" width="135" height="32" rx="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)"/>
+    <text x="313" y="21" fill="#e2e8f0" font-size="13" font-weight="600">Claude</text>
+
+    <rect x="445" y="0" width="135" height="32" rx="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)"/>
+    <text x="463" y="21" fill="#e2e8f0" font-size="13" font-weight="600">Google Gemini</text>
+  </g>
+
+  <!-- Central Knowledge Graph & Entity Cards Layout -->
+  <!-- Box 1: AEO - Answer Engine Optimization -->
+  <g transform="translate(140, 390)" filter="url(#aeoShadow)">
+    <rect width="400" height="390" rx="16" fill="url(#purpleGrad)" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.5"/>
+    <rect x="28" y="28" width="160" height="28" rx="14" fill="rgba(168, 85, 247, 0.2)" stroke="#a855f7"/>
+    <text x="44" y="47" fill="#c084fc" font-size="12" font-weight="800">AEO ARCHITECTURE</text>
+    
+    <text x="28" y="95" fill="#ffffff" font-size="22" font-weight="700">Direct Answer Synthesis</text>
+    
+    <g transform="translate(28, 125)">
+      <circle cx="8" cy="14" r="4" fill="#c084fc"/>
+      <text x="24" y="19" fill="#e2e8f0" font-size="15">Direct Q&amp;A semantic structures</text>
+      
+      <circle cx="8" cy="54" r="4" fill="#c084fc"/>
+      <text x="24" y="59" fill="#e2e8f0" font-size="15">Schema.org knowledge mapping</text>
+      
+      <circle cx="8" cy="94" r="4" fill="#c084fc"/>
+      <text x="24" y="99" fill="#e2e8f0" font-size="15">Zero-click featured snippet capture</text>
+
+      <circle cx="8" cy="134" r="4" fill="#c084fc"/>
+      <text x="24" y="139" fill="#e2e8f0" font-size="15">Voice &amp; conversational clarity</text>
+    </g>
+
+    <line x1="28" y1="285" x2="372" y2="285" stroke="rgba(255,255,255,0.08)"/>
+    <text x="28" y="325" fill="#a855f7" font-size="13" font-weight="700">PRIMARY GOAL</text>
+    <text x="28" y="352" fill="#ffffff" font-size="16" font-weight="600">Single Source of Truth Status</text>
+  </g>
+
+  <!-- Box 2: Central Entity Bridge -->
+  <g transform="translate(580, 420)" filter="url(#aeoShadow)">
+    <rect width="440" height="330" rx="16" fill="#131726" stroke="#06b6d4" stroke-width="2"/>
+    <rect x="28" y="24" width="180" height="28" rx="14" fill="url(#cyanPill)"/>
+    <text x="44" y="43" fill="#ffffff" font-size="12" font-weight="800">ENTITY GRAPH COHESION</text>
+    
+    <text x="28" y="90" fill="#ffffff" font-size="21" font-weight="800">Authority &amp; Citation Engine</text>
+
+    <!-- Node diagram -->
+    <g transform="translate(28, 120)">
+      <rect width="384" height="60" rx="8" fill="rgba(6, 182, 212, 0.08)" stroke="rgba(6, 182, 212, 0.25)"/>
+      <text x="18" y="28" fill="#94a3b8" font-size="11" font-weight="700">SEMANTIC FOOTPRINT</text>
+      <text x="18" y="49" fill="#06b6d4" font-size="16" font-weight="800">Verified Brand Entity in LLM Weights</text>
+
+      <rect y="72" width="384" height="60" rx="8" fill="rgba(168, 85, 247, 0.08)" stroke="rgba(168, 85, 247, 0.25)"/>
+      <text x="18" y="100" fill="#94a3b8" font-size="11" font-weight="700">CITATION INDEX</text>
+      <text x="18" y="121" fill="#c084fc" font-size="16" font-weight="800">Perplexity &amp; ChatGPT Source Rank</text>
+    </g>
+
+    <text x="28" y="295" fill="#06b6d4" font-size="13" font-weight="700">Synthesized Cross-Model Authority →</text>
+  </g>
+
+  <!-- Box 3: GEO - Generative Engine Optimization -->
+  <g transform="translate(1060, 390)" filter="url(#aeoShadow)">
+    <rect width="400" height="390" rx="16" fill="url(#purpleGrad)" stroke="rgba(6, 182, 212, 0.4)" stroke-width="1.5"/>
+    <rect x="28" y="28" width="160" height="28" rx="14" fill="rgba(6, 182, 212, 0.2)" stroke="#06b6d4"/>
+    <text x="44" y="47" fill="#38bdf8" font-size="12" font-weight="800">GEO STRATEGY</text>
+    
+    <text x="28" y="95" fill="#ffffff" font-size="22" font-weight="700">Generative Synthesis Rank</text>
+    
+    <g transform="translate(28, 125)">
+      <circle cx="8" cy="14" r="4" fill="#38bdf8"/>
+      <text x="24" y="19" fill="#e2e8f0" font-size="15">Multi-source authoritative consensus</text>
+      
+      <circle cx="8" cy="54" r="4" fill="#38bdf8"/>
+      <text x="24" y="59" fill="#e2e8f0" font-size="15">Statistical quotation &amp; data points</text>
+      
+      <circle cx="8" cy="94" r="4" fill="#38bdf8"/>
+      <text x="24" y="99" fill="#e2e8f0" font-size="15">Technical domain terminology</text>
+
+      <circle cx="8" cy="134" r="4" fill="#38bdf8"/>
+      <text x="24" y="139" fill="#e2e8f0" font-size="15">Comparative recommendation wins</text>
+    </g>
+
+    <line x1="28" y1="285" x2="372" y2="285" stroke="rgba(255,255,255,0.08)"/>
+    <text x="28" y="325" fill="#38bdf8" font-size="13" font-weight="700">PRIMARY GOAL</text>
+    <text x="28" y="352" fill="#ffffff" font-size="16" font-weight="600">Top-Tier AI Recommendation &amp; Citation</text>
+  </g>
+</svg>
