@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" style="background:#0a0d14; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <radialGradient id="glow1" cx="25%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#eab308" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0a0d14" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="80%" cy="70%" r="60%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0a0d14" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b202e" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0f121a" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#0a0d14"/>
+  <rect width="1600" height="900" fill="url(#glow1)"/>
+  <rect width="1600" height="900" fill="url(#glow2)"/>
+
+  <!-- Ambient Grid Lines -->
+  <g stroke="rgba(255, 255, 255, 0.04)" stroke-width="1">
+    <line x1="150" y1="0" x2="150" y2="900"/>
+    <line x1="450" y1="0" x2="450" y2="900"/>
+    <line x1="800" y1="0" x2="800" y2="900"/>
+    <line x1="1150" y1="0" x2="1150" y2="900"/>
+    <line x1="1450" y1="0" x2="1450" y2="900"/>
+    <line x1="0" y1="180" x2="1600" y2="180"/>
+    <line x1="0" y1="420" x2="1600" y2="420"/>
+    <line x1="0" y1="680" x2="1600" y2="680"/>
+  </g>
+
+  <!-- Eyebrow Badge -->
+  <g transform="translate(140, 105)">
+    <rect width="360" height="38" rx="19" fill="#151924" stroke="rgba(234, 179, 8, 0.4)" stroke-width="1.5"/>
+    <circle cx="22" cy="19" r="5" fill="#eab308"/>
+    <text x="38" y="24" fill="#eab308" font-size="13" font-weight="700" letter-spacing="1.5">STRATEGIC BRAND MOAT</text>
+  </g>
+
+  <!-- Headline -->
+  <text x="140" y="210" fill="#FFFFFF" font-size="50" font-weight="800" letter-spacing="-1">BUILDING AN AI BRAND MOAT</text>
+  <text x="140" y="270" fill="#94a3b8" font-size="23" font-weight="500">How to Become the Default Commercial Recommendation in LLMs</text>
+
+  <!-- Cards -->
+  <g transform="translate(140, 370)" filter="url(#shadow)">
+  <rect width="400" height="410" rx="16" fill="url(#cardGrad)" stroke="rgba(168, 85, 247, 0.3)" stroke-width="1.5"/>
+  <rect x="28" y="28" width="160" height="28" rx="14" fill="rgba(168, 85, 247, 0.2)" stroke="#a855f7"/>
+  <text x="44" y="47" fill="#c084fc" font-size="12" font-weight="700">CANONICAL GROUNDING</text>
+  <text x="28" y="95" fill="#f1f5f9" font-size="22" font-weight="700">Model Pre-Training</text>
+  <g transform="translate(28, 125)">
+    <text x="0" y="20" fill="#94a3b8" font-size="15">• Semantic weight in base LLMs</text>
+    <text x="0" y="55" fill="#94a3b8" font-size="15">• Proprietary benchmarks &amp; index data</text>
+    <text x="0" y="90" fill="#94a3b8" font-size="15">• Wikipedia &amp; Wikidata entity anchors</text>
+    <text x="0" y="125" fill="#94a3b8" font-size="15">• Unambiguous industry definitions</text>
+  </g>
+  <line x1="28" y1="290" x2="372" y2="290" stroke="rgba(255,255,255,0.08)"/>
+  <text x="28" y="330" fill="#a855f7" font-size="13" font-weight="700">FOUNDATION</text>
+  <text x="28" y="360" fill="#cbd5e1" font-size="16" font-weight="600">Embedded in Foundational AI Weights</text>
+</g>
+  <g transform="translate(580, 410)" filter="url(#shadow)">
+  <rect width="440" height="350" rx="16" fill="#121826" stroke="#eab308" stroke-width="2"/>
+  <rect x="28" y="24" width="170" height="28" rx="14" fill="rgba(234, 179, 8, 0.2)" stroke="#eab308"/>
+  <text x="44" y="43" fill="#eab308" font-size="12" font-weight="800">THE DEFAULT CHOICE</text>
+  <text x="28" y="90" fill="#ffffff" font-size="22" font-weight="800">LLM Recommendation Moat</text>
+  <g transform="translate(28, 120)">
+    <rect width="384" height="60" rx="8" fill="rgba(234, 179, 8, 0.08)" stroke="rgba(234, 179, 8, 0.25)"/>
+    <text x="18" y="28" fill="#94a3b8" font-size="11" font-weight="700">RECOMMENDATION PROBABILITY</text>
+    <text x="18" y="49" fill="#eab308" font-size="18" font-weight="800">#1 Cited Authority in Category</text>
+    <rect y="72" width="384" height="60" rx="8" fill="rgba(56, 189, 248, 0.08)" stroke="rgba(56, 189, 248, 0.25)"/>
+    <text x="18" y="100" fill="#94a3b8" font-size="11" font-weight="700">DEFENSIVE RETENTION</text>
+    <text x="18" y="121" fill="#38bdf8" font-size="18" font-weight="800">Immune to Competitor Keyword Bidding</text>
+  </g>
+  <text x="28" y="315" fill="#eab308" font-size="13" font-weight="700">Permanent Category Preeminence →</text>
+</g>
+  <g transform="translate(1060, 370)" filter="url(#shadow)">
+  <rect width="400" height="410" rx="16" fill="url(#cardGrad)" stroke="rgba(234, 179, 8, 0.4)" stroke-width="1.5"/>
+  <rect x="28" y="28" width="160" height="28" rx="14" fill="#eab308"/>
+  <text x="44" y="47" fill="#0b0d14" font-size="12" font-weight="800">RAG SYNTHESIS</text>
+  <text x="28" y="95" fill="#ffffff" font-size="22" font-weight="700">Third-Party Consensus</text>
+  <g transform="translate(28, 125)">
+    <text x="0" y="20" fill="#f1f5f9" font-size="15">• Multi-source verified customer reviews</text>
+    <text x="0" y="55" fill="#f1f5f9" font-size="15">• Podcast transcripts &amp; editorial press</text>
+    <text x="0" y="90" fill="#f1f5f9" font-size="15">• Case study metrics corroborated off-site</text>
+    <text x="0" y="125" fill="#f1f5f9" font-size="15">• Zero-hallucination model confidence</text>
+  </g>
+  <line x1="28" y1="290" x2="372" y2="290" stroke="rgba(255,255,255,0.08)"/>
+  <text x="28" y="330" fill="#eab308" font-size="13" font-weight="700">MOAT STRENGTH</text>
+  <text x="28" y="360" fill="#ffffff" font-size="16" font-weight="600">The Undisputed Industry Standard</text>
+</g>
+</svg>
