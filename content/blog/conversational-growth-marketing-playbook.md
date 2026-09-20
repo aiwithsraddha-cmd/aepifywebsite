@@ -16,7 +16,7 @@ featuredImage: "/assets/blog/conversational-growth-marketing-playbook.png"
 imageAlt: "Conversational Growth Marketing Engine, Conversion Funnels, and Pipeline Growth"
 readingTime: "7 min read"
 published: true
-seoTitle: "Conversational Growth Playbook: Scale Customer Acquisition | Aepify"
+seoTitle: "Conversational Growth Playbook: Scale AI Acquisition | Aepify"
 metaDescription: "Learn how to build a high-velocity conversational growth engine. Discover the 4-phase playbook for scaling pipeline and customer acquisition with AI."
 ---
 

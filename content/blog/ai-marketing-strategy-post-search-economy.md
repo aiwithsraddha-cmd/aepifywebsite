@@ -17,7 +17,7 @@ imageAlt: "AI Marketing Strategy, Brand Authority, and Post-Search Economy Archi
 readingTime: "8 min read"
 published: true
 seoTitle: "AI Marketing Strategy in the Post-Search Economy | Aepify"
-metaDescription: "Explore how brand authority, conversational positioning, and defensible moats determine market leadership in the post-search economy."
+metaDescription: "Explore how brand authority, conversational positioning, and defensible moats determine market leadership in the post-search economy. A strategy guide by Aepify."
 ---
 
 <div class="article-takeaway-box">

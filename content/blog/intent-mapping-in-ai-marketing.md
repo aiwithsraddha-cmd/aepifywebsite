@@ -17,7 +17,7 @@ imageAlt: "Intent Mapping in AI Marketing Architecture and Prompt Layers"
 readingTime: "8 min read"
 published: true
 seoTitle: "Intent Mapping in AI Marketing: Reverse-Engineer Buyer Prompts | Aepify"
-metaDescription: "Learn how to build an intent mapping matrix in AI marketing. Reverse-engineer high-value buyer prompts into qualified pipeline with Aepify's guide."
+metaDescription: "Learn how to build an intent mapping matrix in AI marketing. Reverse-engineer high-value buyer prompts into qualified pipeline with Aepify's tactical guide."
 ---
 
 <div class="article-takeaway-box">

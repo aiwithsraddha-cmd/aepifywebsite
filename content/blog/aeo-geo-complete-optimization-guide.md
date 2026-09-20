@@ -18,7 +18,7 @@ featuredImage: "/assets/blog/aeo-geo-complete-optimization-guide.png"
 imageAlt: "AEO and GEO Architecture, Neural Knowledge Graph, and Generative Model Citations"
 readingTime: "9 min read"
 published: true
-seoTitle: "AEO & GEO: Complete Guide to Answer & Generative Engine Optimization | Aepify"
+seoTitle: "AEO & GEO: Complete Answer & Generative Optimization Guide | Aepify"
 metaDescription: "Learn what AEO and GEO are, how LLMs select citations, and how to optimize your website for ChatGPT, Perplexity, Claude, and Gemini with Aepify."
 ---
 

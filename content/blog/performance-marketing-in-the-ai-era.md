@@ -16,8 +16,8 @@ featuredImage: "/assets/blog/performance-marketing-in-the-ai-era.png"
 imageAlt: "Performance Marketing Command Center and Conversational Acquisition Metrics"
 readingTime: "8 min read"
 published: true
-seoTitle: "Performance Marketing in the AI Era: Beyond Traditional CAC & ROAS | Aepify"
-metaDescription: "Discover how AI advertising transforms performance marketing. Learn how to measure conversational ROAS, CPQI, and reduce customer acquisition costs."
+seoTitle: "Performance Marketing in the AI Era: Beyond CAC & ROAS | Aepify"
+metaDescription: "Discover how AI advertising transforms performance marketing. Learn how to measure conversational ROAS, CPQI, and reduce customer acquisition costs with Aepify."
 ---
 
 <div class="article-takeaway-box">

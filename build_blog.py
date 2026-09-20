@@ -25,31 +25,43 @@ CATEGORY_OUTPUT_DIR = OUTPUT_BLOG_DIR / "category"
 SITE_URL = "https://aepify.com"
 BRAND_NAME = "Aepify"
 
-# 6 Required Categories with Slugs and SEO Descriptions
+# 6 Required Categories with Slugs, Strategic Descriptions, and SEO Meta Tags
 CATEGORIES_METADATA = {
     "ChatGPT Ads": {
         "slug": "chatgpt-ads",
-        "description": "Insights, placement breakdowns, and strategic guides for advertising within ChatGPT and OpenAI conversational experiences."
+        "description": "Insights, placement breakdowns, and strategic guides for advertising within ChatGPT and OpenAI conversational experiences.",
+        "seo_title": "ChatGPT Ads: Placement Strategy, Bidding & ROI Guides | Aepify",
+        "meta_description": "Master advertising on ChatGPT. Explore campaign setup frameworks, conversational intent targeting, CPQI economics, and early-mover ad strategies with Aepify."
     },
     "AI Marketing": {
         "slug": "ai-marketing",
-        "description": "High-performance AI marketing frameworks, campaign automation, and modern commercial workflows."
+        "description": "High-performance AI marketing frameworks, campaign automation, and modern commercial workflows.",
+        "seo_title": "AI Marketing: Conversational Strategies & Buyer Intent | Aepify",
+        "meta_description": "High-impact AI marketing strategies for high-consideration businesses. Learn prompt reverse-engineering, intent mapping architectures, and agentic workflows."
     },
     "Performance Marketing": {
         "slug": "performance-marketing",
-        "description": "Data-driven ad management, conversion rate optimization, and acquisition metrics for high-consideration businesses."
+        "description": "Data-driven ad management, conversion rate optimization, and acquisition metrics for high-consideration businesses.",
+        "seo_title": "Performance Marketing in the AI Era: CPQI & Conversational ROAS | Aepify",
+        "meta_description": "Engineer profitable customer acquisition in conversational AI. Calculate Cost Per Qualified Intent (CPQI), eliminate waste spend, and scale conversational ROAS."
     },
     "Growth Marketing": {
         "slug": "growth-marketing",
-        "description": "Scalable growth playbooks, funnel architecture, and customer acquisition for service businesses and modern SMBs."
+        "description": "Scalable growth playbooks, funnel architecture, and customer acquisition for service businesses and modern SMBs.",
+        "seo_title": "Conversational Growth Marketing: B2B Playbooks & Funnels | Aepify",
+        "meta_description": "Accelerate B2B sales pipeline with conversational growth funnels. Replace low-converting 7-field forms with interactive diagnostic audits and scorecards."
     },
     "Marketing Strategy": {
         "slug": "marketing-strategy",
-        "description": "Long-term positioning, market timing, and strategic competitive advantages in AI-native ecosystems."
+        "description": "Long-term positioning, market timing, and strategic competitive advantages in AI-native ecosystems.",
+        "seo_title": "AI Marketing Strategy: Brand Authority in the Post-Search Economy | Aepify",
+        "meta_description": "Build defensible AI brand moats and capture synthetic consensus. Strategic positioning frameworks for businesses navigating the post-search economy."
     },
     "AEO & GEO": {
         "slug": "aeo-geo",
-        "description": "Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) tactics for modern search algorithms."
+        "description": "Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) tactics for modern search algorithms.",
+        "seo_title": "AEO & GEO Optimization: Ranking in ChatGPT, Perplexity & Claude | Aepify",
+        "meta_description": "The definitive guide to Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO). Optimize schema, RAG retrieval, and AI search citations."
     }
 }
 
@@ -514,23 +526,43 @@ def build_index_page(articles):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>AI Advertising, ChatGPT Ads &amp; Buyer Intent | Aepify</title>
-  <meta name="description" content="Insights on ChatGPT Ads, AI advertising, buyer intent, AI search, performance marketing and the future of customer discovery.">
+  <title>Aepify Blog: ChatGPT Ads, AI Marketing &amp; Conversational Search</title>
+  <meta name="description" content="Explore expert guides, benchmarks, and strategies on ChatGPT Ads, conversational intent mapping, CPQI metrics, AEO &amp; GEO optimization, and modern B2B growth.">
   <link rel="canonical" href="{SITE_URL}/blog/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="AI Advertising, ChatGPT Ads &amp; Buyer Intent | Aepify">
-  <meta property="og:description" content="Insights on ChatGPT Ads, AI advertising, buyer intent, AI search, performance marketing and the future of customer discovery.">
+  <meta property="og:title" content="Aepify Blog: ChatGPT Ads, AI Marketing &amp; Conversational Search">
+  <meta property="og:description" content="Explore expert guides, benchmarks, and strategies on ChatGPT Ads, conversational intent mapping, CPQI metrics, AEO &amp; GEO optimization, and modern B2B growth.">
   <meta property="og:url" content="{SITE_URL}/blog/">
   <meta property="og:image" content="{SITE_URL}/assets/blog/what-are-chatgpt-ads.png">
   <meta property="og:site_name" content="Aepify">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Advertising, ChatGPT Ads &amp; Buyer Intent | Aepify">
-  <meta name="twitter:description" content="Insights on ChatGPT Ads, AI advertising, buyer intent, AI search, performance marketing and the future of customer discovery.">
+  <meta name="twitter:title" content="Aepify Blog: ChatGPT Ads, AI Marketing &amp; Conversational Search">
+  <meta name="twitter:description" content="Explore expert guides, benchmarks, and strategies on ChatGPT Ads, conversational intent mapping, CPQI metrics, AEO &amp; GEO optimization, and modern B2B growth.">
   <meta name="twitter:image" content="{SITE_URL}/assets/blog/what-are-chatgpt-ads.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Aepify Blog: ChatGPT Ads, AI Marketing & Conversational Search",
+    "description": "Explore expert guides, benchmarks, and strategies on ChatGPT Ads, conversational intent mapping, CPQI metrics, AEO & GEO optimization, and modern B2B growth.",
+    "url": "{SITE_URL}/blog/",
+    "publisher": {{
+      "@type": "Organization",
+      "name": "Aepify",
+      "url": "{SITE_URL}",
+      "logo": {{
+        "@type": "ImageObject",
+        "url": "{SITE_URL}/logo-cropped.png"
+      }}
+    }}
+  }}
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png?v=2">
@@ -605,8 +637,8 @@ def build_category_page(cat_name, cat_info, cat_articles):
     cat_slug = cat_info["slug"]
     cat_desc = cat_info["description"]
     canonical_url = f"{SITE_URL}/blog/category/{cat_slug}/"
-    page_title = f"{cat_name} - AI Advertising & Strategy | Aepify"
-    meta_desc = f"{cat_desc} Read expert insights and practical guides from Aepify."
+    page_title = cat_info.get("seo_title", f"{cat_name} - AI Advertising & Strategy | Aepify")
+    meta_desc = cat_info.get("meta_description", f"{cat_desc} Read expert insights and practical guides from Aepify.")
 
     if cat_articles:
         cards_html = "\n".join([render_blog_card(art) for art in cat_articles])
@@ -655,7 +687,53 @@ def build_category_page(cat_name, cat_info, cat_articles):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/styles.css?v=3.3">
+    <link rel="stylesheet" href="/styles.css?v=3.3">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "{escape_html(page_title)}",
+    "description": "{escape_html(meta_desc)}",
+    "url": "{canonical_url}",
+    "publisher": {{
+      "@type": "Organization",
+      "name": "Aepify",
+      "url": "{SITE_URL}",
+      "logo": {{
+        "@type": "ImageObject",
+        "url": "{SITE_URL}/logo-cropped.png"
+      }}
+    }}
+  }}
+  </script>
+  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "{SITE_URL}/"
+      }},
+      {{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "{SITE_URL}/blog/"
+      }},
+      {{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{escape_html(cat_name)}",
+        "item": "{canonical_url}"
+      }}
+    ]
+  }}
+  </script>
 </head>
 <body class="blog-page">
   <div class="site-ambient-grid" aria-hidden="true"></div>
