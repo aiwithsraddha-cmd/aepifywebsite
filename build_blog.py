@@ -333,6 +333,17 @@ def format_date(date_str):
 
 # --- TEMPLATES ---
 
+def get_google_tag():
+    return '''  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6SPZVXL7F1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6SPZVXL7F1');
+  </script>'''
+
 def get_site_header(active_nav="blog"):
     return f'''  <!-- STICKY COMPACTING NAVIGATION -->
   <header class="navbar" id="navbar">
@@ -518,12 +529,15 @@ def build_index_page(articles):
         cat_buttons.append(f'<button class="blog-cat-btn" data-category="{escape_html(cat_name.lower())}">{escape_html(cat_name)}</button>')
     cat_buttons_html = "\n            ".join(cat_buttons)
 
+    google_tag = get_google_tag()
     header = get_site_header(active_nav="blog")
     footer = get_site_footer()
 
     html = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
+{google_tag}
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Aepify Blog: ChatGPT Ads, AI Marketing &amp; Conversational Search</title>
@@ -652,12 +666,15 @@ def build_category_page(cat_name, cat_info, cat_articles):
           <a href="/blog/" class="btn btn-secondary btn-sm">Explore all articles →</a>
         </div>'''
 
+    google_tag = get_google_tag()
     header = get_site_header(active_nav="blog")
     footer = get_site_footer()
 
     html = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
+{google_tag}
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>{escape_html(page_title)}</title>
@@ -883,6 +900,7 @@ def build_article_page(article, all_articles):
     encoded_url = canonical_url.replace(":", "%3A").replace("/", "%2F")
     encoded_title = title.replace(" ", "%20").replace("?", "%3F")
 
+    google_tag = get_google_tag()
     header = get_site_header(active_nav="blog")
     footer = get_site_footer()
     json_article_str = json.dumps(json_ld_article, indent=2)
@@ -893,6 +911,8 @@ def build_article_page(article, all_articles):
     html = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
+{google_tag}
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>{escape_html(seo_title)}</title>
