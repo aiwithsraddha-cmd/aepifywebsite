@@ -573,7 +573,7 @@ def build_index_page(articles):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/styles.css?v=3.3">
+  <link rel="stylesheet" href="/styles.css?v=4.0">
 </head>
 <body class="blog-page">
   <div class="site-ambient-grid" aria-hidden="true"></div>
@@ -628,7 +628,7 @@ def build_index_page(articles):
 
 {footer}
 
-  <script src="/js/blog.js?v=1.1"></script>
+  <script src="/js/blog.js?v=2.0"></script>
 </body>
 </html>'''
     return html
@@ -687,7 +687,7 @@ def build_category_page(cat_name, cat_info, cat_articles):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/styles.css?v=3.3">
+  <link rel="stylesheet" href="/styles.css?v=4.0">
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -769,7 +769,7 @@ def build_category_page(cat_name, cat_info, cat_articles):
 
 {footer}
 
-  <script src="/js/blog.js?v=1.1"></script>
+  <script src="/js/blog.js?v=2.0"></script>
 </body>
 </html>'''
     return html
@@ -925,7 +925,7 @@ def build_article_page(article, all_articles):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/styles.css?v=3.3">
+  <link rel="stylesheet" href="/styles.css?v=4.0">
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -954,7 +954,7 @@ def build_article_page(article, all_articles):
     <header class="article-header">
       <a href="/blog/category/{cat_slug}/" class="article-category-badge">{escape_html(category)}</a>
       <h1 class="article-h1">{escape_html(title)}</h1>
-      <p class="article-subtitle" style="font-size: 1.18rem; color: var(--color-muted); line-height: 1.6; margin-bottom: 24px;">
+      <p class="article-subtitle">
         {escape_html(description)}
       </p>
 
@@ -1066,7 +1066,7 @@ def build_article_page(article, all_articles):
 
 {footer}
 
-  <script src="/js/blog.js?v=1.1"></script>
+  <script src="/js/blog.js?v=2.0"></script>
 </body>
 </html>'''
     return html
