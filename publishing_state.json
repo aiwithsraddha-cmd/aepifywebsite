@@ -8,11 +8,11 @@
     "Marketing Strategy",
     "AEO & GEO"
   ],
-  "current_rotation_position": 2,
-  "next_category": "AI Marketing",
-  "last_published_date": "2026-10-06",
-  "last_published_category": "ChatGPT Ads",
-  "total_published": 13,
+  "current_rotation_position": 3,
+  "next_category": "Performance Marketing",
+  "last_published_date": "2026-10-08",
+  "last_published_category": "AI Marketing",
+  "total_published": 14,
   "history": [
     {
       "cycle": 1,
@@ -167,6 +167,18 @@
       "title": "ChatGPT Ads Context Hints Explained: How to Target High-Intent Buyer Conversations Without Keywords",
       "url": "https://aepify.com/blog/chatgpt-ads-context-hints-explained/",
       "primary_keyword": "ChatGPT Ads",
+      "funnel_stage": "MOFU",
+      "status": "published"
+    },
+    {
+      "cycle": 3,
+      "day": 14,
+      "date": "2026-10-08",
+      "category": "AI Marketing",
+      "slug": "how-customers-use-ai-before-buying",
+      "title": "How Customers Use AI Before Buying: Inside the Conversational Evaluation Loop",
+      "url": "https://aepify.com/blog/how-customers-use-ai-before-buying/",
+      "primary_keyword": "AI Marketing",
       "funnel_stage": "MOFU",
       "status": "published"
     }
