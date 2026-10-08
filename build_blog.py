@@ -356,9 +356,10 @@ def get_site_header(active_nav="blog"):
         <a href="/#who-its-for" class="nav-link">Who It's For</a>
         <a href="/#how-it-works" class="nav-link">How It Works</a>
         <a href="/#opportunity-engine" class="nav-link">Opportunity Score</a>
+        <a href="/blog/" class="nav-link{' active' if active_nav == 'blog' else ''}">Blog</a>
+        <a href="/news/" class="nav-link{' active' if active_nav == 'news' else ''}">News</a>
         <a href="/#pricing" class="nav-link">Pricing</a>
         <a href="/#faq" class="nav-link">FAQ</a>
-        <a href="/blog/" class="nav-link{' active' if active_nav == 'blog' else ''}">Blog</a>
       </nav>
 
       <div class="nav-actions">
@@ -379,9 +380,10 @@ def get_site_header(active_nav="blog"):
         <a href="/#who-its-for" class="mobile-nav-link">Who It's For</a>
         <a href="/#how-it-works" class="mobile-nav-link">How It Works</a>
         <a href="/#opportunity-engine" class="mobile-nav-link">Opportunity Score</a>
+        <a href="/blog/" class="mobile-nav-link{' active' if active_nav == 'blog' else ''}">Blog</a>
+        <a href="/news/" class="mobile-nav-link{' active' if active_nav == 'news' else ''}">News</a>
         <a href="/#pricing" class="mobile-nav-link">Pricing</a>
         <a href="/#faq" class="mobile-nav-link">FAQ</a>
-        <a href="/blog/" class="mobile-nav-link{' active' if active_nav == 'blog' else ''}">Blog</a>
         <div class="mobile-menu-cta">
           <a href="https://tally.so/r/GxZpre" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full mobile-cta-btn">
             Get Your FREE Opportunity Report →
@@ -430,9 +432,10 @@ def get_site_footer():
             <a href="/#who-its-for" class="footer-link">Who It's For</a>
             <a href="/#how-it-works" class="footer-link">How It Works</a>
             <a href="/#opportunity-engine" class="footer-link">Opportunity Score</a>
+            <a href="/blog/" class="footer-link">Blog</a>
+            <a href="/news/" class="footer-link">News</a>
             <a href="/#pricing" class="footer-link">Pricing</a>
             <a href="/#faq" class="footer-link">FAQ</a>
-            <a href="/blog/" class="footer-link">Blog</a>
           </nav>
         </div>
 

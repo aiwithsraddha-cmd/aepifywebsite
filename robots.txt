@@ -3,3 +3,4 @@ Allow: /
 Disallow: /admin/
 
 Sitemap: https://aepify.com/sitemap.xml
+Sitemap: https://aepify.com/news-sitemap.xml

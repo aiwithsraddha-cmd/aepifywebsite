@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  <url>
+    <loc>https://aepify.com/news/openai-confirms-ad-formats-testing-chatgpt/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Aepify News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-04T14:30:00Z</news:publication_date>
+      <news:title>OpenAI Officially Confirms Ad Formats Testing in ChatGPT Free and Search Tiers</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://aepify.com/news/openai-previews-sponsored-context-architecture/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Aepify News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-02T18:00:00Z</news:publication_date>
+      <news:title>OpenAI Previews &#x27;Sponsored Context&#x27; Architecture for Conversational Search</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://aepify.com/news/openai-reportedly-builds-self-serve-ads-manager/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Aepify News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-28T11:00:00Z</news:publication_date>
+      <news:title>OpenAI Reportedly Builds Dedicated Ads Manager for Self-Serve Performance Campaigns</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://aepify.com/news/european-dma-implications-chatgpt-ads-rollout/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Aepify News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-22T09:30:00Z</news:publication_date>
+      <news:title>European Digital Markets Act (DMA) Implications for ChatGPT Advertising Rollouts</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://aepify.com/news/openai-tests-conversational-ad-measurement-attribution/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Aepify News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-17T16:15:00Z</news:publication_date>
+      <news:title>OpenAI Tests Conversational Ad Measurement &amp; Attribution Connectors with Early Ad-Tech Partners</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://aepify.com/news/openai-apac-expansion-brand-sponsorships-japan-india/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Aepify News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-11T08:00:00Z</news:publication_date>
+      <news:title>Asia-Pacific Expansion: OpenAI Explores Localized Brand Sponsorships in Japan and India</news:title>
+    </news:news>
+  </url>
+</urlset>

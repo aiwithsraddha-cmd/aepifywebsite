@@ -1,0 +1,23 @@
+{
+  "last_successful_scan": "2026-10-08T12:00:00Z",
+  "next_scheduled_scan": "2026-10-08T12:30:00Z",
+  "scan_interval_minutes": 30,
+  "stories_discovered": 18,
+  "stories_published": 6,
+  "stories_skipped_low_importance": 7,
+  "duplicate_stories_merged": 5,
+  "failed_sources": 0,
+  "pending_verification": 0,
+  "tier1_sources_active": 4,
+  "tier2_sources_active": 12,
+  "monitored_regions": [
+    "Global",
+    "North America",
+    "Europe",
+    "UK",
+    "India",
+    "Asia",
+    "Middle East",
+    "Latin America"
+  ]
+}
