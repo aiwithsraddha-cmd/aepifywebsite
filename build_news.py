@@ -368,57 +368,6 @@ def build_index_page(news_items, status):
       <p class="news-hero-subtitle">Everything changing in ChatGPT advertising, in one place.</p>
     </header>
 
-    <!-- INTELLIGENCE STATUS BAR -->
-    <div class="news-status-bar">
-      <div class="news-status-left">
-        <div class="news-status-pill">
-          <span class="pulse-dot"></span> Live Monitoring Active
-        </div>
-        <span class="news-status-divider">•</span>
-        <div class="news-status-meta">Last Verified Scan: <strong>{html.escape(last_scan_str)}</strong></div>
-        <span class="news-status-divider">•</span>
-        <div class="news-status-meta">Sources: <strong>Tier 1 &amp; Tier 2 Global Publications</strong></div>
-      </div>
-      <div class="news-status-count">
-        <span id="newsCountDisplay">{total_published}</span> Verified Briefs
-      </div>
-    </div>
-
-    <!-- CONTROLS & MULTI-FILTER BAR -->
-    <div class="news-controls">
-      <!-- Search Input -->
-      <div class="news-search-box">
-        <svg class="news-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input type="search" id="newsSearchInput" class="news-search-input" placeholder="Search by topic, country, company, or keyword (e.g. Ads Manager, India, DMA, formats)..." aria-label="Search news articles">
-      </div>
-
-      <!-- Region Filter Pills -->
-      <div class="news-filter-group" id="regionFilters" role="radiogroup" aria-label="Filter by region">
-        <span class="news-filter-label">Region:</span>
-        <button type="button" class="news-pill active" data-filter="region" data-value="all">All</button>
-        <button type="button" class="news-pill" data-filter="region" data-value="Global">Global</button>
-        <button type="button" class="news-pill" data-filter="region" data-value="North America">North America</button>
-        <button type="button" class="news-pill" data-filter="region" data-value="Europe">Europe &amp; UK</button>
-        <button type="button" class="news-pill" data-filter="region" data-value="Asia">Asia &amp; India</button>
-      </div>
-
-      <!-- Topic Filter Pills -->
-      <div class="news-filter-group" id="topicFilters" role="radiogroup" aria-label="Filter by topic">
-        <span class="news-filter-label">Topic:</span>
-        <button type="button" class="news-pill active" data-filter="topic" data-value="all">All Topics</button>
-        <button type="button" class="news-pill" data-filter="topic" data-value="Ad Formats">Ad Formats</button>
-        <button type="button" class="news-pill" data-filter="topic" data-value="Ads Manager">Ads Manager</button>
-        <button type="button" class="news-pill" data-filter="topic" data-value="Product Updates">Product Updates</button>
-        <button type="button" class="news-pill" data-filter="topic" data-value="Targeting">Targeting</button>
-        <button type="button" class="news-pill" data-filter="topic" data-value="Measurement">Measurement</button>
-        <button type="button" class="news-pill" data-filter="topic" data-value="Availability">Availability</button>
-        <button type="button" class="news-pill" data-filter="topic" data-value="Policy">Policy</button>
-      </div>
-    </div>
-
     {featured_html}
 
     <!-- LATEST NEWS GRID -->
@@ -426,13 +375,6 @@ def build_index_page(news_items, status):
       <h2 style="font-size: 1.5rem; font-weight: 800; margin: 0 0 20px; color: var(--color-news-black);">Latest Intelligence Briefs</h2>
       <div class="news-grid" id="newsGrid">
         {cards_grid_html}
-      </div>
-
-      <!-- Empty State Fallback -->
-      <div class="news-empty-state" id="newsEmptyState" style="display: none;">
-        <h3 class="news-empty-title">No Matching Intelligence Found</h3>
-        <p class="news-empty-text">No verified ChatGPT Ads stories matched your current search filters. Try clearing your search query or selecting "All" regions.</p>
-        <button type="button" class="btn btn-secondary btn-sm" id="resetFiltersBtn" style="margin-top: 14px;">Reset All Filters</button>
       </div>
     </section>
 
@@ -449,19 +391,9 @@ def build_index_page(news_items, status):
 
   {get_site_footer()}
 
-  <!-- CLIENT-SIDE SEARCH & FILTER CONTROLLER -->
   <script>
+  // Mobile drawer navigation toggle
   document.addEventListener("DOMContentLoaded", function() {{
-    const searchInput = document.getElementById("newsSearchInput");
-    const regionPills = document.querySelectorAll('#regionFilters .news-pill');
-    const topicPills = document.querySelectorAll('#topicFilters .news-pill');
-    const newsCards = document.querySelectorAll(".news-card");
-    const featuredCard = document.querySelector(".news-featured-card");
-    const emptyState = document.getElementById("newsEmptyState");
-    const countDisplay = document.getElementById("newsCountDisplay");
-    const resetBtn = document.getElementById("resetFiltersBtn");
-
-    // Mobile nav toggle
     const mobileToggle = document.getElementById("mobileToggle");
     const mobileMenu = document.getElementById("mobileMenu");
     if (mobileToggle && mobileMenu) {{
@@ -470,101 +402,6 @@ def build_index_page(news_items, status):
         mobileToggle.classList.toggle("active", open);
         mobileToggle.setAttribute("aria-expanded", open ? "true" : "false");
         document.body.classList.toggle("menu-open", open);
-      }});
-    }}
-
-    let selectedRegion = "all";
-    let selectedTopic = "all";
-    let searchQuery = "";
-
-    function filterStories() {{
-      let visibleCount = 0;
-
-      // Filter featured card
-      if (featuredCard) {{
-        const fRegion = featuredCard.getAttribute("data-region") || "";
-        const fTopics = (featuredCard.getAttribute("data-topics") || "").split(",");
-        const fText = (featuredCard.innerText || "").toLowerCase();
-
-        const matchRegion = (selectedRegion === "all") || (fRegion.toLowerCase().includes(selectedRegion.toLowerCase()));
-        const matchTopic = (selectedTopic === "all") || fTopics.some(t => t.trim().toLowerCase() === selectedTopic.toLowerCase());
-        const matchSearch = !searchQuery || fText.includes(searchQuery);
-
-        if (matchRegion && matchTopic && matchSearch) {{
-          featuredCard.parentElement.style.display = "block";
-          visibleCount++;
-        }} else {{
-          featuredCard.parentElement.style.display = "none";
-        }}
-      }}
-
-      // Filter grid cards
-      newsCards.forEach(card => {{
-        const cRegion = card.getAttribute("data-region") || "";
-        const cTopics = (card.getAttribute("data-topics") || "").split(",");
-        const cTitle = card.getAttribute("data-title") || "";
-        const cSummary = card.getAttribute("data-summary") || "";
-        const cText = (card.innerText || "").toLowerCase();
-
-        const matchRegion = (selectedRegion === "all") || (cRegion.toLowerCase().includes(selectedRegion.toLowerCase()));
-        const matchTopic = (selectedTopic === "all") || cTopics.some(t => t.trim().toLowerCase() === selectedTopic.toLowerCase());
-        const matchSearch = !searchQuery || cText.includes(searchQuery) || cTitle.includes(searchQuery) || cSummary.includes(searchQuery);
-
-        if (matchRegion && matchTopic && matchSearch) {{
-          card.style.display = "flex";
-          visibleCount++;
-        }} else {{
-          card.style.display = "none";
-        }}
-      }});
-
-      if (countDisplay) {{
-        countDisplay.textContent = visibleCount;
-      }}
-
-      if (emptyState) {{
-        emptyState.style.display = visibleCount === 0 ? "block" : "none";
-      }}
-    }}
-
-    // Region Pills
-    regionPills.forEach(pill => {{
-      pill.addEventListener("click", () => {{
-        regionPills.forEach(p => p.classList.remove("active"));
-        pill.classList.add("active");
-        selectedRegion = pill.getAttribute("data-value");
-        filterStories();
-      }});
-    }});
-
-    // Topic Pills
-    topicPills.forEach(pill => {{
-      pill.addEventListener("click", () => {{
-        topicPills.forEach(p => p.classList.remove("active"));
-        pill.classList.add("active");
-        selectedTopic = pill.getAttribute("data-value");
-        filterStories();
-      }});
-    }});
-
-    // Search Input
-    if (searchInput) {{
-      searchInput.addEventListener("input", (e) => {{
-        searchQuery = e.target.value.trim().toLowerCase();
-        filterStories();
-      }});
-    }}
-
-    // Reset button
-    if (resetBtn) {{
-      resetBtn.addEventListener("click", () => {{
-        selectedRegion = "all";
-        selectedTopic = "all";
-        searchQuery = "";
-        if (searchInput) searchInput.value = "";
-        regionPills.forEach(p => p.classList.toggle("active", p.getAttribute("data-value") === "all"));
-        topicPills.forEach(p => p.classList.toggle("active", p.getAttribute("data-value") === "all"));
-        filterStories();
       }});
     }}
   }});

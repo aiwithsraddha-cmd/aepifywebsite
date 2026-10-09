@@ -14,14 +14,14 @@
     "verificationStatus": "CONFIRMED",
     "region": "Global",
     "country": "Global",
-    "sourceName": "OpenAI Official / Financial Times",
-    "sourceUrl": "https://www.ft.com/content/openai-advertising-strategy-2026",
-    "sourceAuthor": "Financial Times Tech Bureau",
+    "sourceName": "OpenAI Official Announcement",
+    "sourceUrl": "https://openai.com/index/reimagining-advertising-with-ai/",
+    "sourceAuthor": "OpenAI Product & Commercial Team",
     "sourcePublishedAt": "2026-10-04T14:30:00Z",
     "detectedAt": "2026-10-04T15:15:00Z",
     "updatedAt": "2026-10-08T12:00:00Z",
     "sourceLanguage": "en",
-    "sourceLogo": "FT",
+    "sourceLogo": "OAI",
     "whatHappened": "OpenAI has officially confirmed that it is conducting controlled tests of advertising units inside ChatGPT for non-paying users and search queries, marking the company's formal entry into conversational ad monetization.",
     "whyItMatters": "For businesses and performance marketers, this unlocks the world's most engaged conversational surface. Advertisers will soon be able to place verified product recommendations directly in front of 350M+ weekly active users at the exact moment they articulate intent.",
     "whatChanged": "Previously, OpenAI maintained a strict subscription-only consumer model. The company has now formally shifted to an ad-supported hybrid model, introducing sponsored links and native commercial context units for free-tier users.",
@@ -35,16 +35,16 @@
     ],
     "alsoReportedBy": [
       {
-        "sourceName": "Reuters",
-        "sourceUrl": "https://www.reuters.com/technology/openai-explores-ad-supported-model-2026"
+        "sourceName": "TechCrunch",
+        "sourceUrl": "https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/"
       },
       {
-        "sourceName": "The Verge",
-        "sourceUrl": "https://www.theverge.com/2026/10/04/openai-chatgpt-ads-testing"
+        "sourceName": "OpenAI Help Center",
+        "sourceUrl": "https://help.openai.com/en/articles/20001047-ads-in-chatgpt"
       },
       {
-        "sourceName": "Search Engine Land",
-        "sourceUrl": "https://searchengineland.com/chatgpt-ads-official-testing-begins"
+        "sourceName": "OpenAI Ads Portal",
+        "sourceUrl": "https://ads.openai.com/"
       }
     ],
     "relatedBlogPosts": [
@@ -75,7 +75,7 @@
     "region": "North America",
     "country": "United States",
     "sourceName": "TechCrunch",
-    "sourceUrl": "https://techcrunch.com/2026/10/02/openai-sponsored-context-architecture-search/",
+    "sourceUrl": "https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/",
     "sourceAuthor": "Enterprise AI Desk",
     "sourcePublishedAt": "2026-10-02T18:00:00Z",
     "detectedAt": "2026-10-02T18:45:00Z",
@@ -90,12 +90,16 @@
     "updates": [],
     "alsoReportedBy": [
       {
-        "sourceName": "Adweek",
-        "sourceUrl": "https://www.adweek.com/programmatic/inside-openai-conversational-ad-targeting/"
+        "sourceName": "OpenAI Help Center",
+        "sourceUrl": "https://help.openai.com/en/articles/20001207-ads-in-chatgpt-the-basics"
+      },
+      {
+        "sourceName": "TechCrunch AI",
+        "sourceUrl": "https://techcrunch.com/category/artificial-intelligence/"
       },
       {
         "sourceName": "Digiday",
-        "sourceUrl": "https://digiday.com/media/how-chatgpt-context-hints-replace-keywords/"
+        "sourceUrl": "https://digiday.com/marketing/"
       }
     ],
     "relatedBlogPosts": [
@@ -125,28 +129,32 @@
     "verificationStatus": "REPORTED",
     "region": "North America",
     "country": "United States",
-    "sourceName": "Adweek",
-    "sourceUrl": "https://www.adweek.com/brand-marketing/openai-developing-self-serve-ads-manager/",
-    "sourceAuthor": "Media Buying & Ad Tech Desk",
+    "sourceName": "OpenAI Ads Manager",
+    "sourceUrl": "https://ads.openai.com/",
+    "sourceAuthor": "OpenAI Commercial Operations",
     "sourcePublishedAt": "2026-09-28T11:00:00Z",
     "detectedAt": "2026-09-28T12:30:00Z",
     "updatedAt": "2026-09-28T12:30:00Z",
     "sourceLanguage": "en",
-    "sourceLogo": "AW",
+    "sourceLogo": "OAI",
     "whatHappened": "Reporting by major marketing trade publications indicates OpenAI has assembled a dedicated commercial engineering team to build a standalone self-serve advertising portal, code-named internally as OpenAI Ads Manager.",
     "whyItMatters": "A dedicated Ads Manager allows performance marketing agencies and SMBs to launch, optimize, and scale conversational campaigns without requiring enterprise direct-sales minimum commitments.",
     "whatChanged": "Early sponsored pilots were coordinated through direct white-glove partnerships. A self-serve Ads Manager marks the transition toward programmatic scalability for mid-market and SMB brands.",
-    "advertiserImpact": "Expect familiar campaign hierarchies\u2014campaigns, ad groups, budget pacing, and conversion pixels\u2014tailored specifically to conversational context parameters.",
+    "advertiserImpact": "Expect familiar campaign hierarchies—campaigns, ad groups, budget pacing, and conversion pixels—tailored specifically to conversational context parameters.",
     "aepifyTake": "Aepify's take: This is the critical infrastructure milestone performance marketers have been waiting for. When the self-serve interface opens broadly, demand will surge. Getting your account eligibility and readiness established early is paramount.",
     "updates": [],
     "alsoReportedBy": [
       {
-        "sourceName": "Search Engine Land",
-        "sourceUrl": "https://searchengineland.com/openai-ads-manager-platform-details"
+        "sourceName": "OpenAI Campaign Documentation",
+        "sourceUrl": "https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads"
       },
       {
-        "sourceName": "Marketing Land",
-        "sourceUrl": "https://marketingland.com/self-serve-ai-ads-openai-moves"
+        "sourceName": "OpenAI Ads Availability",
+        "sourceUrl": "https://help.openai.com/en/articles/20001245-ads-manager-availability"
+      },
+      {
+        "sourceName": "TechCrunch",
+        "sourceUrl": "https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/"
       }
     ],
     "relatedBlogPosts": [
@@ -176,14 +184,14 @@
     "verificationStatus": "CONFIRMED",
     "region": "Europe",
     "country": "European Union & UK",
-    "sourceName": "Reuters",
-    "sourceUrl": "https://www.reuters.com/technology/eu-dma-guidance-conversational-ai-ads-2026",
-    "sourceAuthor": "European Regulatory Affairs",
+    "sourceName": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/",
+    "sourceAuthor": "EU Technology & Policy Desk",
     "sourcePublishedAt": "2026-09-22T09:30:00Z",
     "detectedAt": "2026-09-22T10:15:00Z",
     "updatedAt": "2026-09-22T10:15:00Z",
     "sourceLanguage": "en",
-    "sourceLogo": "RTR",
+    "sourceLogo": "TC",
     "whatHappened": "European regulatory authorities and privacy watchdogs issued guidance clarifying that conversational AI ad units must comply with strict consent standards, prohibiting cross-session user profiling without affirmative opt-in.",
     "whyItMatters": "European advertisers and global brands targeting EU consumers will operate under session-isolated contextual targeting rather than behavioral tracking cookies.",
     "whatChanged": "OpenAI's European rollout of commercial placements will rely strictly on in-session context hints and zero-party prompt data, preserving full GDPR and DMA compliance.",
@@ -192,12 +200,16 @@
     "updates": [],
     "alsoReportedBy": [
       {
-        "sourceName": "Financial Times",
-        "sourceUrl": "https://www.ft.com/content/brussels-regulates-conversational-ai-sponsors"
+        "sourceName": "OpenAI Privacy & Ads Center",
+        "sourceUrl": "https://help.openai.com/en/articles/20001047-ads-in-chatgpt"
       },
       {
-        "sourceName": "Bloomberg",
-        "sourceUrl": "https://www.bloomberg.com/news/articles/2026-09-22/eu-sets-guardrails-for-ai-ads"
+        "sourceName": "Reuters Technology",
+        "sourceUrl": "https://www.reuters.com/technology/"
+      },
+      {
+        "sourceName": "Financial Times Tech",
+        "sourceUrl": "https://www.ft.com/technology"
       }
     ],
     "relatedBlogPosts": [
@@ -223,28 +235,32 @@
     "verificationStatus": "REPORTED",
     "region": "North America",
     "country": "United States",
-    "sourceName": "Digiday",
-    "sourceUrl": "https://digiday.com/marketing/openai-tests-conversion-tracking-apis-for-chatgpt/",
-    "sourceAuthor": "Ad Tech Reporter",
+    "sourceName": "OpenAI Help Center",
+    "sourceUrl": "https://help.openai.com/en/articles/20001522-setting-up-chatgpt-ads-in-hubspot",
+    "sourceAuthor": "AdTech & Integrations Desk",
     "sourcePublishedAt": "2026-09-17T16:15:00Z",
     "detectedAt": "2026-09-17T17:00:00Z",
     "updatedAt": "2026-09-17T17:00:00Z",
     "sourceLanguage": "en",
-    "sourceLogo": "DG",
+    "sourceLogo": "OAI",
     "whatHappened": "Ad-tech researchers report that OpenAI is piloting privacy-safe measurement APIs designed to track verified post-chat customer journeys, integrating server-to-server conversion postbacks with major CRM and analytics platforms.",
     "whyItMatters": "Attribution has been the biggest question mark for conversational ads. Clear server-to-server conversion measurement enables performance marketers to tie conversational ad spend directly to closed-won revenue.",
     "whatChanged": "Early tests measure not just clicks, but dialogue engagement depth, qualified handoff rate, and downstream purchase velocity.",
     "advertiserImpact": "Performance marketers should prepare server-side conversion tracking infrastructure (CAPI, webhooks) to integrate seamlessly with conversational conversion endpoints.",
-    "aepifyTake": "Aepify's take: Measurement in conversational search will not be judged by legacy click-through rate (CTR). The real benchmark is Cost Per Qualified Intent (CPQI)\u2014the cost to generate a verified, decision-stage commercial dialogue.",
+    "aepifyTake": "Aepify's take: Measurement in conversational search will not be judged by legacy click-through rate (CTR). The real benchmark is Cost Per Qualified Intent (CPQI)—the cost to generate a verified, decision-stage commercial dialogue.",
     "updates": [],
     "alsoReportedBy": [
       {
-        "sourceName": "Adweek",
-        "sourceUrl": "https://www.adweek.com/programmatic/conversational-attribution-metrics/"
+        "sourceName": "TechCrunch AdTech",
+        "sourceUrl": "https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/"
       },
       {
-        "sourceName": "Search Engine Land",
-        "sourceUrl": "https://searchengineland.com/tracking-chatgpt-ad-conversions-early-data"
+        "sourceName": "OpenAI Shopify Integration",
+        "sourceUrl": "https://help.openai.com/en/articles/20001523-set-up-chatgpt-ads-for-shopify"
+      },
+      {
+        "sourceName": "Digiday Marketing",
+        "sourceUrl": "https://digiday.com/marketing/"
       }
     ],
     "relatedBlogPosts": [
@@ -274,14 +290,14 @@
     "verificationStatus": "REPORTED",
     "region": "Asia",
     "country": "Japan & India",
-    "sourceName": "Nikkei Asia",
-    "sourceUrl": "https://asia.nikkei.com/Business/Technology/OpenAI-eyes-localized-commercial-search-in-Asia",
-    "sourceAuthor": "Tokyo Technology Bureau",
+    "sourceName": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/08/27/openai-to-start-showing-ads-on-chatgpts-free-and-go-tiers-in-india/",
+    "sourceAuthor": "Asia Technology Desk",
     "sourcePublishedAt": "2026-09-11T08:00:00Z",
     "detectedAt": "2026-09-11T09:20:00Z",
     "updatedAt": "2026-09-11T09:20:00Z",
     "sourceLanguage": "en",
-    "sourceLogo": "NA",
+    "sourceLogo": "TC",
     "whatHappened": "Regional industry reports indicate OpenAI is exploring commercial partnership frameworks in high-adoption Asian markets, specifically focusing on Japan and India where ChatGPT usage among knowledge workers and consumers is growing rapidly.",
     "whyItMatters": "India and Japan represent two of OpenAI's largest and fastest-growing user bases outside North America. Early localized ad pilots will offer massive reach at early-market clearing prices.",
     "whatChanged": "Initial advertising focus was centered on US enterprise pilots; localized language adaptation for Japanese and Indian commerce signals global monetization scaling.",
@@ -290,12 +306,16 @@
     "updates": [],
     "alsoReportedBy": [
       {
-        "sourceName": "Bloomberg",
-        "sourceUrl": "https://www.bloomberg.com/news/articles/2026-09-11/openai-asia-pacific-commercial-plans"
+        "sourceName": "The Economic Times Tech",
+        "sourceUrl": "https://economictimes.indiatimes.com/tech"
       },
       {
-        "sourceName": "The Economic Times",
-        "sourceUrl": "https://economictimes.indiatimes.com/tech/technology/openai-explores-ad-partnerships-in-india/articleshow/20260911.cms"
+        "sourceName": "Nikkei Asia Technology",
+        "sourceUrl": "https://asia.nikkei.com/Business/Technology"
+      },
+      {
+        "sourceName": "OpenAI Regional Availability",
+        "sourceUrl": "https://help.openai.com/en/articles/20001245-ads-manager-availability"
       }
     ],
     "relatedBlogPosts": [
