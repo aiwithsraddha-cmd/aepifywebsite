@@ -1,9 +1,9 @@
 {
-  "last_successful_scan": "2026-10-08T12:00:00Z",
-  "next_scheduled_scan": "2026-10-08T12:30:00Z",
+  "last_successful_scan": "2026-10-12T08:15:00Z",
+  "next_scheduled_scan": "2026-10-12T08:45:00Z",
   "scan_interval_minutes": 30,
-  "stories_discovered": 18,
-  "stories_published": 6,
+  "stories_discovered": 19,
+  "stories_published": 7,
   "stories_skipped_low_importance": 7,
   "duplicate_stories_merged": 5,
   "failed_sources": 0,
